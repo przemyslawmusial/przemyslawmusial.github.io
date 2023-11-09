@@ -910,7 +910,9 @@ footer li {
 	}
 
 	.submenu:hover .submenu-content {
-		background-color: #831212;
+		position: relative;
+		background-color: #911913;
+		border: none;
 	}
 }
 
