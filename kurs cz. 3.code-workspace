@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"name": "kurs cz. 3",
+			"path": "../../kurs cz. 3"
+		},
+		{
+			"name": "kurs cz. 2",
+			"path": "../../kurs cz. 2"
+		},
+		{
+			"name": "example",
+			"path": "../../../../../../xampp/htdocs/example"
+		},
+		{
+			"path": "../../strona - Damian"
+		},
+		{
+			"path": "../../slider"
+		},
+		{
+			"path": "../../kurs JS"
+		},
+		{
+			"path": "../../programowanie grafiki 3d"
+		},
+		{
+			"path": "../../techniki agentowe"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../../hotspot"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "strona - market kmiecik"
+	}
+}
