@@ -108,7 +108,7 @@ nav .burger {
 	padding: 10px 20px;
 }
 
-.submenu:hover .submenu-content {
+.submenu-content.opened {
 	display: block;
 	display: flex;
 	flex-direction: column;
@@ -673,7 +673,7 @@ footer li {
 }
 
 .description .offer-p {
-	padding: 0 15px;
+	padding: 30px 15px;
 }
 
 .subpage-offer {
@@ -688,7 +688,7 @@ footer li {
 }
 
 .subpage-offer-card .img {
-	margin-top: 20px;
+	margin: 15px 0;
 	width: 100%;
 	height: 380px;
 	background-size: cover;
@@ -727,6 +727,7 @@ footer li {
 }
 
 .extra-description {
+	margin-top: 30px;
 	background-color: #911913;
 }
 
@@ -788,6 +789,26 @@ footer li {
 
 	.contact .formField {
 		width: 500px;
+	}
+
+	.subpage-offer-card-description {
+		width: 50%;
+	}
+
+	.subpage-offer-card .img {
+		width: 50%;
+	}
+
+	.subpage-offer-card-left {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.subpage-offer-card-right {
+		flex-direction: row-reverse;
+		justify-content: center;
+		align-items: center;
 	}
 }
 
@@ -909,7 +930,11 @@ footer li {
 		align-items: center;
 	}
 
-	.submenu:hover .submenu-content {
+	.submenu-content {
+		transition: 0.4s;
+	}
+
+	.submenu-content.opened {
 		position: relative;
 		background-color: #911913;
 		border: none;
