@@ -1,15 +1,12 @@
 * {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
-}
-
-html {
-	scroll-behavior: smooth;
 }
 
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: "Montserrat", sans-serif;
+	background-color: #ddd;
 }
 
 .wrapper {
@@ -17,62 +14,338 @@ body {
 	max-width: 1200px;
 }
 
-header {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	background-image: url(../images/background.jpg);
-	background-size: cover;
-}
-
-.description-container {
+.nav-container {
+	height: 12vh;
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
-	position: absolute;
-	left: 0;
-	top: -5px;
-	height: 100%;
-	width: 100%;
-	background-image: url(../images/header-container-small.png);
-	background-size: cover;
+	position: relative;
+	background-color: #f8f9fa;
 }
 
-header a {
+nav img {
+	margin: auto;
+	width: 150px;
+}
+
+nav .ul-container {
+	margin: auto;
+	list-style-type: none;
+	display: flex;
+	width: 65%;
+	justify-content: space-around;
+	text-align: center;
+	flex-wrap: wrap;
+}
+
+nav a {
+	text-transform: uppercase;
+	text-decoration: none;
+	/* font-weight: bold; */
+	position: relative;
+	padding: 10px;
+	letter-spacing: 2px;
+	color: black;
+	transition: color 0.3s;
+}
+
+nav a:hover {
+	color: #911913;
+}
+
+.nav-info {
+	width: 100%;
+}
+
+.nav-info ul {
+	display: flex;
+	list-style-type: none;
+	justify-content: center;
+	text-align: center;
+}
+
+.nav-info ul li {
+	padding: 10px 20px;
+}
+
+/* burger icon */
+
+nav .line {
+	width: 28px;
+	height: 4px;
+	background: black;
+	margin: 10px;
+	border-radius: 20px;
+	transition: 0.3s ease-in-out;
+}
+
+nav .burger {
+	padding-right: 50px;
+	background: none;
+	border: none;
+	display: none;
+}
+
+/* submenu */
+
+.submenu {
+	position: relative;
+	list-style-type: none;
+}
+
+.submenu-content {
+	display: none;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 4%;
-	font-size: 35px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	padding: 10px 20px;
+}
+
+.submenu-content a {
+	padding: 10px 20px;
+}
+
+.submenu-content.opened {
+	display: block;
+	display: flex;
+	flex-direction: column;
+	background-color: #f8f9fa;
+	z-index: 5;
+	animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+}
+
+/* nawigacja kontakt */
+
+.nav-info {
+	padding: 10px 0;
+	background-color: #911913;
 	color: white;
-	transition: 0.3s;
 }
 
-header a:hover {
-	color: #ee2b2f;
+.nav-info i {
+	padding: 0 10px;
 }
 
-.logo {
-	margin-top: 30px;
-	height: 120px;
-	width: 320px;
-	background-image: url(../images/logo.png);
-	background-position: center;
+/* header */
+
+.header-shadow {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header-card {
+	position: relative;
+	width: 100%;
+	height: 63vh;
+	background-image: url(../images/materialy-budowlane.jpg);
 	background-size: cover;
-	z-index: 10;
+	background-position: center;
 }
 
-.description {
-	padding: 30px 30px;
+.header-card-2 {
+	background-image: url(../images/hydraulika.jpg);
+}
+
+.header-card-3 {
+	background-image: url(../images/kostka-brukowa.jpg);
+}
+
+.header-card-4 {
+	background-image: url(../images/stal-zebrowana.jpg);
+}
+
+.header-card-5 {
+	background-image: url(../images/transport.jpg);
+}
+
+.header-card p,
+.offer-h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	z-index: 3;
+}
+
+.header-card a {
+	position: absolute;
+	left: 50%;
+	bottom: 25%;
+	transform: translateX(-50%);
+	text-decoration: none;
+	color: white;
+	padding: 10px 20px;
+	border: 2px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	z-index: 3;
+}
+
+.header-card a:hover {
+	background-color: #911913;
+}
+
+.slick-prev {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	font-size: 34px;
+	color: white;
+	z-index: 3;
+}
+
+.slick-next {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	font-size: 34px;
+	color: white;
+	z-index: 3;
+}
+
+.slick-dots {
 	text-align: center;
 }
 
-.advantages {
-	position: relative;
+.slick-dots li {
+	display: inline-block;
+	margin: 3px 7px;
+}
+
+.slick-dots li button {
+	background: #b0adad;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	border: none;
+	color: transparent;
+}
+
+.slick-dots li.slick-active button {
+	background: #911913;
+}
+
+/* description */
+
+.description {
+	margin-top: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.description p {
+	padding: 0 10px;
+}
+
+.underline {
+	margin: 10px auto 40px;
+	width: 60px;
+	height: 4px;
+	border-radius: 5px;
+	background-color: #911913;
+}
+
+/* offer */
+
+.offer {
+	margin-top: 70px;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	background-image: url(../images/Info_sekcja.jpg);
+}
+
+.offer-img {
+	position: relative;
+	height: 290px;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: 0.3s;
+}
+
+.product1 {
+	background-image: url(../images/materialy-budowlane.jpg);
+}
+
+.product2 {
+	background-image: url(../images/hydraulika.jpg);
+}
+.product3 {
+	background-image: url(../images/kostka-brukowa.jpg);
+}
+.product4 {
+	background-image: url(../images/stal-zebrowana.jpg);
+}
+.product5 {
+	background-image: url(../images/transport.jpg);
+}
+
+.offer-img .img-description {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	z-index: 3;
+}
+
+.offer-description {
+	padding: 10px 20px 20px;
+}
+
+.offer-shadow {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.offer-img:hover {
+	transform: scale(1.01);
+}
+
+/* advantages */
+
+.advantages {
+	position: relative;
+	margin-top: 70px;
+	padding-bottom: 70px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-image: url(../images/zalety-wspolpracy.jpg);
 	background-position: top;
 	background-size: cover;
 	background-attachment: fixed;
@@ -83,7 +356,7 @@ header a:hover {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background-color: rgba(0, 9, 27, 0.3);
+	background-color: rgba(0, 9, 27, 0.75);
 }
 
 .advantages h2 {
@@ -110,30 +383,183 @@ header a:hover {
 	padding: 10px 0;
 }
 
-.advantages .icon-title {
+/* reviews */
+
+.reviews {
+	padding-top: 60px;
+	margin-top: 50px;
+	margin: 0 10px;
+	/* display: flex; */
+	/* flex-direction: column; */
+	/* align-items: center; */
+	/* justify-content: center; */
+	text-align: center;
+}
+
+.review-card {
+	border: #b4b4b4 2px solid;
+	background-color: #fff;
+	border-radius: 15px;
+	padding-bottom: 20px;
+	margin: 0 25px;
+}
+
+.stars {
+	padding: 10px 0;
+	color: #fdc500;
+}
+
+.fa-star {
+	font-size: 24px;
+	padding: 10px 10px;
+}
+
+.reviews .description {
+	font-size: 14px;
+	padding: 10px 40px;
+}
+
+.reviews .line {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 2px;
+	width: 70%;
+	margin: 10px 0;
+	border-radius: 25%;
+	background-color: #b4b4b4;
+}
+
+.reviews .name {
 	font-weight: bold;
+	padding: 10px 35px;
+	text-align: left;
 }
 
-.advantages .icon-description {
-	padding: 7px 60px;
-	font-size: 13px;
+.reviews .person-description {
+	padding-left: 35px;
+	text-align: left;
 }
 
-.advantages .icon-container {
-	padding: 50px 0;
+.reviews .slick-dots {
+	text-align: center;
 }
 
-.underline {
-	margin: 10px auto 40px;
-	width: 60px;
-	height: 4px;
+.reviews .slick-dots li {
+	display: inline-block;
+	margin: 20px 7px;
+}
+
+.reviews .slick-dots li button {
+	background: #b4b4b4;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	border: none;
+	color: transparent;
+}
+
+.reviews .slick-dots li.slick-active button {
+	background: #fdc500;
+}
+
+/* experience */
+
+.experience {
+	margin-top: 60px;
+}
+
+/* companies */
+
+.companies {
+	margin: 50px 0;
+}
+
+.company {
+	height: 180px;
+	background-position: center;
+	background-size: cover;
+	object-fit: cover;
+	margin: 0 20px;
+}
+
+.company1 {
+	background-image: url(../images/firma1.png);
+}
+.company2 {
+	background-image: url(../images/firma2.png);
+}
+.company3 {
+	background-image: url(../images/firma3.png);
+}
+.company4 {
+	background-image: url(../images/firma4.png);
+}
+
+/* kontakt */
+
+.contact {
+	padding: 30px 0;
+	background-color: #911913;
+}
+
+.underline-white {
+	background-color: #fff;
+}
+
+.contact h2 {
+	color: #fff;
+}
+
+.contact .contact-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact .map {
+	height: 300px;
+	width: 300px;
+}
+
+.contact .contact-form {
+	margin-top: 20px;
+}
+
+.contact .formField {
+	width: 300px;
+	height: 50px;
+	padding-left: 10px;
+	border-radius: 15px;
+	margin: 10px 0;
+	border: none;
+	font-family: "Montserrat", sans-serif;
+}
+
+.contact .formMessage {
+	padding-top: 10px;
+	height: 100px;
+	resize: vertical;
+	font-family: "Montserrat", sans-serif;
+}
+
+.contact button {
+	text-decoration: none;
+	border: none;
+	background-color: #fdc500;
+	padding: 15px 30px;
 	border-radius: 5px;
-	background-color: #ee2b2f;
+	font-family: "Montserrat", sans-serif;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
-footer {
-    overflow: hidden;
+.contact button:hover {
+	color: white;
 }
+
+/* footer */
 
 footer .first-container {
 	padding: 30px 0;
@@ -153,16 +579,15 @@ footer .item:hover {
 }
 
 footer .info {
-	font-size: 26px;
+	font-size: 20px;
 }
 
 footer .fa-solid {
-    font-size: 40px;
 	padding: 0 10px;
 }
 
 footer .description {
-	padding-top: 10px;
+	padding-top: 8px;
 	font-size: 18px;
 }
 
@@ -172,46 +597,401 @@ footer .footer-underline {
 	background-color: rgb(36, 36, 36);
 }
 
+footer .main-info .logo {
+	width: 150px;
+	height: 63px;
+	margin: 20px 0;
+	background-image: url(../images/logo.png);
+	background-size: cover;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 footer .second-container {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	text-align: center;
+	padding: 20px 0;
+	font-size: 15px;
+}
+
+footer a {
+	text-decoration: none;
+	color: black;
+	transition: 0.1s;
+}
+
+footer a:hover {
+	color: #911913;
+}
+
+footer .second-container .main-info {
+	padding: 15px 0;
+}
+
+footer .second-container .offer-info {
+	margin-top: 30px;
+	padding: 15px 0;
+}
+
+footer .second-container .offer-info h3 {
+	margin-bottom: 10px;
+}
+
+footer .third-container {
 	padding: 15px 0;
 	text-align: center;
 }
 
-@media (min-width: 992px) {
-	header {
-		background-image: url(../images/background\ new.jpg);
-	}
+footer li {
+	list-style-type: none;
+	padding: 5px 0;
+}
 
-	.description-container {
-		width: 700px;
-		background-image: none;
-		justify-content: center;
-	}
+/* Materiały budowalne - podstrona */
 
-	.logo {
-		height: 200px;
-		width: 550px;
-	}
+.offer-header {
+	position: relative;
+	width: 100%;
+	height: 30vh;
+	background-size: cover;
+	background-position: center;
+}
 
-	.description {
-		font-size: 20px;
-	}
+.offer-header1{
+	background-image: url(../images/materialy-budowlane.jpg);
+}
 
-	header a {
-		color: black;
-	}
+.offer-header p {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	z-index: 3;
+}
 
+.description .offer-p {
+	padding: 30px 15px;
+}
+
+.subpage-offer {
+	margin-top: 60px;
+}
+
+.subpage-offer-card {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.subpage-offer-card .img {
+	margin: 15px 0;
+	width: 100%;
+	height: 380px;
+	background-size: cover;
+	background-position: center;
+}
+
+.subpage-offer-card .img1 {
+	background-image: url(../images/styropian.jpeg);
+}
+
+.subpage-offer-card .img2 {
+	background-image: url(../images/płyty\ gipsowo-kartonowe.jpeg);
+}
+
+.subpage-offer-card .img3 {
+	background-image: url(../images/farby.jpg);
+}
+
+.subpage-offer-card .img4 {
+	background-image: url(../images/cegły.jpg);
+}
+.subpage-offer-card .img5 {
+	background-image: url(../images/zaprawy.jpg);
+}
+.subpage-offer-card .img6 {
+	background-image: url(../images/deski.jpg);
+}
+.subpage-offer-card .img7 {
+	background-image: url(../images/narzędzia.jpg);
+}
+.subpage-offer-card .img8 {
+	background-image: url(../images/elektryka.jpg);
+}
+.subpage-offer-card .img9 {
+	background-image: url(../images/elementy\ wykończeniowe.jpg);
+}
+
+.extra-description {
+	margin-top: 30px;
+	background-color: #911913;
+}
+
+.extra-description p {
+	text-align: center;
+	color: white;
+	padding: 70px 20px;
+}
+
+.extra-description span {
+	font-weight: bold;
+}
+
+.subpage-advantages {
+	margin-top: 0;
+	padding-bottom: 0;
+}
+
+.subpage-advantages .icon-title {
+	font-weight: bold;
+}
+
+.subpage-advantages .icon-description {
+	padding: 7px 60px;
+	font-size: 13px;
+}
+
+.subpage-advantages .icon-container {
+	padding: 50px 0;
+}
+
+
+/* polityka prywatności - podstrona */
+
+.privacy-policy-description {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.privacy-policy-description li {
+	list-style: none;
+	padding: 20px 10px;
+}
+
+.description h1 {
+	margin-top: 20px;
+}
+
+/* hydraulika - podstrona */
+
+.offer-header2 {
+	background-image: url(../images/hydraulika.jpg);
+}
+
+/* kostka brukowa - podstrona */
+
+.offer-header3 {
+	background-image: url(../images/kostka-brukowa.jpg);
+}
+
+/* stal żebrowana - podstrona */
+
+.offer-header4 {
+	background-image: url(../images/stal-zebrowana.jpg);
+}
+
+/* transport krajowy i zagraniczny - podstrona */
+
+.offer-header5 {
+	background-image: url(../images/transport.jpg);
+}
+
+@media (min-width: 768px) {
 	.advantages .icon-container {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-    footer .first-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+	.contact .contact-container {
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.contact .map {
+		width: 50%;
+	}
+
+	.contact .contact-form {
+		width: 50%;
+		margin-top: 0;
+	}
+
+	footer .first-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	footer .second-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.contact .formField {
+		width: 500px;
+	}
+
+	.subpage-offer-card-description {
+		width: 50%;
+	}
+
+	.subpage-offer-card .img {
+		width: 50%;
+	}
+
+	.subpage-offer-card-left {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.subpage-offer-card-right {
+		flex-direction: row-reverse;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
-@media (min-width: 1200px) {
-	.description-container {
-		width: 800px;
+@media (min-width: 992px) {
+	.header-card {
+		height: 70vh;
+	}
+
+	.header-card p {
+		font-size: 45px;
+	}
+
+	.header-card a {
+		font-size: 24px;
+	}
+
+	.slick-next {
+		font-size: 45px;
+		right: 15px;
+	}
+
+	.slick-prev {
+		font-size: 45px;
+		left: 15px;
+	}
+
+	.slick-dots li {
+		margin: 5px 10px;
+	}
+
+	.slick-dots li button {
+		width: 20px;
+		height: 20px;
+	}
+
+	.offer-card-1 {
+		display: flex;
+	}
+	.offer-card-2 {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+
+	.offer-img {
+		width: 50%;
+	}
+
+	.offer-description {
+		display: flex;
+		align-items: center;
+		width: 50%;
+	}
+
+	.advantages .icon-container {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.advantages .icon {
+		font-size: 50px;
+		padding-bottom: 15px;
+	}
+}
+
+@media (max-width: 992px) {
+	body,
+	html {
+		overflow-x: hidden;
+	}
+
+	nav .burger {
+		display: block;
+	}
+
+	.burger.active .line:first-child {
+		transform: translateY(-300px);
+	}
+
+	.burger.active .line:nth-child(2) {
+		transform: rotate(45deg) translate(4px, 4px);
+	}
+
+	.burger.active .line:nth-child(3) {
+		transform: rotate(-45deg) translate(6px, -6px);
+	}
+
+	nav .ul-container {
+		position: absolute;
+		right: 0;
+		top: 12vh;
+		background-color: #911913;
+		height: 92vh;
+		width: 100%;
+		flex-direction: column;
+		text-align: center;
+		transform: translate(100%);
+		transition: 0.3s ease-in-out;
+		z-index: 10;
+	}
+
+	nav .ul-container.active {
+		transform: translate(0%);
+	}
+
+	nav a {
+		color: white;
+	}
+
+	nav a:hover {
+		color: #333;
+	}
+
+	nav img {
+		margin: 0 50px;
+		width: 150px;
+	}
+
+	.nav-info ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.submenu-content {
+		transition: 0.4s;
+	}
+
+	.submenu-content.opened {
+		position: relative;
+		background-color: #911913;
+		border: none;
+	}
+}
+
+@media (min-height: 1200px) {
+	.nav-container {
+		height: 8vh;
+	}
+
+	nav .ul-container {
+		top: 8vh;
 	}
 }
