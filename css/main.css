@@ -131,6 +131,10 @@ header a:hover {
 	background-color: #ee2b2f;
 }
 
+footer {
+    overflow: hidden;
+}
+
 footer .first-container {
 	padding: 30px 0;
 	display: grid;
@@ -149,7 +153,7 @@ footer .item:hover {
 }
 
 footer .info {
-	font-size: 20px;
+	font-size: 26px;
 }
 
 footer .fa-solid {
