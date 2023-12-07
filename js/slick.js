@@ -1,7 +1,7 @@
 $(".offer-carousel").slick({
 	arrows: false,
 	autoplaySpeed: 10000,
-	autoplay: false,
+	autoplay: true,
 	mobileFirst: true,
 	slidesToShow: 1,
 	slidesToScroll: 1,
