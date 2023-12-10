@@ -571,6 +571,10 @@ footer li {
 	background-image: url(/images/ukladanie-kostki-header.jpg);
 }
 
+.realizacje {
+	background-image: url(/images/realizacje.jpg);
+}
+
 .subpage-header .header-title {
 	position: absolute;
 	color: white;
@@ -740,6 +744,32 @@ footer li {
 	color: white;
 }
 
+/* wykończenia wnętrz */
+
+.advantages-subpage {
+	background-color: #cbb26a;
+}
+
+/* realizacje */
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 10px;
+	margin: 50px 10px;
+}
+
+.gallery img {
+	width: 100%;
+	height: 250px;
+	transition: 0.3s;
+}
+
+#lightboxOverlay {
+	width: 100vw !important;
+	height: auto;
+}
+
 @media (min-width: 768px) {
 
 	.about-us .content-container p{
@@ -820,6 +850,10 @@ footer li {
 		margin-bottom: 40px;
 		padding: 0px;
 	}
+
+	/* .gallery img{
+		width: 350px;
+	} */
 }
 
 @media (min-width: 992px) {
@@ -919,6 +953,14 @@ footer li {
 
 	.section-title h2 {
 		font-size: 32px;
+	}
+
+	.gallery img{
+		width: 350px;
+	}
+
+	.gallery img:hover {
+		transform: scale(1.05);
 	}
 }
 

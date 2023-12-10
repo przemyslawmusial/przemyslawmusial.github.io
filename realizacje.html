@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remonty wnętrz | Max-Bud</title>
+    <title>Realizacje | Max-Bud</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ae82900702.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/lightbox.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
 
     <nav>
@@ -42,6 +47,23 @@
         </div>
     </nav>
 
+    <header class="subpage-header realizacje">
+        <h1 class="header-title">realizacje</h1>
+        <div class="header-shadow"></div>
+    </header>
+
+    <main class="wrapper">
+        <section class="gallery">
+            <a href="/images/ukladanie-kostki.jpg" data-lightbox="moja-galeria"><img src="/images/ukladanie-kostki.jpg" alt=""></a>
+            <a href="/images/budowanie-domow.jpg" data-lightbox="moja-galeria"><img src="/images/budowanie-domow.jpg" alt=""></a>
+            <a href="/images/fundamenty.jpg" data-lightbox="moja-galeria"><img src="/images/fundamenty.jpg" alt=""></a>
+            <a href="/images/wykonczenie.jpg" data-lightbox="moja-galeria"><img src="/images/wykonczenie.jpg" alt=""></a>
+            <a href="/images/lanie-plyt-betonowych.jpg" data-lightbox="moja-galeria"><img src="/images/lanie-plyt-betonowych.jpg" alt=""></a>
+            <a href="/images//zakonczenie-budowy.jpg" data-lightbox="moja-galeria"><img src="/images/zakonczenie-budowy.jpg" alt=""></a>
+
+        </section>
+    </main>
+
     <footer>
         <div class="footer-underline"></div>
         <div class="second-container wrapper">
@@ -54,8 +76,8 @@
             <div class="map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2582.910678558689!2d21.518711177501793!3d49.655982244246715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473c4b57b3281817%3A0xc1872a1e945209c5!2sBudowa%20dom%C3%B3w%2C%20wyko%C5%84czenia%20wn%C4%99trz%20%7C%20Max-Bud%20Tomasz%20Lepak!5e0!3m2!1spl!2spl!4v1701654152337!5m2!1spl!2spl"
-                    width="100%" height="100%" allowfullscreen=""
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    width="100%" height="100%" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="offer-info">
                 <h2>oferta</h2>
@@ -72,7 +94,9 @@
             <p>Wszelkie prawa zastrzeżone | &copy; 2023</p>
         </div>
     </footer>
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
