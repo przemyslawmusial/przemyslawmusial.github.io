@@ -272,7 +272,7 @@ nav .burger {
 }
 
 .offer-card .description {
-	padding: 25px 20px;
+	padding: 25px 20px 60px;
 	margin-bottom: 35px;
 	text-align: center;
 }
@@ -770,6 +770,13 @@ footer li {
 	height: auto;
 }
 
+@media (min-width: 576px){
+	.offer-group{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
 @media (min-width: 768px) {
 
 	.about-us .content-container p{
@@ -961,6 +968,16 @@ footer li {
 
 	.gallery img:hover {
 		transform: scale(1.05);
+	}
+
+	.offer-card:nth-child(4){
+		grid-column-start: 2;
+		grid-column-end: 2;
+	}
+
+	.offer-group{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
