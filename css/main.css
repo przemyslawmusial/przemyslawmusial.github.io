@@ -380,7 +380,7 @@ nav .burger {
 	background-color: #333;
 }
 
-.contact .form-info h3{
+.contact .form-info h3 {
 	margin-bottom: 30px;
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
@@ -408,8 +408,6 @@ nav .burger {
 	text-align: center;
 	color: white;
 }
-
-
 
 .contact .contact-form {
 	margin-top: 20px;
@@ -477,7 +475,6 @@ footer .footer-underline {
 	width: 100%;
 	background-color: rgb(36, 36, 36);
 }
-
 
 footer .map iframe {
 	border-top: 2px solid #cbb26a;
@@ -689,7 +686,7 @@ footer li {
 	margin: auto;
 }
 
- .content .image {
+.content .image {
 	width: 100%;
 	margin: auto;
 	height: 250px;
@@ -770,16 +767,42 @@ footer li {
 	height: auto;
 }
 
-@media (min-width: 576px){
-	.offer-group{
+/* remonty domów */
+
+.offer-subpage {
+	padding-bottom: 40px;
+}
+
+.subpage-offer-card {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.subpage-offer-card img {
+	margin: 15px 0 0;
+	width: 100%;
+	height: 350px;
+}
+
+.subpage-offer-card .description {
+	padding: 10px 30px;
+}
+
+.subpage-offer-card-description h3 {
+	font-size: 20px;
+}
+
+@media (min-width: 576px) {
+	.offer-group {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media (min-width: 768px) {
-
-	.about-us .content-container p{
+	.about-us .content-container p {
 		font-size: 18px;
 	}
 
@@ -828,7 +851,7 @@ footer li {
 		order: 3;
 	}
 
-	.content .image{
+	.content .image {
 		width: 90%;
 		height: 400px;
 	}
@@ -837,12 +860,12 @@ footer li {
 		font-size: 28px;
 	}
 
-	.contact .form-info h3{
+	.contact .form-info h3 {
 		margin: 10px 0 40px 20px;
 		padding-left: 7px;
 	}
 
-	footer .map iframe{
+	footer .map iframe {
 		border-radius: 10px;
 		border: 2px solid #cbb26a;
 	}
@@ -851,7 +874,7 @@ footer li {
 		height: 100%;
 	}
 
-	.contact .form-info .first{
+	.contact .form-info .first {
 		margin: 0px;
 		margin-top: 10px;
 		margin-bottom: 40px;
@@ -861,6 +884,26 @@ footer li {
 	/* .gallery img{
 		width: 350px;
 	} */
+
+	.subpage-offer-card-description {
+		width: 50%;
+	}
+
+	.subpage-offer-card img {
+		width: 50%;
+	}
+
+	.subpage-offer-card-left {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.subpage-offer-card-right {
+		flex-direction: row-reverse;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 @media (min-width: 992px) {
@@ -920,7 +963,7 @@ footer li {
 		font-size: 36px;
 	}
 
-	.content .image{
+	.content .image {
 		width: 75%;
 		height: 350px;
 	}
@@ -929,7 +972,7 @@ footer li {
 		width: 75%;
 	}
 
-	.last-row{
+	.last-row {
 		padding-bottom: 100px;
 	}
 
@@ -948,13 +991,13 @@ footer li {
 		padding: 50px 30px;
 	}
 
-	.step-icon{
+	.step-icon {
 		left: -1400%;
 		width: 60px;
 		height: 60px;
 	}
 
-	.step-icon .fa-solid{
+	.step-icon .fa-solid {
 		font-size: 22px;
 	}
 
@@ -962,7 +1005,7 @@ footer li {
 		font-size: 32px;
 	}
 
-	.gallery img{
+	.gallery img {
 		width: 350px;
 	}
 
@@ -970,12 +1013,13 @@ footer li {
 		transform: scale(1.05);
 	}
 
-	.offer-card:nth-child(4){
+	.offer-card:nth-child(4) {
+		margin-top: 50px;
 		grid-column-start: 2;
 		grid-column-end: 2;
 	}
 
-	.offer-group{
+	.offer-group {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
