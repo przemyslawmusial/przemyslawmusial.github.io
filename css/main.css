@@ -225,11 +225,11 @@ nav .burger {
 
 /* header dla podstron */
 
-.subpage-header .header-img{
+.subpage-header .header-img {
 	height: 15vh;
 }
 
-.subpage-header .header-title{
+.subpage-header .header-title {
 	width: 100%;
 	color: white;
 	position: absolute;
@@ -240,7 +240,7 @@ nav .burger {
 	text-transform: uppercase;
 	text-align: center;
 	z-index: 3;
-	font-weight:400;
+	font-weight: 400;
 }
 
 /* search-section */
@@ -251,6 +251,7 @@ nav .burger {
 }
 
 .search-button-container {
+	margin: 0 10px;
 	padding-top: 40px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -286,6 +287,7 @@ nav .burger {
 }
 
 .search-container {
+	margin: 0 10px;
 	padding: 10px 0px;
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
@@ -634,17 +636,17 @@ footer a img {
 
 /* podstrona - o nas */
 
-.about-us-page{
+.about-us-page {
 	background: #ffffff;
 }
 
-.about-us-description{
+.about-us-description {
 	padding: 60px 20px;
 	text-align: center;
 }
 
-.about-us-description p{
-	color:#333;
+.about-us-description p {
+	color: #333;
 	margin-top: 40px;
 }
 
@@ -661,10 +663,14 @@ footer a img {
 
 @media (min-width: 768px) {
 	.search-button-container {
+		margin-left: auto;
+		margin-right: auto;
 		grid-template-columns: repeat(4, 1fr);
 	}
 
 	.search-container {
+		margin-left: auto;
+		margin-right: auto;
 		grid-template-columns: repeat(4, 1fr);
 	}
 
@@ -709,7 +715,7 @@ footer a img {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.about-us-description p{
+	.about-us-description p {
 		font-size: 18px;
 	}
 }
@@ -719,7 +725,8 @@ footer a img {
 		display: none;
 	}
 
-	html,body{
+	html,
+	body {
 		scroll-padding-top: 12vh;
 	}
 
@@ -777,7 +784,7 @@ footer a img {
 	.team-description .name {
 		font-size: 24px;
 	}
-	.team-description .function{
+	.team-description .function {
 		margin-bottom: 100px;
 	}
 
@@ -786,15 +793,15 @@ footer a img {
 		font-size: 24px;
 	}
 
-	.team-description .contact{
+	.team-description .contact {
 		font-size: 14px;
 	}
 
-	.team-description .contact-2{
+	.team-description .contact-2 {
 		font-size: 14px;
 	}
 
-	.team-description .function{
+	.team-description .function {
 		font-size: 14px;
 	}
 
