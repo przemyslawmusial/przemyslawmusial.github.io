@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Selecta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ae82900702.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="nav-container wrapper">
+            <a href="index.html"><img src="./img/logo_preview_rev_1.png" alt=""></a>
+
+            <ul class="ul-container">
+                <li><a href="index.html">strona główna</a></li>
+                <li><a class="about-us" href="o-nas.html">o nas</a></li>
+                <li class="submenu">
+                    <a href="#" class="submenu-btn">oferta</a>
+                    <div class="submenu-content">
+                        <a href="oferty.html">kupno</a>
+                        <a href="oferty.html">wynajem</a>
+                        <a href="oferty.html">flip</a>
+                        <a href="oferty.html">premium</a>
+                    </div>
+                </li>
+                <li><a href="kariera.html">kariera</a></li>
+                <li><a class="contact-nav" href="kontakt.html">kontakt</a></li>
+            </ul>
+
+            <button class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-img">
+            <div class="header-text">
+                <h1 class="header-title">casa selecta</h1>
+                <h2 class="header-description">odkryj swoje idealne miejsce</h2>
+            </div>
+            <a href="#search-section"><i class="fa-solid fa-chevron-down"></i></a>
+            <div class="header-shadow"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section" id="search-section">
+            <div class="search-button-container wrapper">
+                <a href="">kup</a>
+                <a href="">wynajmij</a>
+                <a href="">dla właścicieli</a>
+                <a href="">usługi</a>
+            </div>
+
+            <div class="section-title">
+                <p>szukaj</p>
+                <p class="upper-case">oferty</p>
+            </div>
+
+            <div class="search-container wrapper">
+                <div class="search-container-item">
+
+                    <div><input type="text" name="rodzaj_nieruchomosci" placeholder="Wybierz" class="searchField">
+                        <div><label for="rodzaj_nieruchomosci">rodzaj nieruchomości</label></div>
+                    </div>
+                </div>
+                <div class="search-container-item">
+
+                    <div><input type="text" name="rodzaj_transakcji" placeholder="Wybierz" class="searchField">
+                        <div><label for="rodzaj_transakcji">rodzaj transakcji</label></div>
+                    </div>
+                </div>
+                <div class="search-container-item">
+
+                    <div><input type="text" name="lokalizacja" placeholder="Wybierz" class="searchField">
+                        <div><label for="lokalizacja">lokalizacja</label></div>
+                    </div>
+                </div>
+                <div class="search-container-item">
+                    <div><button type="submit">Szukaj</button></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="special-offers">
+            <div class="section-title">
+                <p>oferty</p>
+                <p class="upper-case">specjalne</p>
+            </div>
+
+            <div class="offers-container wrapper">
+                <div class="offer-card">
+                    <div class="card-img">
+                        <a href="ogloszenie-szablon.html"><img src="./img/pokój.jpg" alt=""></a>
+                    </div>
+                    <div class="card-header">
+                        <p class="title">Mieszkanie na wynajem</p>
+                        <span class="location">
+                            <span class="city">Kraków,</span>
+                            <span class="district">Podgórze,</span>
+                            <span class="street">Dębniki Stare</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <span class="params">2 pokoje | 52 m<sup>2</sup></span>
+                    </div>
+                    <div class="card-footer">
+                        <p class="pricesquare">101 zł/m<sup>2</sup></p>
+                        <p class="price">5 250 zł</p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-img">
+                        <a href="#"><img src="./img/bedroom-5772286_1280.jpg" alt=""></a>
+                    </div>
+                    <div class="card-header">
+                        <p class="title">Mieszkanie na wynajem</p>
+                        <span class="location">
+                            <span class="city">Kraków,</span>
+                            <span class="district">Podgórze,</span>
+                            <span class="street">Dębniki Stare</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <span class="params">2 pokoje | 52 m<sup>2</sup></span>
+                    </div>
+                    <div class="card-footer">
+                        <p class="pricesquare">101 zł/m<sup>2</sup></p>
+                        <p class="price">5 250 zł</p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-img">
+                        <a href="#"><img src="./img/pokój.jpg" alt=""></a>
+                    </div>
+                    <div class="card-header">
+                        <p class="title">Mieszkanie na wynajem</p>
+                        <span class="location">
+                            <span class="city">Kraków,</span>
+                            <span class="district">Podgórze,</span>
+                            <span class="street">Dębniki Stare</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <span class="params">2 pokoje | 52 m<sup>2</sup></span>
+                    </div>
+                    <div class="card-footer">
+                        <p class="pricesquare">101 zł/m<sup>2</sup></p>
+                        <p class="price">5 250 zł</p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-img">
+                        <a href="#"><img src="./img/bedroom-5772286_1280.jpg" alt=""></a>
+                    </div>
+                    <div class="card-header">
+                        <p class="title">Mieszkanie na wynajem</p>
+                        <span class="location">
+                            <span class="city">Kraków,</span>
+                            <span class="district">Podgórze,</span>
+                            <span class="street">Dębniki Stare</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <span class="params">2 pokoje | 52 m<sup>2</sup></span>
+                    </div>
+                    <div class="card-footer">
+                        <p class="pricesquare">101 zł/m<sup>2</sup></p>
+                        <p class="price">5 250 zł</p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-img">
+                        <a href="#"><img src="./img/pokój.jpg" alt=""></a>
+                    </div>
+                    <div class="card-header">
+                        <p class="title">Mieszkanie na wynajem</p>
+                        <span class="location">
+                            <span class="city">Kraków,</span>
+                            <span class="district">Podgórze,</span>
+                            <span class="street">Dębniki Stare</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <span class="params">2 pokoje | 52 m<sup>2</sup></span>
+                    </div>
+                    <div class="card-footer">
+                        <p class="pricesquare">101 zł/m<sup>2</sup></p>
+                        <p class="price">5 250 zł</p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-img">
+                        <a href="#"><img src="./img/bedroom-5772286_1280.jpg" alt=""></a>
+                    </div>
+                    <div class="card-header">
+                        <p class="title">Mieszkanie na wynajem</p>
+                        <span class="location">
+                            <span class="city">Kraków,</span>
+                            <span class="district">Podgórze,</span>
+                            <span class="street">Dębniki Stare</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <span class="params">2 pokoje | 52 m<sup>2</sup></span>
+                    </div>
+                    <div class="card-footer">
+                        <p class="pricesquare">101 zł/m<sup>2</sup></p>
+                        <p class="price">5 250 zł</p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+        <section class="location-map">
+            <div class="section-title">
+                <p>poznaj lokalizacje</p>
+                <p class="upper-case">naszych nieruchomości</p>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d40972.813125637535!2d19.934395521582026!3d50.07129173661675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1713788197588!5m2!1spl!2spl"
+                width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <section class="contact-section-bg">
+            <div class="section-title" style="padding-bottom: 30px;">
+                <p>pozostaw swoje dane</p>
+                <p class="upper-case">a wszystko inne zostaw nam</p>
+            </div>
+            <div class="contact-box wrapper">
+                <div class="input-container email-box">
+                    <input type="text" id="emailInput">
+                    <label for="emailInput">E-mail</label>
+                </div>
+                <div class="input-container phone-box">
+                    <input type="text" id="phoneInput">
+                    <label for="phoneInput">Telefon komórkowy</label>
+                </div>
+            </div>
+            <input type="submit" name="wyslij" value="wyślij" id="wyslij">
+        </section>
+
+        <section class="team">
+            <div class="section-title">
+                <p>poznaj</p>
+                <p class="upper-case">nasz zespół</p>
+            </div>
+            <div class="team-cards-group wrapper">
+                <div class="team-card">
+                    <div class="team-img"><img src="./img/Screenshot_1.png" alt=""></div>
+                    <div class="team-description">
+                        <p class="name">Jan Kowalski</p>
+                        <p class="function">Casa Selecta</p>
+                        <p><a href="mailto:jan@casa-selecta.pl" class="contact"><i class="fa-solid fa-envelope"></i>jan@casa-selecta.pl</a></p>
+                        <p><a href="tel:+48123456789" class="contact-2" style="margin-top: 20px;"><i class="fa-solid fa-phone"></i>+48 123 456 789
+                        </a></p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img"><img src="./img/Screenshot_2.png" alt=""></div>
+                    <div class="team-description">
+                        <p class="name">Karolina Skała</p>
+                        <p class="function">Casa Selecta</p>
+                        <p><a href="mailto:karolina@casa-selecta.pl" class="contact"><i class="fa-solid fa-envelope"></i>karolina@casa-selecta.pl</a></p>
+                        <p><a href="tel:+48123456789" class="contact-2" style="margin-top: 20px;"><i class="fa-solid fa-phone"></i>+48 123 456 789
+                        </a></p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img"><img src="./img/male-7275449_1280.jpg" alt=""></div>
+                    <div class="team-description">
+                        <p class="name">Piotr Nowak</p>
+                        <p class="function">Casa Selecta</p>
+                        <p><a href="mailto:piotr@casa-selecta.pl" class="contact"><i class="fa-solid fa-envelope"></i>piotr@casa-selecta.pl</a></p>
+                        <p><a href="tel:+48123456789" class="contact-2" style="margin-top: 20px;"><i class="fa-solid fa-phone"></i>+48 123 456 789
+                        </a></p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img"><img src="./img/Screenshot_3.png" alt=""></div>
+                    <div class="team-description">
+                        <p class="name">Paulina Pabian</p>
+                        <p class="function">Casa Selecta</p>
+                        <p><a href="mailto:paulina@casa-selecta.pl" class="contact"><i class="fa-solid fa-envelope"></i>paulina@casa-selecta.pl</a></p>
+                        <p><a href="tel:+48123456789" class="contact-2" style="margin-top: 20px;"><i class="fa-solid fa-phone"></i>+48 123 456 789
+                        </a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-img"><a href="index.html"><img src="./img/logo_preview_rev_1.png" alt=""></a></div>
+            <div class="footer-line"></div>
+            <div class="footer-container">
+                <div class="footer-1">
+                    <p>Oferty na sprzedaż</p>
+                    <div class="link-container">
+                        <a href="#"><span>Mieszkania</span> na sprzedaż</a>
+                        <a href="#"><span>Domy</span> na sprzedaż</a>
+                        <a href="#"><span>Działki</span> na sprzedaż</a>
+                        <a href="#"><span>Lokale</span> na sprzedaż</a>
+                        <a href="#"><span>Hale</span> na sprzedaż</a>
+                        <a href="#"><span>Obiekty</span> na sprzedaż</a>
+                    </div>
+                </div>
+                <div class="footer-2">
+                    <p>Oferty na wynajem</p>
+                    <div class="link-container">
+                        <a href="#"><span>Mieszkania</span> na wynajem</a>
+                        <a href="#"><span>Domy</span> na wynajem</a>
+                        <a href="#"><span>Działki</span> na wynajem</a>
+                        <a href="#"><span>Lokale</span> na wynajem</a>
+                        <a href="#"><span>Hale</span> na wynajem</a>
+                        <a href="#"><span>Obiekty</span> na wynajem</a>
+                    </div>
+                </div>
+                <div class="footer-3">
+                    <p>Informacje</p>
+                    <div class="link-container">
+                        <a href="o-nas.html">O nas</a>
+                        <a href="#">Usługi</a>
+                        <a href="kariera.html">Kariera</a>
+                        <a href="kontakt.html">Kontakt</a>
+                    </div>
+                </div>
+                <div class="footer-4">
+                    <p>Kontakt</p>
+                    <div class="contact-information">
+                        <p style="font-weight: bold;">Casa Selecta</p>
+                        <p>30-100 Kraków</p>
+                        <p>ul.Opolska 2/31</p>
+                        <p>tel. +48 123 456 789</p>
+                        <p><a href=""><i class="fa-brands fa-facebook"></i></a></i><a href=""><i
+                                    class="fa-brands fa-x-twitter"></i></a><a href=""><i
+                                    class="fa-brands fa-instagram"></i></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-line" style="margin-top: 20px;"></div>
+            <p class="footer-end">Casa Selecta | 2024</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Selecta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ae82900702.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/ogloszenie.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="nav-container wrapper">
+            <a href="index.html"><img src="./img/logo_preview_rev_1.png" alt=""></a>
+
+            <ul class="ul-container">
+                <li><a href="index.html">strona główna</a></li>
+                <li><a class="about-us" href="o-nas.html">o nas</a></li>
+                <li class="submenu">
+                    <a href="#" class="submenu-btn">oferta</a>
+                    <div class="submenu-content">
+                        <a href="oferty.html">kupno</a>
+                        <a href="oferty.html">wynajem</a>
+                        <a href="oferty.html">flip</a>
+                        <a href="oferty.html">premium</a>
+                    </div>
+                </li>
+                <li><a href="kariera.html">kariera</a></li>
+                <li><a class="contact-nav" href="kontakt.html">kontakt</a></li>
+            </ul>
+
+            <button class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+
+        </div>
+    </nav>
+
+    <header class="publication-header">
+        <div class="publication-header-img">
+            <div class="header-text">
+                <h1 class="header-title" style="margin-bottom: 20px;">Mieszkanie na sprzedaż</h1>
+                <h2 class="header-description">Kraków | Prądnik Czerwony | Reduta</h2>
+            </div>
+            <div class="publication-nav">
+                <div class="nav-item">
+                    <div><i class="fa-solid fa-image"></i></div>
+                    <a href="#publication-gallery">Zdjęcia</a>
+                </div>
+                <div class="nav-item">
+                    <div><i class="fa-regular fa-file-lines"></i></div>
+                    <a href="#publication-description">Opis</a>
+                </div>
+                <div class="nav-item">
+                    <div><i class="fa-solid fa-location-dot"></i></div>
+                    <a href="#publication-localization">Lokalizcja</a>
+                </div>
+            </div>
+            <div class="price-info">
+                <div>
+                    <p style="font-size: 13px;">13 402 zł/m<sup>2</sup></p>
+                </div>
+                <div>
+                    <p style="font-weight: bold; font-size: 34px;">2 600 000 zł</p>
+                </div>
+            </div>
+            <div class="publication-header-shadow"></div>
+        </div>
+
+    </header>
+
+    <main class="publication-container wrapper">
+        <div class="page-over">
+            <div class="main-container">
+                <div class="offer-section">
+                    <h1>
+                        <p>Mieszkanie na sprzedaż ul. reduta</p>
+                        <p class="small-title">kraków, prądnik czerwony</p>
+                    </h1>
+                    <div class="param-box">
+                        <div class="detail-box">
+                            <p>cena</p>
+                            <p>2 600 000 zł</p>
+                        </div>
+                    </div>
+                    <div class="param-box">
+                        <div class="detail-box">
+                            <p>cena za m<sup>2</sup></p>
+                            <p>13 402 zł</p>
+                        </div>
+                    </div>
+                    <div class="param-box">
+                        <div class="detail-box">
+                            <p>powierzchnia</p>
+                            <p>194 m<sup>2</sup></p>
+                        </div>
+                    </div>
+                    <div class="param-box">
+                        <div class="detail-box">
+                            <p>piętro</p>
+                            <p>4</p>
+                        </div>
+                    </div>
+                    <div class="param-box">
+                        <div class="detail-box">
+                            <p>cena</p>
+                            <p>2 600 000 zł</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-section" id="publication-gallery">
+                    <h1>
+                        <p>galeria</p>
+                        <p class="small-title">zdjęć</p>
+                    </h1>
+                    <div class="gallery">
+
+                    </div>
+                </div>
+                <div class="offer-section" id="publication-description">
+                    <h1>
+                        <p>szczegóły</p>
+                        <p class="small-title">oferty</p>
+                    </h1>
+                    <div class="publication-props">
+                        <div class="rodzaj-budynku">
+                            <span class="prop-name">Rodzaj budynku</span>
+                            <span class="prop-value">kamienica</span>
+                        </div>
+                        <div class="technologia-budowlana">
+                            <span class="prop-name">technologia budowlana</span>
+                            <span class="prop-value">tradycyjna murowana</span>
+                        </div>
+                        <div class="miesieczny-czynsz">
+                            <span class="prop-name">miesięczny czynsz administracyjny</span>
+                            <span class="prop-value">fundusz remontowy, woda, wywóz śmieci</span>
+                        </div>
+                        <div class="oplaty-wg-licznikow">
+                            <span class="prop-name">opłaty wg liczników</span>
+                            <span class="prop-value">gaz, prąd</span>
+                        </div>
+                        <div class="liczba-pieter">
+                            <span class="prop-name">liczba pięter w budynku</span>
+                            <span class="prop-value">5</span>
+                        </div>
+                        <div class="garaz">
+                            <span class="prop-name">garaż</span>
+                            <span class="prop-value">brak</span>
+                        </div>
+                        <div class="stan-lokalu">
+                            <span class="prop-name">stan lokalu</span>
+                            <span class="prop-value">bardzo dobry</span>
+                        </div>
+                        <div class="stan-prawny">
+                            <span class="prop-name">stan prawny</span>
+                            <span class="prop-value">użytkowanie wieczyste</span>
+                        </div>
+                        <div class="mies-czynsz-admin">
+                            <span class="prop-name">mies. czynsz admin.</span>
+                            <span class="prop-value">350 zł</span>
+                        </div>
+                        <div class="okna">
+                            <span class="prop-name">okna</span>
+                            <span class="prop-value">plastikowe nowy typ</span>
+                        </div>
+                        <div class="instalacje">
+                            <span class="prop-name">instalacje</span>
+                            <span class="prop-value">sprawne</span>
+                        </div>
+                        <div class="balkon">
+                            <span class="prop-name">balkon</span>
+                            <span class="prop-value">tak</span>
+                        </div>
+                        <div class="rok-budowy">
+                            <span class="prop-name">rok budowy</span>
+                            <span class="prop-value">2019</span>
+                        </div>
+                        <div class="widok">
+                            <span class="prop-name">widok</span>
+                            <span class="prop-value">na park</span>
+                        </div>
+                        <div class="gaz">
+                            <span class="prop-name">gaz</span>
+                            <span class="prop-value">brak</span>
+                        </div>
+                        <div class="woda">
+                            <span class="prop-name">woda</span>
+                            <span class="prop-value">ciepła - piecyk</span>
+                        </div>
+                        <div class="dojazd">
+                            <span class="prop-name">dojazd</span>
+                            <span class="prop-value">asfalt</span>
+                        </div>
+                        <div class="otoczenie">
+                            <span class="prop-name">otoczenie</span>
+                            <span class="prop-value">zielone tereny</span>
+                        </div>
+                        <div class="ogrzewanie">
+                            <span class="prop-name">ogrzewanie</span>
+                            <span class="prop-value">C.O. GAZOWE</span>
+                        </div>
+                        <div class="odl-do-sklepu">
+                            <span class="prop-name">odl. do sklepu [m]</span>
+                            <span class="prop-value">100 m</span>
+                        </div>
+                        <div class="odl-do-szkoly">
+                            <span class="prop-name">odl. do szkoły [m]</span>
+                            <span class="prop-value">500 m</span>
+                        </div>
+                        <div class="usytuowanie">
+                            <span class="prop-name">usytuowanie</span>
+                            <span class="prop-value">dwustronne</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-section">
+                    <h1>
+                        <p>opis</p>
+                        <p class="small-title">nieruchomości</p>
+                    </h1>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime fugiat dolorum omnis natus
+                            itaque distinctio suscipit soluta numquam in officiis. Harum voluptatibus in dicta illum
+                            eius molestias vel, perspiciatis blanditiis quis aspernatur ad similique maiores? Quam
+                            voluptates tempora rerum pariatur voluptate reprehenderit, inventore id quo facere
+                            repudiandae praesentium dolorem delectus voluptatum at molestias, est fugit tempore eius
+                            adipisci ipsa magni provident voluptas eligendi! Repellendus odio quas esse ut labore,
+                            debitis non velit. Impedit perspiciatis ullam facilis voluptatem non, accusamus aspernatur
+                            vitae vel eaque veniam quas excepturi nisi vero sequi numquam dolor, nostrum illo voluptate
+                            aliquid temporibus, molestiae incidunt. Dicta, temporibus.</p>
+                    </div>
+                </div>
+                <div class="offer-section" id="publication-localization">
+                    <h1>
+                        <p>lokalizacja</p>
+                        <p class="small-title">nieruchomości</p>
+                    </h1>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d40972.813125637535!2d19.934395521582026!3d50.07129173661675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1713788197588!5m2!1spl!2spl"
+                        width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="offer-section">
+                    <h1>
+                        <p>opiekun</p>
+                        <p class="small-title">oferty</p>
+                    </h1>
+                    <div class="team-card" style="margin-top: 20px;">
+                        <div class="team-img"><img src="./img/Screenshot_1.png" alt=""></div>
+                        <div class="team-description">
+                            <p class="name">Jan Kowalski</p>
+                            <p class="function">Casa Selecta</p>
+                            <p><a href="mailto:jan@casa-selecta.pl" class="contact"><i
+                                        class="fa-solid fa-envelope"></i>jan@casa-selecta.pl</a></p>
+                            <p><a href="tel:+48123456789" class="contact-2" style="margin-top: 20px;"><i
+                                        class="fa-solid fa-phone"></i>+48 123 456 789
+                                </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer style="margin-top: 0;">
+        <div class="footer-img"><a href="index.html"><img src="./img/logo_preview_rev_1.png" alt=""></a></div>
+        <div class="footer-line"></div>
+        <div class="footer-container">
+            <div class="footer-1">
+                <p>Oferty na sprzedaż</p>
+                <div class="link-container">
+                    <a href="#"><span>Mieszkania</span> na sprzedaż</a>
+                    <a href="#"><span>Domy</span> na sprzedaż</a>
+                    <a href="#"><span>Działki</span> na sprzedaż</a>
+                    <a href="#"><span>Lokale</span> na sprzedaż</a>
+                    <a href="#"><span>Hale</span> na sprzedaż</a>
+                    <a href="#"><span>Obiekty</span> na sprzedaż</a>
+                </div>
+            </div>
+            <div class="footer-2">
+                <p>Oferty na wynajem</p>
+                <div class="link-container">
+                    <a href="#"><span>Mieszkania</span> na wynajem</a>
+                    <a href="#"><span>Domy</span> na wynajem</a>
+                    <a href="#"><span>Działki</span> na wynajem</a>
+                    <a href="#"><span>Lokale</span> na wynajem</a>
+                    <a href="#"><span>Hale</span> na wynajem</a>
+                    <a href="#"><span>Obiekty</span> na wynajem</a>
+                </div>
+            </div>
+            <div class="footer-3">
+                <p>Informacje</p>
+                <div class="link-container">
+                    <a href="o-nas.html">O nas</a>
+                    <a href="#">Usługi</a>
+                    <a href="kariera.html">Kariera</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </div>
+            </div>
+            <div class="footer-4">
+                <p>Kontakt</p>
+                <div class="contact-information">
+                    <p style="font-weight: bold;">Casa Selecta</p>
+                    <p>30-100 Kraków</p>
+                    <p>ul.Opolska 2/31</p>
+                    <p>tel. +48 123 456 789</p>
+                    <p><a href=""><i class="fa-brands fa-facebook"></i></a></i><a href=""><i
+                                class="fa-brands fa-x-twitter"></i></a><a href=""><i
+                                class="fa-brands fa-instagram"></i></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-line" style="margin-top: 20px;"></div>
+        <p class="footer-end">Casa Selecta | 2024</p>
+        </div>
+    </footer>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

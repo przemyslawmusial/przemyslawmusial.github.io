@@ -1,0 +1,197 @@
+html,
+body {
+	scroll-padding-top: 120px;
+}
+
+.publication-header .publication-header-img {
+	position: relative;
+	background-image: url(..//img/pokój.jpg);
+	height: 60vh;
+	background-position: center;
+	background-size: cover;
+}
+
+.publication-header .publication-header-shadow {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.publication-header .header-text {
+	top: 30%;
+	font-size: 10px;
+}
+.publication-header .header-text .header-title,
+.header-description {
+	font-size: 22px;
+}
+
+.publication-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 80%;
+	padding: 25px 5px;
+	position: absolute;
+	bottom: 25%;
+	right: 0;
+	background: #f4f4f4;
+	z-index: 5;
+}
+
+.publication-nav a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #4e4e4e;
+	font-size: 14px;
+	transition: 0.3s;
+}
+
+.publication-nav .nav-item:hover a {
+	color: black;
+}
+
+.publication-nav .nav-item:hover i {
+	color: var(--second-color);
+}
+
+.nav-item {
+	text-align: center;
+}
+
+.nav-item i {
+	font-size: 16px;
+	color: #ddd;
+	transition: 0.4s;
+}
+
+.price-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+	color: white;
+	width: 80%;
+	padding: 20px 0;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.price-info p {
+	text-align: end;
+	padding-right: 15px;
+	text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.main-description {
+	width: 90%;
+}
+
+.publication-container{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.publication-container .offer-section{
+    margin: 20px 0;
+}
+
+.page-over{
+    padding: 30px;
+    border: 1px solid #f4f4f4;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-container{
+    position: relative;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.main-container h1{
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.main-container h1 .small-title{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.detail-box{
+    padding: 20px 0;
+}
+
+.detail-box>p:nth-child(1){
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.detail-box>p:nth-child(2){
+    font-weight: bold;
+    color: var(--second-color);
+}
+
+.gallery{
+    height: 250px;
+    width: 100%;
+    background-image: url(../img/bedroom-5772286_1280.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.publication-props>div{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.publication-props>div span{
+    display: block;
+    width: 50%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    line-height: 11px;
+}
+
+.publication-props>div span:nth-child(1){
+    text-align: left;
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-size: 11px;
+}
+
+.publication-props>div span:nth-child(2){
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media (min-width: 992px) {
+	.publication-header .header-text .header-title,
+	.header-description {
+		font-size: 30px;
+	}
+
+    .publication-nav{
+        width: 30%;
+        right: 20%;
+        bottom: 5%;
+    }
+
+    .price-info{
+        width: 30%;
+        left: 20%;
+    }
+
+    .publication-header .header-text{
+        top: 40%;
+    }
+}
