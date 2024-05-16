@@ -10,7 +10,7 @@
 }
 
 body {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Roboto", sans-serif;
 	/* background-color: #333; */
 }
 
@@ -173,7 +173,8 @@ nav .burger {
 	top: 70%;
 	left: 50%;
 	transform: translateX(-50%);
-	padding: 25px 60px;
+	padding: 15px 50px;
+	font-size: 14px;
 	text-decoration: none;
 	text-align: center;
 	text-transform: uppercase;
@@ -207,7 +208,9 @@ nav .burger {
 
 .subpage-header .header-img {
 	margin-top: 12vh;
-	height: 15vh;
+	height: 25vh;
+	background-image: none;
+	background-color: var(--main-color);
 }
 
 .subpage-header .header-title {
@@ -217,11 +220,28 @@ nav .burger {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 18px;
+	font-size: 14px;
 	text-transform: uppercase;
 	text-align: center;
 	z-index: 3;
 	font-weight: 400;
+}
+
+.about-us {
+	position: relative;
+	background-image: url(../gallery-img/limuzyna-galeria5.webp);
+	background-position: center;
+	background-size: cover;
+	z-index: 1;
+}
+
+.about-us-section-shadow {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: -11;
 }
 
 .about-us-container {
@@ -233,52 +253,104 @@ nav .burger {
 }
 
 .about-us-item {
-	width: 100%;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin: 20px 10px;
+	color: white;
+	padding: 20px 0;
+	z-index: 2;
+}
+
+.about-us-item-description {
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .about-us-item h2 {
 	text-transform: uppercase;
 	text-align: center;
+	line-height: 40px;
+	z-index: 2;
 }
 
 .about-us-item p {
 	padding: 20px 30px;
 	text-align: center;
+	line-height: 26px;
 }
 
 .about-us-item a {
 	margin-top: 20px;
 	color: #fff;
-	background-color: rgba(0, 0, 0, 0.5);
-	padding: 20px 30px;
+	padding: 10px 30px;
 	border-radius: 5px;
 	text-decoration: none;
 	text-transform: uppercase;
 	transition: 0.3s;
+	border: 2px solid white;
 }
 
 .about-us-item a:hover {
-	color: var(--second-color);
+	background-color: rgba(52, 52, 52, 0.7);
 }
 
 .about-us-item img {
 	margin-top: 60px;
 	width: 80%;
-	border-radius: 5px;
+	border: 5px solid #333;
+	transform: rotate(-4deg);
+}
+
+.about-us h2{
+	text-align: center;
+	text-transform: uppercase;
+	padding: 30px 20px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	margin-bottom: 20px;
+	z-index: 2;
 }
 
 .offer {
-	padding: 40px 0 70px;
+	padding: 20px 0;
 	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+}
+
+.offer-subpage{
 	background-image: url(../img/limuzyna-bg.webp);
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	z-index: 2;
+}
+
+.offer .offer-btn{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.offer .offer-btn:hover a{
+	background-color: rgba(52, 52, 52, 0.7);
+}
+
+.offer a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	padding: 15px 30px;
+	border: 2px solid white;
+	border-radius: 5px;
+	transition: .3s;
+}
+
+.offer .section-title {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 20px 0;
 }
 
 .section-title {
@@ -308,12 +380,45 @@ nav .burger {
 	z-index: -1;
 }
 
+.offer-card-main {
+	align-items: center;
+	position: relative;
+	color: white;
+	border-radius: 10px;
+	margin: 10px 25px;
+}
+
+.offer-card-main img {
+	width: 100%;
+	height: 215px;
+	background-position: center;
+	background-size: cover;
+}
+
+.offer-card-main .title{
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 15px 0;
+}
+
+.offer-card-main .description{
+	padding: 25px 20px 60px;
+	margin-bottom: 35px;
+	text-align: center;
+}
+
 .offer-card {
 	align-items: center;
 	position: relative;
 	background-color: #fff;
 	border-radius: 10px;
 	margin: 10px 25px;
+	transition: .3s;
+}
+
+.offer-card:hover {
+	transform: scale(1.05);
 }
 
 .offer-card img {
@@ -361,15 +466,16 @@ nav .burger {
 }
 
 .limousine {
-	background-color: #606060;
 	padding: 30px 0 50px;
 }
 
 .limousine-card {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	text-align: center;
 	margin-top: 50px;
+	padding: 0 30px;
 }
 
 .limousine-card img {
@@ -378,11 +484,41 @@ nav .burger {
 	width: 100%;
 	height: auto;
 	aspect-ratio: 16/9;
+	border: 2px solid white;
+	width: 90%;
 }
 
 .limousine-card .description {
-	color: #ddd;
+	color: white;
 	padding: 10px 30px;
+	z-index: 999;
+	line-height: 25px;
+}
+
+.limousine-card .description p{
+	text-align: left;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 20px 20px;
+}
+
+.limousine-card .description div{
+	margin-top: 5px;
+	padding: 15px 0 30px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.limousine-card .description a:hover{
+	background-color: rgba(52, 52, 52, 0.7);
+}
+
+.limousine-card .description a{
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	border: 2px solid white;
+	padding: 15px 25px;
+	border-radius: 5px;
+	transition: .3s;
 }
 
 .contact {
@@ -475,7 +611,7 @@ nav .burger {
 }
 
 .contact .info {
-	font-size: 24px;
+	font-size: 18px;
 }
 
 .contact .fa-solid {
@@ -735,6 +871,7 @@ footer a img {
 
 	.about-us-container {
 		flex-direction: row;
+		align-items: start;
 	}
 
 	.about-us-item {
@@ -770,13 +907,13 @@ footer a img {
 	}
 
 	.limousine-card img {
-		width: 50%;
+		width: 25%;
 	}
 
 	.limousine-card-left {
 		flex-direction: row;
-		justify-content: center;
-		align-items: center;
+		justify-content: start;
+		align-items: start;
 	}
 
 	.limousine-card-right {
@@ -867,7 +1004,11 @@ footer a img {
 	.header-title {
 		font-size: 32px;
 	}
-	
+
+	.subpage-header .header-title {
+		font-size: 24px;
+	}
+
 	.header-description {
 		font-size: 30px;
 	}
