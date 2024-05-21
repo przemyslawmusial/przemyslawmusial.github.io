@@ -27,6 +27,17 @@ body {
 	max-width: 1200px;
 }
 
+.main-container {
+	position: absolute;
+	top: 95vh;
+	width: 98%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #cfcfcf;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
 nav {
 	width: 100%;
 	position: fixed;
@@ -303,7 +314,7 @@ nav .burger {
 	transform: rotate(-4deg);
 }
 
-.about-us h2{
+.about-us h2 {
 	text-align: center;
 	text-transform: uppercase;
 	padding: 30px 20px;
@@ -321,31 +332,33 @@ nav .burger {
 	z-index: 2;
 }
 
-.offer-subpage{
+.offer-subpage {
 	background-image: url(../img/limuzyna-bg.webp);
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
 }
 
-.offer .offer-btn{
+.offer .offer-btn {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.offer .offer-btn:hover a{
+.offer .offer-btn:hover a {
 	background-color: rgba(52, 52, 52, 0.7);
 }
 
-.offer a{
+.offer a {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: white;
 	padding: 15px 30px;
 	border: 2px solid white;
 	border-radius: 5px;
-	transition: .3s;
+	transition: 0.3s;
 }
 
 .offer .section-title {
@@ -379,6 +392,8 @@ nav .burger {
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.55);
 	z-index: -1;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
 }
 
 .offer-card-main {
@@ -396,14 +411,14 @@ nav .burger {
 	background-size: cover;
 }
 
-.offer-card-main .title{
+.offer-card-main .title {
 	text-align: center;
 	font-size: 24px;
 	font-weight: bold;
 	padding: 15px 0;
 }
 
-.offer-card-main .description{
+.offer-card-main .description {
 	padding: 25px 20px 60px;
 	margin-bottom: 35px;
 	text-align: center;
@@ -415,7 +430,7 @@ nav .burger {
 	background-color: #fff;
 	border-radius: 10px;
 	margin: 10px 25px;
-	transition: .3s;
+	transition: 0.3s;
 }
 
 .offer-card:hover {
@@ -450,6 +465,9 @@ nav .burger {
 	right: 0;
 	padding: 15px 15px;
 	font-size: 14px;
+	border: none;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
 	border-top-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	background-color: var(--main-color);
@@ -496,35 +514,35 @@ nav .burger {
 	line-height: 25px;
 }
 
-.limousine-card .description p{
+.limousine-card .description p {
 	text-align: left;
 	background-color: rgba(0, 0, 0, 0.5);
 	padding: 20px 20px;
 }
 
-.limousine-card .description div{
+.limousine-card .description div {
 	margin-top: 5px;
 	padding: 15px 0 30px;
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.limousine-card .description a:hover{
+.limousine-card .description a:hover {
 	background-color: rgba(52, 52, 52, 0.7);
 }
 
-.limousine-card .description a{
+.limousine-card .description a {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: white;
 	border: 2px solid white;
 	padding: 15px 25px;
 	border-radius: 5px;
-	transition: .3s;
+	transition: 0.3s;
 }
 
 .contact {
-	position: relative;
-	padding: 40px 0 80px;
+	/* position: relative; */
+	/* padding: 40px 0 80px; */
 	background-color: #ddd;
 }
 
@@ -646,6 +664,10 @@ nav .burger {
 /* footer */
 
 footer {
+	position: absolute;
+	width: 100vw;
+	left: 50%;
+	transform: translateX(-50%);
 	background: var(--main-color);
 }
 
@@ -818,9 +840,16 @@ footer a img {
 	padding-bottom: 40px;
 }
 
+.price-desription .section-title h2 {
+	padding: 10px 40px;
+	font-size: 50px;
+	text-transform: none;
+}
+
 .price-desription p {
-	padding: 40px 20px;
+	padding: 40px 120px;
 	text-align: center;
+	line-height: 30px;
 }
 
 .price-desription a {
@@ -866,6 +895,17 @@ footer a img {
 }
 
 @media (min-width: 768px) {
+	.main-container {
+		position: absolute;
+		top: 95vh;
+		width: 98%;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: #cfcfcf;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+
 	.about-us {
 		padding: 50px 0;
 	}
