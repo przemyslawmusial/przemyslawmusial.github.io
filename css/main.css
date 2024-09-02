@@ -955,6 +955,7 @@ textarea {
 	border: 1px solid #ddd;
 	background-color: #78787871;
 	margin-bottom: 20px;
+	padding-left: 8px;
 }
 
 .contact-section .subpage-second .container form input,
@@ -966,6 +967,7 @@ textarea {
 .contact-section .second .container form textarea {
 	height: 220px;
 	margin-bottom: 30px;
+	padding-top: 5px;
 }
 
 .contact-section .second .container form button {
@@ -1004,8 +1006,52 @@ textarea {
 	font-family: "Roboto", sans-serif;
 }
 
-.iframe-contact{
+.iframe-contact {
 	margin: 10px;
+}
+
+#cookieConsent {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--main-color);
+	color: #fff;
+	text-align: center;
+	padding: 20px 20px;
+	z-index: 50;
+	opacity: 0;
+	transition: opacity 0.6s ease-in-out;
+	display: none;
+}
+
+#cookieConsent.show {
+	display: block;
+	opacity: 1;
+}
+
+.cookieConsent p {
+	padding: 15px 0 20px 0;
+}
+
+.cookieConsent p a {
+	text-decoration: none;
+	color: #333;
+}
+
+.cookieConsent__ok {
+	padding: 10px 20px;
+	text-decoration: none;
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+	z-index: 50;
+	transition: 0.3s;
+	border-radius: 5px;
+}
+
+.cookieConsent__ok:hover {
+	color: var(--main-color);
 }
 
 @media (min-width: 768px) {

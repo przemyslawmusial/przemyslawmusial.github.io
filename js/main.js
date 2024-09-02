@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	const nav = document.querySelector("nav");
 	const contact = document.querySelector(".ul-container .contact-nav");
 	const navLinks = document.querySelectorAll(".ul-container li a");
+	const cookieConsent = document.getElementById("cookieConsent");
+	const cookieConsentOK = document.getElementById("cookieConsentOK");
 
 	burgerIcon.addEventListener("click", () => {
 		mobileNav.classList.toggle("active");
@@ -50,4 +52,25 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	window.addEventListener("scroll", addShadow);
+
+	function hideCookieConsent() {
+		cookieConsent.classList.remove("show");
+		document.cookie =
+			"cookieConsentAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+	}
+
+	setTimeout(function () {
+		if (document.cookie.indexOf("cookieConsentAccepted=true") === -1) {
+			cookieConsent.classList.add("show");
+		}
+	}, 2000);
+
+	// Sprawdzenie, czy użytkownik wcześniej zaakceptował
+	// if (document.cookie.indexOf("cookieConsentAccepted=true") === -1) {
+	// 	cookieConsent.style.display = "block";
+	// }
+
+	cookieConsentOK.addEventListener("click", function () {
+		hideCookieConsent();
+	});
 });
