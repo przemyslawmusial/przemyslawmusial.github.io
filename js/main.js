@@ -42,7 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	if (offerBtn) {
 		offerBtn.addEventListener("click", () => {
-			submenuContent.classList.toggle("opened");
+			if (window.innerWidth <= 768) {
+				// Sprawdza, czy szerokość okna jest mniejsza lub równa 768px
+				submenuContent.classList.toggle("opened");
+			}
 		});
 	}
 

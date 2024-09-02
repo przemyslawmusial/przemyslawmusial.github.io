@@ -719,6 +719,7 @@ footer .footer-info {
 }
 
 .offers-subpages .card img {
+	width: 50%;
 	padding: 15px 0;
 }
 
@@ -1204,5 +1205,9 @@ textarea {
 	.contact-section .second .container form input,
 	textarea {
 		width: 330px;
+	}
+
+	.offers-subpages .card img {
+		width: 90%;
 	}
 }

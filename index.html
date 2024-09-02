@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon">
     <title>Mocowania Do Szkła - Uchwyty, Rotule | Producent Mocuj.pl</title>
     <meta name="description"
         content="Bezpośredni producent ➤ Uchwyty do szkła, okucia do daszków szklanych, elementy balustrad ➤ Solidne i trwałe. Prosty montaż. Cała Polska. Sprawdź ofertę!">
@@ -14,6 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -101,7 +103,7 @@
             </div>
         </section>
 
-        <section class="icon-section">
+        <section class="icon-section" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
             <div class="container wrapper">
                 <div class="icon-group">
                     <i class="fa-solid fa-briefcase"></i>
@@ -123,7 +125,7 @@
 
         <section class="offer-section">
             <div class="offer-container wrapper">
-                <div class="offer-card">
+                <div class="offer-card" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400">
                     <img src="./img/oferta/R1-1-38.webp" alt="Mocowania punktowe do szkła">
                     <p class="title">Mocowania punktowe do szkła</p>
                     <p class="description">Nowoczesne rotule przystosowane do łączenia i montażu dowolnych konstrukcji
@@ -133,7 +135,7 @@
                     </p>
                     <a href="mocowania-punktowe-do-szkla.html" class="offer-btn">pełna oferta</a>
                 </div>
-                <div class="offer-card">
+                <div class="offer-card" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400">
                     <img src="./img/oferta/R2-2-38.webp" alt="Mocowania do balustrad szklanych">
                     <p class="title">Mocowania do balustrad szklanych</p>
                     <p class="description">Uchwyty okrągłe o różnym dystansie do samodzielnego montażu balustrad
@@ -144,7 +146,7 @@
                     </p>
                     <a href="mocowania-do-balustrad-szklanych.html" class="offer-btn">pełna oferta</a>
                 </div>
-                <div class="offer-card">
+                <div class="offer-card" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400">
                     <img src="./img/oferta/rotula-38-3.webp" alt="Mocowania do daszków szklanych">
                     <p class="title">Mocowania do daszków szklanych</p>
                     <p class="description">Akcesoria niezbędne do montażu zewnętrznych zadaszeń szklanych na różnego
@@ -154,7 +156,7 @@
                     </p>
                     <a href="mocowania-do-daszkow-szklanych.html" class="offer-btn">pełna oferta</a>
                 </div>
-                <div class="offer-card">
+                <div class="offer-card" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400">
                     <img src="./img/oferta/t2.webp" alt="Tuleje dystansowe">
                     <p class="title">Tuleje dystansowe</p>
                     <p class="description">Tuleje dystansowe wykorzystywane do niwelowania odległości konstrukcji w
@@ -170,7 +172,7 @@
         <section class="highlights-section">
             <h2>co nas wyróżnia?</h2>
             <div class="container wrapper">
-                <div class="card">
+                <div class="card" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="400">
                     <i class="fa-solid fa-certificate"></i>
                     <p class="title">Gwarancja jakości</p>
                     <p class="description">Gwarantujemy najwyższą jakość usług przy zachowaniu konkurencyjnych cen.
@@ -178,7 +180,7 @@
                         materiały wykończeniowe, dzięki czemu nasze produkty cieszą długoletnią niezawodnością i
                         atrakcyjnym wyglądem.</p>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="600">
                     <i class="fa-solid fa-circle-arrow-right"></i>
                     <p class="title">Błyskawiczna realizacja</p>
                     <p class="description">Zapewniamy sprawną i bezproblemową realizację zamówienia na terenie całej
@@ -186,7 +188,7 @@
                         mocowania do szkła według projektów dostarczonych przez klienta niezwłocznie i zawsze w
                         umówionym terminie!</p>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="800">
                     <i class="fa-regular fa-handshake"></i>
                     <p class="title">Indywidualne warunki</p>
                     <p class="description">Do każdego zlecenia podchodzimy indywidualnie i z zaangażowaniem służąc
@@ -226,8 +228,9 @@
 
         <section class="section-questions">
             <div class="container wrapper">
-                <h2>Masz pytania? Skontaktuj się z nami</h2>
-                <a href="" class="question-btn"><i class="fa-solid fa-phone"></i>Zadzwoń</a>
+                <h2 data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400">Masz pytania? Skontaktuj się z
+                    nami</h2>
+                <a href="" class="question-btn" data-aos="fade-left"><i class="fa-solid fa-phone"></i>Zadzwoń</a>
             </div>
         </section>
 
@@ -260,8 +263,8 @@
                         <label for="topic">temat</label>
                         <input id="topic" type="text" name="topic" class="formField" required="required">
                         <label for="message">treść wiadomości</label>
-                        <textarea id="message" type="text" name="message" class="formField formMessage"
-                            required="required"></textarea>
+                        <textarea style="resize: none;" id="message" type="text" name="message"
+                            class="formField formMessage" required="required"></textarea>
                         <button type="submit">wyślij</button>
                     </form>
                 </div>
@@ -297,6 +300,19 @@
         </div>
     </footer>
 
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.countTo.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.count').countTo();
+
+        });
+    </script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="./js/main.js"></script>
 </body>
 
