@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	function closeNavigation() {
 		if (mobileNav.classList.contains("active")) {
 			mobileNav.classList.remove("active");
-			burgerIcon.classList.remove("fa-xmark");
+			burgerIcon.classList.remove("active");
 		}
 	}
 
