@@ -4,6 +4,29 @@ document.addEventListener("DOMContentLoaded", function () {
 	const offerBtn = document.querySelector(".submenu-btn");
 	const submenuContent = document.querySelector(".submenu-content");
 	const nav = document.querySelector("nav");
+	const offersBtns = document.querySelectorAll(".offer .container i");
+	const offersContainers = document.querySelectorAll(
+		".offer .container .offers-container"
+	);
+
+	offersBtns.forEach((btn, index) => {
+		btn.addEventListener("click", () => {
+			const isActive = offersContainers[index].classList.contains("active");
+
+			offersContainers.forEach((container) => {
+				container.classList.remove("active");
+			});
+
+			offersBtns.forEach((button) => {
+				button.classList.remove("active");
+			});
+
+			if (!isActive) {
+				offersContainers[index].classList.add("active");
+				offersBtns[index].classList.add("active");
+			}
+		});
+	});
 
 	burgerIcon.addEventListener("click", () => {
 		mobileNav.classList.toggle("active");
@@ -18,4 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
+
+	function closeNavigation() {
+		if (mobileNav.classList.contains("active")) {
+			mobileNav.classList.remove("active");
+			burgerIcon.classList.remove("fa-xmark");
+		}
+	}
+
+	mobileNav.addEventListener("click", () => {
+		closeNavigation();
+	});
 });

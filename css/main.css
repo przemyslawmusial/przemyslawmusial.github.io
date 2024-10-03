@@ -3,6 +3,17 @@
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	scroll-padding: 10.2vh;
+}
+
+::selection {
+	background-color: var(--main-color);
+	color: black;
+}
+
+::-moz-selection {
+	background-color: var(--main-color);
+	color: black;
 }
 
 body {
@@ -185,6 +196,7 @@ nav .burger {
 
 .welcome-section {
 	margin-top: 30px;
+	margin-bottom: 20px;
 	border-radius: 30px;
 	display: flex;
 	flex-direction: column;
@@ -295,6 +307,7 @@ nav .burger {
 	justify-content: center;
 	color: #fff;
 	background-color: var(--second-color);
+	margin-bottom: 20px;
 }
 
 .why-us .description {
@@ -378,13 +391,22 @@ nav .burger {
 	margin-bottom: 30px;
 }
 
+.offer .container .line2 {
+	margin: 10px 0 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+	height: 1.5px;
+	background-color: #d9d9d9;
+}
+
 .offer .container .card {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	margin: 10px 20px;
-	border-bottom: 1.5px solid #d9d9d9;
+	/* border-bottom: 1.5px solid #d9d9d9; */
 	padding: 30px 0;
 }
 
@@ -412,11 +434,50 @@ nav .burger {
 	font-size: 60px;
 	color: var(--main-color);
 	margin: 20px 0 40px;
-	transition: color 0.3s;
+	transition: color 0.3s, transform 0.5s;
 }
 
 .offer .container .card i:hover {
 	color: #efa506;
+}
+
+.offer .container .card i.active {
+	transform: rotate(180deg);
+}
+
+.offer .container .offers-container {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease, opacity 1s ease;
+	grid-template-columns: repeat(1, 1fr);
+	width: 100%;
+	display: grid;
+}
+
+.offer .container .offers-container.active {
+	max-height: 5000px;
+	opacity: 1;
+}
+
+.offer .container .offers-container .cards {
+	padding: 20px 15px;
+	margin: 10px 30px;
+	background-color: var(--second-color);
+	border-radius: 30px;
+}
+
+.offer .container .offers-container .cards p:first-of-type {
+	text-align: center;
+	font-weight: bold;
+	font-size: 17px;
+	color: var(--main-color);
+}
+
+.offer .container .offers-container .cards p:last-of-type {
+	font-size: 13px;
+	color: #fff;
+	padding: 15px 20px;
 }
 
 .advices {
@@ -1024,6 +1085,10 @@ footer p {
 		margin: 0;
 		transition: color 0.3s;
 	}
+
+	.offer .container .offers-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media (min-width: 992px) {
@@ -1158,5 +1223,9 @@ footer p {
 
 	.process .card-container .card {
 		max-height: 400px;
+	}
+
+	.offer .container .offers-container {
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
