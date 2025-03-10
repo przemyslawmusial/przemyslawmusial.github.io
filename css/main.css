@@ -283,6 +283,10 @@ header .description-container-mobile a:hover {
 	padding: 20px 40px 0px;
 }
 
+.title-container h2 {
+	text-transform: uppercase;
+}
+
 .title-container .subline {
 	height: 5px;
 	width: 50px;
@@ -737,6 +741,108 @@ footer li {
 	padding: 5px 0;
 }
 
+/* SUBPAGES */
+
+.subpage-header {
+	height: auto;
+}
+
+.subpage-header .description {
+	text-align: center;
+	color: #fff;
+	padding: 40px 20px;
+}
+
+.main-description {
+	text-align: center;
+	padding: 30px 20px;
+	font-size: 15px;
+}
+
+.first-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 20px;
+}
+
+.first-container .description {
+	width: 90%;
+	align-self: center;
+	justify-content: center;
+	padding: 10px 0;
+}
+
+.first-container .description h3 {
+	position: relative;
+	/* padding-left: 10px; */
+}
+
+/* .first-container .description h3::before {
+	content: "";
+	position: absolute;
+	left: -0;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block;
+	width: 5px;
+	height: 150%;
+	background-color: var(--second-color);
+} */
+
+.first-container .image {
+	padding: 15px 20px;
+	width: 100%;
+}
+
+.first-container .image img {
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.first-container .description .main-list {
+	padding: 20px;
+	padding-left: 20px;
+}
+
+.first-container .description .main-list li {
+	padding-bottom: 8px;
+}
+
+.first-container .description .main-list li::marker {
+	color: var(--main-color);
+}
+
+/* .first-container .description .main-list li::before {
+	content: "\f06d";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	color: var(--main-color);
+	margin-right: 10px;
+} */
+
+.first-container .description .sublist li {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.first-container .description .description-p {
+	margin-top: 10px;
+}
+
+.first-container .description .extra-p {
+	font-weight: bold;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.first-container .description .sublist li::before {
+	color: var(--second-color);
+}
+
 @media (orientation: landscape) and (max-width: 932px) and (max-height: 480px) {
 	header .description-container-mobile {
 		display: none;
@@ -879,6 +985,30 @@ footer li {
 	footer .map iframe {
 		border-radius: 10px;
 		border: 2px solid var(--main-color);
+	}
+
+	.first-container {
+		flex-direction: row;
+	}
+
+	.first-container .description {
+		width: 50%;
+	}
+
+	.first-container .image {
+		width: 50%;
+	}
+
+	.second-container {
+		flex-direction: row-reverse;
+	}
+
+	.second-container .description {
+		width: 50%;
+	}
+
+	.second-container .image {
+		width: 50%;
 	}
 }
 
@@ -1037,6 +1167,15 @@ footer li {
 	.advantages .icon-container {
 		padding: 30px 0;
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.subpage-header .description {
+		padding: 60px 20px;
+	}
+
+	.main-description {
+		padding: 40px 100px;
+		font-size: 16px;
 	}
 }
 
