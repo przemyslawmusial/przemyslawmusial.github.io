@@ -1,55 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 	const burgerIcon = document.querySelector(".burger");
 	const mobileNav = document.querySelector("ul");
-	const offerBtn = document.querySelector(".submenu-btn");
-	const submenuContent = document.querySelector(".submenu-content");
-	const nav = document.querySelector("nav");
-	const offersBtns = document.querySelectorAll(".offer .container i");
-	const offersContainers = document.querySelectorAll(
-		".offer .container .offers-container"
-	);
+	const navSubline = document.querySelector(".nav-container .subline");
 
-	offersBtns.forEach((btn, index) => {
-		btn.addEventListener("click", () => {
-			const isActive = offersContainers[index].classList.contains("active");
+	// console.log(mobileNav);
 
-			offersContainers.forEach((container) => {
-				container.classList.remove("active");
-			});
-
-			offersBtns.forEach((button) => {
-				button.classList.remove("active");
-			});
-
-			if (!isActive) {
-				offersContainers[index].classList.add("active");
-				offersBtns[index].classList.add("active");
-			}
-		});
-	});
-
-	burgerIcon.addEventListener("click", () => {
-		mobileNav.classList.toggle("active");
-		burgerIcon.classList.toggle("active");
-	});
-
-	if (offerBtn) {
-		offerBtn.addEventListener("click", () => {
-			if (window.innerWidth <= 992) {
-				// Sprawdza, czy szerokość okna jest mniejsza lub równa 768px
-				submenuContent.classList.toggle("opened");
-			}
+	if (burgerIcon) {
+		burgerIcon.addEventListener("click", () => {
+			mobileNav.classList.toggle("active");
+			burgerIcon.classList.toggle("active");
+			navSubline.classList.toggle("active");
 		});
 	}
-
-	function closeNavigation() {
-		if (mobileNav.classList.contains("active")) {
-			mobileNav.classList.remove("active");
-			burgerIcon.classList.remove("active");
-		}
-	}
-
-	mobileNav.addEventListener("click", () => {
-		closeNavigation();
-	});
 });
