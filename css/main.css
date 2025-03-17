@@ -379,6 +379,11 @@ header .description-container-mobile a:hover {
 	background-color: var(--main-color);
 	text-decoration: none;
 	color: white;
+	transition: color 0.3s;
+}
+
+.offer-card a:hover {
+	color: var(--second-color);
 }
 
 /* ADVANTAGES SECTION */
