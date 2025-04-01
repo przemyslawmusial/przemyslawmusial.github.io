@@ -628,6 +628,182 @@ footer li {
   padding: 5px 0;
 }
 
+.house-header .container {
+  padding: 50px 20px;
+  text-align: center;
+}
+.house-header .container h1 {
+  font-family: "Cormorant", serif;
+  font-size: 36px;
+  color: #d0b29a;
+  margin-bottom: 20px;
+}
+.house-header .container p {
+  color: #fff;
+}
+.house-header .container .links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+.house-header .container .links-container a {
+  text-decoration: none;
+  padding: 5px 0;
+  width: 100%;
+}
+.house-header .container .links-container a p {
+  color: var(--main-color);
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+.house-header .container .links-container a p:hover {
+  color: #fff;
+}
+
+.house-section {
+  padding: 60px 0;
+}
+.house-section .container .description {
+  padding: 30px 20px;
+}
+.house-section .container .description h2 {
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-family: "Cormorant", serif;
+  font-size: 32px;
+}
+.house-section .container .description ul {
+  padding: 20px;
+  padding-left: 20px;
+}
+.house-section .container .description ul li {
+  padding-bottom: 8px;
+  color: #333;
+}
+.house-section .container .description ul li::marker {
+  color: var(--second-color);
+}
+.house-section .container .image {
+  width: 100%;
+}
+.house-section .container .image img {
+  width: 100%;
+}
+.house-section .gallery {
+  padding: 30px 0;
+}
+.house-section .gallery .gallery-container {
+  position: relative;
+}
+.house-section .gallery .gallery-container h2 {
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+}
+.house-section .gallery .gallery-container h2 span {
+  font-family: "Cormorant", serif;
+  border-left: 2px solid var(--main-color);
+  padding-left: 10px;
+  color: var(--main-color);
+}
+.house-section .gallery .gallery-container .carousele-arrows {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  gap: 60px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.house-section .gallery .gallery-container .carousele-arrows i {
+  color: var(--main-color);
+  padding: 5px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.house-section .gallery .gallery-container .carousele-arrows i:hover {
+  color: var(--text-color);
+}
+.house-section .gallery .gallery-container .carousele-arrows i.slick-disabled {
+  color: #a8a8a8;
+}
+.house-section .gallery .gallery-container .house-carousele {
+  overflow: hidden;
+}
+.house-section .gallery .gallery-container .house-carousele .slick-track {
+  display: flex !important;
+}
+.house-section .gallery .gallery-container .house-carousele .card {
+  margin-top: 10px;
+  width: 100%;
+  height: 290px;
+  position: relative;
+}
+.house-section .gallery .gallery-container .house-carousele .card:hover img {
+  filter: brightness(50%);
+}
+.house-section .gallery .gallery-container .house-carousele .card:hover .overlay {
+  opacity: 1;
+}
+.house-section .gallery .gallery-container .house-carousele .card a .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Przyciemnienie */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.house-section .gallery .gallery-container .house-carousele .card a .overlay span {
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #fff;
+}
+.house-section .gallery .gallery-container .house-carousele .card a .sidebar {
+  margin-left: 10px;
+  width: 1px;
+  height: 200px;
+  background-color: var(--main-color);
+}
+.house-section .gallery .gallery-container .house-carousele .card a .category {
+  font-family: "Cormorant", serif;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 20px;
+  writing-mode: vertical-rl;
+}
+.house-section .gallery .gallery-container .house-carousele .card a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: filter 0.5s;
+}
+
+.lb-image {
+  max-height: 70vh !important; /* Obraz nie będzie większy niż wysokość ekranu */
+  width: auto !important; /* Zachowanie proporcji */
+}
+
 @media (min-width: 768px) {
   header .main-container {
     flex-direction: row;
@@ -692,6 +868,36 @@ footer li {
   }
   footer .second-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .house-header .container .description {
+    margin-bottom: 40px;
+  }
+  .house-header .container .links-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .house-header .container .links-container a p {
+    font-size: 20px;
+  }
+  .house-section .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .house-section .container .description {
+    width: 40%;
+  }
+  .house-section .container .image {
+    width: 60%;
+  }
+  .house-section .gallery .gallery-container .house-carousele .slick-track {
+    gap: 10px;
+  }
+  .house-section .gallery .gallery-container .house-carousele .card {
+    height: 450px;
   }
 }
 @media (min-width: 992px) {
@@ -782,6 +988,35 @@ footer li {
   }
   .faq-section .container a {
     font-size: 18px;
+  }
+  .house-header .container h1 {
+    font-size: 50px;
+  }
+  .house-header .container .description {
+    padding: 0 60px;
+    margin-bottom: 40px;
+  }
+  .house-header .container .links-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .house-header .container .links-container a p {
+    font-size: 32px;
+  }
+  .house-section .container .description h2 {
+    font-size: 50px;
+  }
+  .house-section .container .description ul {
+    padding: 20px;
+    padding-left: 20px;
+  }
+  .house-section .container .description ul li {
+    padding-bottom: 8px;
+    color: #333;
+  }
+  .house-section .container .description ul li::marker {
+    color: var(--second-color);
   }
 }
 @media (min-width: 1920px) {
