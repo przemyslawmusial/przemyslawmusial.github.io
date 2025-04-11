@@ -316,7 +316,6 @@ header .main-container .image img {
   font-size: 15px;
   color: var(--text-color);
   padding: 10px 15px;
-  border-radius: 4px;
   text-decoration: none;
   border: 1.5px solid #000;
   transition: color 0.3s, background-color 0.3s;
@@ -425,6 +424,66 @@ header .main-container .image img {
 .reservation-section .container a:hover {
   color: #000;
   background-color: var(--main-color);
+}
+
+.atractions-section {
+  padding: 40px 20px;
+}
+.atractions-section .container-1 h2 {
+  color: var(--second-color);
+  text-transform: uppercase;
+  font-size: 26px;
+  font-family: "Cormorant", serif;
+}
+.atractions-section .container-1 p {
+  font-size: 15px;
+  color: #6d6d6d;
+}
+.atractions-section .container-1 p:first-of-type {
+  margin: 20px 0;
+}
+.atractions-section .container-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.atractions-section .container-2 a {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border: 1.5px solid var(--main-color);
+  text-decoration: none;
+  color: #6d6d6d;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.atractions-section .container-2 a:hover {
+  background-color: var(--second-color);
+  color: #fff;
+  border: 1.5px solid var(--second-color);
+}
+.atractions-section .container-2 .item {
+  padding: 40px 0;
+  border-top: 1.5px solid var(--main-color);
+}
+.atractions-section .container-2 .item:first-of-type {
+  margin-top: 20px;
+}
+.atractions-section .container-2 .item:last-of-type {
+  border-bottom: 1.5px solid var(--main-color);
+  margin-bottom: 20px;
+}
+.atractions-section .container-2 .item .distance p {
+  font-family: "Cormorant", serif;
+  font-weight: bold;
+  color: var(--main-color);
+  font-size: 30px;
+}
+.atractions-section .container-2 .item .description p {
+  color: #6d6d6d;
+}
+.atractions-section .container-2 .item .description p:nth-of-type(1) {
+  text-transform: uppercase;
+  margin: 7px 0;
 }
 
 .faq-section {
@@ -804,6 +863,50 @@ footer li {
   width: auto !important; /* Zachowanie proporcji */
 }
 
+.attractions-subpage-header {
+  padding: 60px 20px;
+  text-align: center;
+}
+.attractions-subpage-header h1 {
+  font-family: "Cormorant", serif;
+  color: var(--main-color);
+  font-size: 36px;
+}
+.attractions-subpage-header p {
+  margin-top: 50px;
+  color: #fff;
+}
+
+.attraction-card {
+  margin-top: 30px;
+}
+.attraction-card:last-of-type {
+  margin-bottom: 50px;
+}
+.attraction-card .description {
+  padding: 0 20px;
+}
+.attraction-card .description h2 {
+  font-family: "Cormorant", serif;
+  font-size: 30px;
+  text-align: center;
+  color: var(--main-color);
+}
+.attraction-card .description p {
+  margin: 20px 0;
+  color: #333;
+}
+.attraction-card .description p span {
+  font-weight: bold;
+}
+.attraction-card .image {
+  position: relative;
+  width: 100%;
+}
+.attraction-card .image img {
+  width: 100%;
+}
+
 .contact-section .container {
   padding: 40px 20px;
   color: var(--main-color);
@@ -1097,6 +1200,40 @@ footer li {
   .reservation-section .container h2 {
     font-size: 36px;
   }
+  .atractions-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .atractions-section .container-1 {
+    width: 40%;
+  }
+  .atractions-section .container-1 h2 {
+    font-size: 50px;
+  }
+  .atractions-section .container-1 p {
+    font-size: 16px;
+  }
+  .atractions-section .container-2 {
+    width: 60%;
+    padding: 20px 50px;
+    box-shadow: 0 60px 65px 0px rgba(4, 4, 5, 0.06);
+  }
+  .atractions-section .container-2 .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .atractions-section .container-2 .item .distance p {
+    font-size: 50px;
+  }
+  .atractions-section .container-2 .item .description p:first-of-type {
+    font-size: 20px;
+  }
   .faq-section .container .accordion .accordion-item .accordion-header p {
     font-size: 27px;
   }
@@ -1157,11 +1294,38 @@ footer li {
     margin-bottom: 50px;
   }
   .contact-section .contact-form-container {
+    position: relative;
     width: 60%;
     margin-top: 0;
   }
   .contact-section .contact-form-container .form-info h2 {
     font-size: 40px;
+  }
+  .attractions-subpage-header h1 {
+    font-size: 50px;
+  }
+  .attractions-subpage-header p {
+    padding: 0 60px;
+  }
+  .attraction-card {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .attraction-card .description {
+    width: 40%;
+  }
+  .attraction-card .description h2 {
+    font-size: 40px;
+  }
+  .attraction-card .image {
+    width: 60%;
+  }
+  .attraction-card-reverse {
+    flex-direction: row-reverse;
   }
 }
 @media (min-width: 1920px) {

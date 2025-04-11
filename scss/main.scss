@@ -352,7 +352,7 @@ header {
 			font-size: 15px;
 			color: var(--text-color);
 			padding: 10px 15px;
-			border-radius: 4px;
+			// border-radius: 4px;
 			text-decoration: none;
 			border: 1.5px solid #000;
 			transition: color 0.3s, background-color 0.3s;
@@ -480,6 +480,87 @@ header {
 			&:hover {
 				color: #000;
 				background-color: var(--main-color);
+			}
+		}
+	}
+}
+
+// ATRACTIONS SECTION
+
+.atractions-section {
+	padding: 40px 20px;
+
+	.container-1 {
+		h2 {
+			color: var(--second-color);
+			text-transform: uppercase;
+			font-size: 26px;
+			font-family: "Cormorant", serif;
+		}
+
+		p {
+			font-size: 15px;
+			color: #6d6d6d;
+
+			&:first-of-type {
+				margin: 20px 0;
+			}
+		}
+	}
+
+	.container-2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 30px;
+
+		a {
+			margin-top: 20px;
+			padding: 15px 20px;
+			border: 1.5px solid var(--main-color);
+			text-decoration: none;
+			color: #6d6d6d;
+			transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+			&:hover {
+				background-color: var(--second-color);
+				color: #fff;
+				border: 1.5px solid var(--second-color);
+			}
+		}
+
+		.item {
+			// margin: 15px 0;
+			padding: 40px 0;
+			border-top: 1.5px solid var(--main-color);
+
+			&:first-of-type {
+				margin-top: 20px;
+			}
+
+			&:last-of-type {
+				border-bottom: 1.5px solid var(--main-color);
+				margin-bottom: 20px;
+			}
+
+			.distance {
+				p {
+					font-family: "Cormorant", serif;
+					font-weight: bold;
+					color: var(--main-color);
+					font-size: 30px;
+				}
+			}
+
+			.description {
+				p {
+					color: #6d6d6d;
+
+					&:nth-of-type(1) {
+						text-transform: uppercase;
+						margin: 7px 0;
+					}
+				}
 			}
 		}
 	}
@@ -937,6 +1018,61 @@ footer li {
 	width: auto !important; /* Zachowanie proporcji */
 }
 
+// ATRACTIONS SUBPAGE
+
+.attractions-subpage-header {
+	padding: 60px 20px;
+	text-align: center;
+
+	h1 {
+		font-family: "Cormorant", serif;
+		color: var(--main-color);
+		font-size: 36px;
+	}
+
+	p {
+		margin-top: 50px;
+		color: #fff;
+	}
+}
+
+.attraction-card {
+	margin-top: 30px;
+
+	&:last-of-type{
+		margin-bottom: 50px;
+	}
+
+	.description {
+		padding: 0 20px;
+
+		h2 {
+			font-family: "Cormorant", serif;
+			font-size: 30px;
+			text-align: center;
+			color: var(--main-color);
+		}
+
+		p {
+			margin: 20px 0;
+			color: #333;
+
+			span {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.image {
+		position: relative;
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
 // CONTACT SUBPAGE
 
 .contact-section {
@@ -1326,6 +1462,53 @@ footer li {
 		}
 	}
 
+	.atractions-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		margin-bottom: 30px;
+
+		.container-1 {
+			width: 40%;
+
+			h2 {
+				font-size: 50px;
+			}
+
+			p {
+				font-size: 16px;
+			}
+		}
+
+		.container-2 {
+			width: 60%;
+			padding: 20px 50px;
+			box-shadow: 0 60px 65px 0px rgba(4, 4, 5, 0.06);
+
+			.item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 30px;
+
+				.distance {
+					p {
+						font-size: 50px;
+					}
+				}
+				.description {
+					p {
+						&:first-of-type {
+							font-size: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	.faq-section {
 		.container {
 			.accordion {
@@ -1423,6 +1606,7 @@ footer li {
 		}
 
 		.contact-form-container {
+			position: relative;
 			width: 60%;
 			margin-top: 0;
 			// padding: 50px 0;
@@ -1433,6 +1617,41 @@ footer li {
 				}
 			}
 		}
+	}
+
+	.attractions-subpage-header {
+		h1 {
+			font-size: 50px;
+		}
+
+		p {
+			padding: 0 60px;
+		}
+	}
+
+	.attraction-card {
+		margin-top: 60px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+
+		.description {
+			width: 40%;
+
+			h2 {
+				font-size: 40px;
+			}
+		}
+
+		.image {
+			width: 60%;
+		}
+	}
+
+	.attraction-card-reverse {
+		flex-direction: row-reverse;
 	}
 }
 
