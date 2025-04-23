@@ -739,6 +739,12 @@ footer li {
   font-family: "Cormorant", serif;
   font-size: 32px;
 }
+.house-section .container .description p {
+  margin-top: 10px;
+}
+.house-section .container .description p span {
+  font-weight: bold;
+}
 .house-section .container .description ul {
   padding: 20px;
   padding-left: 20px;
@@ -749,6 +755,9 @@ footer li {
 }
 .house-section .container .description ul li::marker {
   color: var(--second-color);
+}
+.house-section .container .description ul li span {
+  font-weight: bold;
 }
 .house-section .container .image {
   width: 100%;

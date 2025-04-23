@@ -870,6 +870,14 @@ footer li {
 				font-size: 32px;
 			}
 
+			p {
+				margin-top: 10px;
+
+				span {
+					font-weight: bold;
+				}
+			}
+
 			ul {
 				padding: 20px;
 				padding-left: 20px;
@@ -880,6 +888,10 @@ footer li {
 
 					&::marker {
 						color: var(--second-color);
+					}
+
+					span {
+						font-weight: bold;
 					}
 				}
 			}
@@ -1039,7 +1051,7 @@ footer li {
 .attraction-card {
 	margin-top: 30px;
 
-	&:last-of-type{
+	&:last-of-type {
 		margin-bottom: 50px;
 	}
 
