@@ -18,6 +18,7 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  --fancybox-accent-color: #d0b29a;
 }
 
 body {
@@ -29,7 +30,7 @@ nav {
   position: sticky;
   top: 0;
   background-color: #fff;
-  z-index: 99999;
+  z-index: 999;
 }
 
 nav .nav-container {
@@ -1028,6 +1029,16 @@ footer li {
 .contact-section .contact-form-container form button:hover {
   color: #fff;
   background-color: #000;
+}
+
+.fancybox-overlay,
+.fancybox-container,
+.fancybox-button {
+  z-index: 9999 !important; /* Ustawiamy wysoki z-index */
+}
+
+.fancybox__container {
+  color: var(--main-color);
 }
 
 .faq-header {

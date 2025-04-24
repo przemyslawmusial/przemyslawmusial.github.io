@@ -18,6 +18,7 @@
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 	scroll-padding-top: 80px;
+	--fancybox-accent-color: #d0b29a;
 }
 
 body {
@@ -29,7 +30,7 @@ nav {
 	position: sticky;
 	top: 0;
 	background-color: #fff;
-	z-index: 99999;
+	z-index: 999;
 }
 
 nav .nav-container {
@@ -1203,6 +1204,16 @@ footer li {
 	}
 }
 
+.fancybox-overlay,
+.fancybox-container,
+.fancybox-button {
+	z-index: 9999 !important; /* Ustawiamy wysoki z-index */
+}
+
+.fancybox__container {
+	color: var(--main-color);
+}
+
 // FAQ - SUBPAGE
 
 .faq-header {
@@ -1233,7 +1244,7 @@ footer li {
 				font-weight: normal;
 			}
 
-			p{
+			p {
 				margin-top: 5px;
 				font-size: 15px;
 				color: #333;
@@ -1706,25 +1717,23 @@ footer li {
 	}
 
 	.faq-header {
-	
 		h1 {
 			padding: 60px 20px;
 			font-size: 46px;
 		}
 	}
-	
+
 	.faq-main {
 		.container {
 			margin-top: 60px;
 			margin-bottom: 60px;
 			padding: 0 20px;
 			.item {
-	
 				h2 {
 					font-size: 24px;
 				}
-	
-				p{
+
+				p {
 					font-size: 16px;
 				}
 			}
