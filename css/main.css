@@ -1030,6 +1030,37 @@ footer li {
   background-color: #000;
 }
 
+.faq-header {
+  text-align: center;
+}
+.faq-header h1 {
+  padding: 40px 20px;
+  color: var(--main-color);
+  font-size: 36px;
+  font-family: "Cormorant", serif;
+}
+
+.faq-main .container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+.faq-main .container .item {
+  margin-bottom: 30px;
+}
+.faq-main .container .item:last-of-type {
+  margin-bottom: 0;
+}
+.faq-main .container .item h2 {
+  font-size: 22px;
+  font-weight: normal;
+}
+.faq-main .container .item p {
+  margin-top: 5px;
+  font-size: 15px;
+  color: #333;
+}
+
 @media (min-width: 768px) {
   header .main-container {
     flex-direction: row;
@@ -1335,6 +1366,21 @@ footer li {
   }
   .attraction-card-reverse {
     flex-direction: row-reverse;
+  }
+  .faq-header h1 {
+    padding: 60px 20px;
+    font-size: 46px;
+  }
+  .faq-main .container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+  .faq-main .container .item h2 {
+    font-size: 24px;
+  }
+  .faq-main .container .item p {
+    font-size: 16px;
   }
 }
 @media (min-width: 1920px) {
