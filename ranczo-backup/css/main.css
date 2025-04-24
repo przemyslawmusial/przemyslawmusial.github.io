@@ -1,0 +1,1401 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+}
+
+:root {
+  --main-color: #d0b29a;
+  --second-color: #281b06;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  --fancybox-accent-color: #d0b29a;
+}
+
+body {
+  background-color: #fefefe;
+}
+
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 999;
+}
+
+nav .nav-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+nav .nav-container img {
+  width: 120px;
+  height: auto;
+  justify-self: start;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+nav .nav-container img:hover {
+  transform: scale(1.03);
+}
+
+nav .nav-container .burger {
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  margin-right: 20px;
+  background: none;
+  border: none;
+}
+
+nav .nav-container .burger .line {
+  width: 28px;
+  height: 4px;
+  background: #000;
+  margin: 10px;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+nav .nav-container .burger.active .line:first-child {
+  transform: rotate(45deg) translate(4px, 4px);
+  background-color: var(--second-color);
+}
+
+nav .nav-container .burger.active .line:nth-child(2) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  background-color: var(--second-color);
+}
+
+nav .nav-container .subline {
+  opacity: 0;
+  position: absolute;
+  width: calc(100% - 40px);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1.5px;
+  background-color: var(--second-color);
+  transition: opacity 0.5s;
+}
+
+nav .nav-container .subline.active {
+  opacity: 1;
+}
+
+nav .nav-container .ul-container {
+  display: flex;
+  justify-content: space-between;
+  /* max-height: 0; */
+  opacity: 0;
+  pointer-events: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: max-height 0.3s ease-in-out;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  list-style-type: none;
+  height: calc(100vh - 80px);
+  width: 100%;
+  flex-direction: column;
+  z-index: 10;
+  padding-top: 20px;
+  transition: opacity 0.5s;
+  z-index: 100;
+}
+nav .nav-container .ul-container .reservation-btn {
+  display: none;
+}
+
+nav .nav-container .ul-container.active {
+  opacity: 1;
+  pointer-events: auto;
+  scroll-behavior: unset;
+}
+
+nav .nav-container .ul-container a {
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  /* position: relative; */
+  /* padding: 10px; */
+  letter-spacing: 2px;
+  color: #000;
+  transition: color 0.3s;
+}
+
+nav .nav-container .ul-container a p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+nav .nav-container .ul-container a:hover {
+  color: var(--second-color);
+}
+
+nav .nav-container .ul-container li {
+  margin-top: 15px;
+}
+
+nav .nav-container .ul-container .contact-links {
+  margin-bottom: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav .nav-container .ul-container .contact-links li a {
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+  padding: 20px 25px;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 5px;
+}
+
+nav .nav-container .ul-container .contact-links li a i {
+  font-size: 20px;
+  padding-right: 8px;
+}
+
+nav .nav-container .ul-container .contact-links li:last-of-type {
+  margin-top: 60px;
+}
+
+header {
+  background-color: var(--second-color);
+}
+header .main-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header .main-container .description {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  text-transform: uppercase;
+}
+header .main-container .description .container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .main-container .description h1 {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-family: "Cormorant", serif;
+  color: var(--main-color);
+}
+header .main-container .description a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px 25px;
+  border: 1px solid var(--main-color);
+  font-size: 15px;
+  align-self: start;
+  transition: background-color 0.3s, color 0.3s;
+}
+header .main-container .description a:hover {
+  background-color: var(--main-color);
+  color: #000;
+}
+header .main-container .image {
+  width: 100%;
+}
+header .main-container .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.about-us {
+  margin-top: 30px;
+  padding: 40px 20px;
+  background-color: var(--main-color);
+}
+.about-us .container .description {
+  color: #fff;
+}
+.about-us .container .description h2 {
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+.about-us .container .description p {
+  margin: 30px 0;
+}
+.about-us .container .image {
+  width: 100%;
+}
+.about-us .container .image img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.icons-section .container {
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+.icons-section .container .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+.icons-section .container .icon i {
+  font-size: 40px;
+  color: var(--main-color);
+  transition: color 0.3s;
+}
+.icons-section .container .icon p {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.icons-section .container .icon:hover {
+  transform: scale(1.05);
+}
+.icons-section .container .icon:hover i {
+  color: var(--second-color);
+}
+
+.gallery-section {
+  margin: 0 0 60px;
+}
+.gallery-section .container {
+  position: relative;
+  padding: 30px 0px 40px 20px;
+}
+.gallery-section .container .carousele-arrows {
+  display: none;
+}
+.gallery-section .container h2 {
+  font-family: "Cormorant", serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+.gallery-section .container p {
+  font-family: "Cormorant", serif;
+  font-size: 14px;
+}
+.gallery-section .container .realizations-btn {
+  position: absolute;
+  bottom: -40px;
+  right: 20px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-color);
+  padding: 10px 15px;
+  text-decoration: none;
+  border: 1.5px solid #000;
+  transition: color 0.3s, background-color 0.3s;
+}
+.gallery-section .container .realizations-btn:hover {
+  color: #fff;
+  background-color: var(--second-color);
+}
+.gallery-section .container .realizations-carousele {
+  margin-top: 35px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.gallery-section .container .realizations-carousele .slick-track {
+  display: flex !important;
+  flex: 0 0 90.9090909091%; /* Ustaw szerokość slajdu */
+}
+.gallery-section .container .realizations-carousele .card {
+  position: relative;
+  width: calc(80% - 10px);
+  height: 400px;
+  margin-right: 20px;
+}
+.gallery-section .container .realizations-carousele .card:hover img {
+  filter: brightness(50%);
+}
+.gallery-section .container .realizations-carousele .card:hover .overlay {
+  opacity: 1;
+}
+.gallery-section .container .realizations-carousele .card a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.gallery-section .container .realizations-carousele .card a img {
+  width: 89%;
+  height: auto;
+  transition: filter 0.5s;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery-section .container .realizations-carousele .card a img:hover {
+  filter: opacity(40%);
+}
+.gallery-section .container .realizations-carousele .card a .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 89%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Przyciemnienie */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.gallery-section .container .realizations-carousele .card a .overlay span {
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #fff;
+}
+.gallery-section .container .realizations-carousele .card a .sidebar {
+  margin-left: 10px;
+  width: 1px;
+  height: 200px;
+  background-color: var(--main-color);
+}
+.gallery-section .container .realizations-carousele .card a .category {
+  font-family: "Cormorant", serif;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 20px;
+  writing-mode: vertical-rl;
+}
+
+.reservation-section {
+  background-color: var(--second-color);
+  margin-top: 100px;
+}
+.reservation-section .container {
+  color: #fff;
+  padding: 40px 20px 60px;
+  text-align: center;
+}
+.reservation-section .container h2 {
+  font-family: "Cormorant", serif;
+}
+.reservation-section .container p {
+  margin: 10px 0 60px;
+  font-size: 14px;
+}
+.reservation-section .container a {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 25px;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  transition: color 0.3s, background-color 0.3s;
+}
+.reservation-section .container a:hover {
+  color: #000;
+  background-color: var(--main-color);
+}
+
+.atractions-section {
+  padding: 40px 20px;
+}
+.atractions-section .container-1 h2 {
+  color: var(--second-color);
+  text-transform: uppercase;
+  font-size: 26px;
+  font-family: "Cormorant", serif;
+}
+.atractions-section .container-1 p {
+  font-size: 15px;
+  color: #6d6d6d;
+}
+.atractions-section .container-1 p:first-of-type {
+  margin: 20px 0;
+}
+.atractions-section .container-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.atractions-section .container-2 a {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border: 1.5px solid var(--main-color);
+  text-decoration: none;
+  color: #6d6d6d;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.atractions-section .container-2 a:hover {
+  background-color: var(--second-color);
+  color: #fff;
+  border: 1.5px solid var(--second-color);
+}
+.atractions-section .container-2 .item {
+  padding: 40px 0;
+  border-top: 1.5px solid var(--main-color);
+}
+.atractions-section .container-2 .item:first-of-type {
+  margin-top: 20px;
+}
+.atractions-section .container-2 .item:last-of-type {
+  border-bottom: 1.5px solid var(--main-color);
+  margin-bottom: 20px;
+}
+.atractions-section .container-2 .item .distance p {
+  font-family: "Cormorant", serif;
+  font-weight: bold;
+  color: var(--main-color);
+  font-size: 30px;
+}
+.atractions-section .container-2 .item .description p {
+  color: #6d6d6d;
+}
+.atractions-section .container-2 .item .description p:nth-of-type(1) {
+  text-transform: uppercase;
+  margin: 7px 0;
+}
+
+.faq-section {
+  background-color: var(--main-color);
+}
+.faq-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 10px 50px;
+}
+.faq-section .container a {
+  padding: 15px;
+  text-decoration: none;
+  color: var(--second-color);
+  border: 1.5px solid var(--second-color);
+  transition: color 0.3s, background-color 0.3s;
+}
+.faq-section .container a:hover {
+  color: #fff;
+  background-color: var(--second-color);
+}
+.faq-section .container .accordion {
+  width: 100%;
+}
+.faq-section .container .accordion .accordion-item {
+  margin-bottom: 50px;
+}
+.faq-section .container .accordion .accordion-item.active .accordion-content {
+  opacity: 1;
+  max-height: 250px;
+  padding: 10px 15px;
+}
+.faq-section .container .accordion .accordion-item.active .accordion-header .line1 {
+  opacity: 0;
+}
+.faq-section .container .accordion .accordion-item .accordion-header {
+  cursor: pointer;
+  padding: 20px 30px 20px 10px;
+  position: relative;
+  border-bottom: 1.5px solid var(--second-color);
+}
+.faq-section .container .accordion .accordion-item .accordion-header .line1 {
+  opacity: 1;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 26px;
+  background-color: var(--second-color);
+  transition: opacity 0.3s;
+}
+.faq-section .container .accordion .accordion-item .accordion-header .line2 {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 2px;
+  background-color: var(--second-color);
+}
+.faq-section .container .accordion .accordion-item .accordion-header p {
+  padding-left: 10px;
+  padding-right: 30px;
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.faq-section .container .accordion .accordion-item .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  padding: 0 15px;
+  font-size: 15px;
+  transition: max-height 0.2s linear, padding 0.2s linear;
+}
+.faq-section .container .accordion .accordion-item .accordion-content p {
+  color: #333;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+}
+
+footer {
+  background-color: var(--second-color);
+  color: #eadbce;
+}
+
+footer .footer-underline {
+  height: 1px;
+  width: 100%;
+  background-color: #eadbce;
+}
+
+footer .main-info .logo {
+  width: 140px;
+  margin: 15px 0;
+}
+
+footer .main-info p {
+  font-family: "Cormorant", serif;
+}
+
+footer h2 {
+  font-family: "Cormorant", serif;
+  font-size: 15px;
+  padding: 0 60px;
+  font-weight: normal;
+}
+
+footer .offer-info {
+  font-family: "Cormorant", serif;
+  color: #eadbce;
+}
+footer .offer-info a {
+  font-family: "Cormorant", serif;
+  color: #eadbce;
+  transition: color 0.3s;
+}
+footer .offer-info a:hover {
+  color: #fff;
+}
+
+footer .offer-info h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+}
+
+footer .second-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 15px;
+}
+
+footer .second-container .links {
+  margin-top: 30px;
+}
+footer .second-container .links ul a {
+  color: #eadbce;
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+footer .second-container .links ul a:hover {
+  color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  transition: 0.1s;
+}
+
+footer .second-container .main-info {
+  padding: 15px 0;
+}
+
+footer .second-container .offer-info {
+  margin-top: 30px;
+  padding: 15px 0;
+}
+
+footer .second-container .offer-info h3 {
+  margin-bottom: 10px;
+}
+
+footer .third-container {
+  font-size: 15px;
+  padding: 15px 0;
+  text-align: center;
+}
+
+footer .third-container .proweb-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer .third-container svg {
+  width: 85px;
+  transition: transform 0.3s;
+}
+
+footer .third-container svg:hover {
+  transform: scale(1.05);
+}
+
+footer li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+.house-header .container {
+  padding: 50px 20px;
+  text-align: center;
+}
+.house-header .container h1 {
+  font-family: "Cormorant", serif;
+  font-size: 36px;
+  color: #d0b29a;
+  margin-bottom: 20px;
+}
+.house-header .container p {
+  color: #fff;
+}
+.house-header .container .links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+.house-header .container .links-container a {
+  text-decoration: none;
+  padding: 5px 0;
+  width: 100%;
+}
+.house-header .container .links-container a p {
+  color: var(--main-color);
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+.house-header .container .links-container a p:hover {
+  color: #fff;
+}
+
+.house-section {
+  padding: 60px 0;
+}
+.house-section .container .description {
+  padding: 30px 20px;
+}
+.house-section .container .description h2 {
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-family: "Cormorant", serif;
+  font-size: 32px;
+}
+.house-section .container .description p {
+  margin-top: 10px;
+}
+.house-section .container .description p span {
+  font-weight: bold;
+}
+.house-section .container .description ul {
+  padding: 20px;
+  padding-left: 20px;
+}
+.house-section .container .description ul li {
+  padding-bottom: 8px;
+  color: #333;
+}
+.house-section .container .description ul li::marker {
+  color: var(--second-color);
+}
+.house-section .container .description ul li span {
+  font-weight: bold;
+}
+.house-section .container .image {
+  width: 100%;
+}
+.house-section .container .image img {
+  width: 100%;
+}
+.house-section .gallery {
+  padding: 30px 0;
+}
+.house-section .gallery .gallery-container {
+  position: relative;
+}
+.house-section .gallery .gallery-container h2 {
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+}
+.house-section .gallery .gallery-container h2 span {
+  font-family: "Cormorant", serif;
+  border-left: 2px solid var(--main-color);
+  padding-left: 10px;
+  color: var(--main-color);
+}
+.house-section .gallery .gallery-container .carousele-arrows {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  gap: 60px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.house-section .gallery .gallery-container .carousele-arrows i {
+  color: var(--main-color);
+  padding: 5px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.house-section .gallery .gallery-container .carousele-arrows i:hover {
+  color: var(--text-color);
+}
+.house-section .gallery .gallery-container .carousele-arrows i.slick-disabled {
+  color: #a8a8a8;
+}
+.house-section .gallery .gallery-container .house-carousele {
+  overflow: hidden;
+}
+.house-section .gallery .gallery-container .house-carousele .slick-track {
+  display: flex !important;
+}
+.house-section .gallery .gallery-container .house-carousele .card {
+  margin-top: 10px;
+  width: 100%;
+  height: 290px;
+  position: relative;
+}
+.house-section .gallery .gallery-container .house-carousele .card:hover img {
+  filter: brightness(50%);
+}
+.house-section .gallery .gallery-container .house-carousele .card:hover .overlay {
+  opacity: 1;
+}
+.house-section .gallery .gallery-container .house-carousele .card a .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Przyciemnienie */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.house-section .gallery .gallery-container .house-carousele .card a .overlay span {
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #fff;
+}
+.house-section .gallery .gallery-container .house-carousele .card a .sidebar {
+  margin-left: 10px;
+  width: 1px;
+  height: 200px;
+  background-color: var(--main-color);
+}
+.house-section .gallery .gallery-container .house-carousele .card a .category {
+  font-family: "Cormorant", serif;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 20px;
+  writing-mode: vertical-rl;
+}
+.house-section .gallery .gallery-container .house-carousele .card a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: filter 0.5s;
+}
+
+.lb-image {
+  max-height: 70vh !important; /* Obraz nie będzie większy niż wysokość ekranu */
+  width: auto !important; /* Zachowanie proporcji */
+}
+
+.attractions-subpage-header {
+  padding: 60px 20px;
+  text-align: center;
+}
+.attractions-subpage-header h1 {
+  font-family: "Cormorant", serif;
+  color: var(--main-color);
+  font-size: 36px;
+}
+.attractions-subpage-header p {
+  margin-top: 50px;
+  color: #fff;
+}
+
+.attraction-card {
+  margin-top: 30px;
+}
+.attraction-card:last-of-type {
+  margin-bottom: 50px;
+}
+.attraction-card .description {
+  padding: 0 20px;
+}
+.attraction-card .description h2 {
+  font-family: "Cormorant", serif;
+  font-size: 30px;
+  text-align: center;
+  color: var(--main-color);
+}
+.attraction-card .description p {
+  margin: 20px 0;
+  color: #333;
+}
+.attraction-card .description p span {
+  font-weight: bold;
+}
+.attraction-card .image {
+  position: relative;
+  width: 100%;
+}
+.attraction-card .image img {
+  width: 100%;
+}
+
+.contact-section .container {
+  padding: 40px 20px;
+  color: var(--main-color);
+}
+.contact-section .container h2 {
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+.contact-section .container .adress {
+  text-transform: uppercase;
+  font-family: "Cormorant", serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.contact-section .container a {
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  color: var(--main-color);
+  margin: 10px 0;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+.contact-section .container a i {
+  padding-right: 5px;
+}
+.contact-section .container a:first-of-type {
+  margin-bottom: 20px;
+}
+.contact-section .container a:hover {
+  color: var(--second-color);
+}
+.contact-section .contact-form-container {
+  margin-top: 40px;
+  background-color: var(--main-color);
+}
+.contact-section .contact-form-container .form-info {
+  padding: 50px 20px 10px;
+}
+.contact-section .contact-form-container .form-info h2 {
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+.contact-section .contact-form-container .form-info p {
+  color: #333;
+  margin: 5px 0 15px;
+}
+.contact-section .contact-form-container form {
+  padding: 0 20px;
+}
+.contact-section .contact-form-container form input {
+  padding-left: 10px;
+}
+.contact-section .contact-form-container form input::-moz-placeholder {
+  text-transform: uppercase;
+  color: var(--second-color);
+  font-weight: bold;
+  font-family: "Cormorant", serif;
+  font-size: 18px;
+}
+.contact-section .contact-form-container form input::placeholder {
+  text-transform: uppercase;
+  color: var(--second-color);
+  font-weight: bold;
+  font-family: "Cormorant", serif;
+  font-size: 18px;
+}
+.contact-section .contact-form-container form .formField {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 50px;
+  background-color: var(--main-color);
+  border: 1.2px solid var(--second-color);
+}
+.contact-section .contact-form-container form .formMessage {
+  height: 200px;
+}
+.contact-section .contact-form-container form textarea {
+  resize: none;
+  padding: 10px 0 0 10px;
+}
+.contact-section .contact-form-container form textarea::-moz-placeholder {
+  text-transform: uppercase;
+  color: var(--second-color);
+  font-weight: bold;
+  font-family: "Cormorant", serif;
+  font-size: 18px;
+}
+.contact-section .contact-form-container form textarea::placeholder {
+  text-transform: uppercase;
+  color: var(--second-color);
+  font-weight: bold;
+  font-family: "Cormorant", serif;
+  font-size: 18px;
+}
+.contact-section .contact-form-container form button {
+  cursor: pointer;
+  width: 100%;
+  padding: 20px 0;
+  background-color: var(--second-color);
+  border: none;
+  color: var(--main-color);
+  font-size: 16px;
+  margin-bottom: 50px;
+  transition: color 0.3s, background-color 0.3s;
+}
+.contact-section .contact-form-container form button:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.fancybox-overlay,
+.fancybox-container,
+.fancybox-button {
+  z-index: 9999 !important; /* Ustawiamy wysoki z-index */
+}
+
+.fancybox__container {
+  color: var(--main-color);
+}
+
+.faq-header {
+  text-align: center;
+}
+.faq-header h1 {
+  padding: 40px 20px;
+  color: var(--main-color);
+  font-size: 36px;
+  font-family: "Cormorant", serif;
+}
+
+.faq-main .container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+.faq-main .container .item {
+  margin-bottom: 30px;
+}
+.faq-main .container .item:last-of-type {
+  margin-bottom: 0;
+}
+.faq-main .container .item h2 {
+  font-size: 22px;
+  font-weight: normal;
+}
+.faq-main .container .item p {
+  margin-top: 5px;
+  font-size: 15px;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  header .main-container {
+    flex-direction: row;
+  }
+  header .main-container .description {
+    height: auto;
+    width: 40%;
+  }
+  header .main-container .image {
+    width: 60%;
+    height: 100%;
+  }
+  .about-us .container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-us .container .description {
+    width: 45%;
+  }
+  .about-us .container .image {
+    width: 55%;
+  }
+  .icons-section .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    padding: 0;
+    padding-bottom: 70px;
+  }
+  .icons-section .container .icon {
+    margin-top: 80px;
+  }
+  .icons-section .container .icon i {
+    font-size: 50px;
+  }
+  .icons-section .container .icon p {
+    font-size: 14px;
+  }
+  .gallery-section .container .carousele-arrows {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    gap: 60px;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .gallery-section .container .carousele-arrows i {
+    color: var(--main-color);
+    padding: 5px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .gallery-section .container .carousele-arrows i:hover {
+    color: var(--text-color);
+  }
+  .gallery-section .container .carousele-arrows i.slick-disabled {
+    color: #a8a8a8;
+  }
+  footer .second-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .house-header .container .description {
+    margin-bottom: 40px;
+  }
+  .house-header .container .links-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .house-header .container .links-container a p {
+    font-size: 20px;
+  }
+  .house-section .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .house-section .container .description {
+    width: 40%;
+  }
+  .house-section .container .image {
+    width: 60%;
+  }
+  .house-section .gallery .gallery-container .house-carousele .slick-track {
+    gap: 10px;
+  }
+  .house-section .gallery .gallery-container .house-carousele .card {
+    height: 450px;
+  }
+}
+@media (min-width: 992px) {
+  nav .nav-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  nav .nav-container .subline {
+    display: none;
+  }
+  nav .nav-container .burger {
+    display: none;
+  }
+  nav .nav-container .ul-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    opacity: 1;
+    pointer-events: auto;
+    top: 0;
+    right: 0;
+    height: auto;
+    flex-direction: row;
+    padding-top: 0px;
+    transition: none;
+    margin-left: 40px;
+    overflow: visible;
+  }
+  nav .nav-container .ul-container .reservation-btn {
+    display: block;
+    padding: 20px 15px;
+    background-color: var(--main-color);
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  nav .nav-container .ul-container .reservation-btn:hover {
+    background-color: var(--second-color);
+    color: #fff;
+  }
+  nav .nav-container .ul-container a {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 20px;
+    margin-right: 20px;
+    letter-spacing: 1px;
+    color: var(--main-color);
+    transition: color 0.3s;
+  }
+  nav .nav-container .ul-container a:hover {
+    color: #000;
+  }
+  nav .nav-container .ul-container li {
+    margin-top: 0;
+  }
+  nav .nav-container .ul-container .links-container {
+    display: flex;
+    flex-direction: row;
+  }
+  nav .nav-container .ul-container .contact-links {
+    display: none;
+  }
+  header .main-container .description .container h1 {
+    font-size: 50px;
+  }
+  .about-us .container .description h2 {
+    font-size: 40px;
+  }
+  .gallery-section .container h2 {
+    font-size: 32px;
+  }
+  .gallery-section .container p {
+    font-size: 14px;
+  }
+  .gallery-section .container .realizations-carousele .card p:first-of-type {
+    color: var(--text-color);
+    font-size: 15px;
+  }
+  .gallery-section .container .realizations-carousele .card p:last-of-type {
+    color: var(--offers-header-color-p);
+    font-size: 12px;
+  }
+  .reservation-section .container h2 {
+    font-size: 36px;
+  }
+  .atractions-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .atractions-section .container-1 {
+    width: 40%;
+  }
+  .atractions-section .container-1 h2 {
+    font-size: 50px;
+  }
+  .atractions-section .container-1 p {
+    font-size: 16px;
+  }
+  .atractions-section .container-2 {
+    width: 60%;
+    padding: 20px 50px;
+    box-shadow: 0 60px 65px 0px rgba(4, 4, 5, 0.06);
+  }
+  .atractions-section .container-2 .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .atractions-section .container-2 .item .distance p {
+    font-size: 50px;
+  }
+  .atractions-section .container-2 .item .description p:first-of-type {
+    font-size: 20px;
+  }
+  .faq-section .container .accordion .accordion-item .accordion-header p {
+    font-size: 27px;
+  }
+  .faq-section .container a {
+    font-size: 18px;
+  }
+  .house-header .container h1 {
+    font-size: 50px;
+  }
+  .house-header .container .description {
+    padding: 0 60px;
+    margin-bottom: 40px;
+  }
+  .house-header .container .links-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .house-header .container .links-container a p {
+    font-size: 32px;
+  }
+  .house-section .container .description h2 {
+    font-size: 50px;
+  }
+  .house-section .container .description ul {
+    padding: 20px;
+    padding-left: 20px;
+  }
+  .house-section .container .description ul li {
+    padding-bottom: 8px;
+    color: #333;
+  }
+  .house-section .container .description ul li::marker {
+    color: var(--second-color);
+  }
+  .contact-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-section .container {
+    width: 40%;
+  }
+  .contact-section .container h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+  .contact-section .container .adress {
+    font-size: 30px;
+    text-align: center;
+  }
+  .contact-section .container a {
+    font-size: 30px;
+  }
+  .contact-section .container a:first-of-type {
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+  .contact-section .contact-form-container {
+    position: relative;
+    width: 60%;
+    margin-top: 0;
+  }
+  .contact-section .contact-form-container .form-info h2 {
+    font-size: 40px;
+  }
+  .attractions-subpage-header h1 {
+    font-size: 50px;
+  }
+  .attractions-subpage-header p {
+    padding: 0 60px;
+  }
+  .attraction-card {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .attraction-card .description {
+    width: 40%;
+  }
+  .attraction-card .description h2 {
+    font-size: 40px;
+  }
+  .attraction-card .image {
+    width: 60%;
+  }
+  .attraction-card-reverse {
+    flex-direction: row-reverse;
+  }
+  .faq-header h1 {
+    padding: 60px 20px;
+    font-size: 46px;
+  }
+  .faq-main .container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+  .faq-main .container .item h2 {
+    font-size: 24px;
+  }
+  .faq-main .container .item p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1920px) {
+  nav .nav-container {
+    height: 100px;
+  }
+}/*# sourceMappingURL=main.css.map */
