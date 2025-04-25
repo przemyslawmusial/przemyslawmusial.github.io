@@ -729,12 +729,12 @@ svg:hover {
 .pricing-section .item .description-container h2 {
   font-size: 20px;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .pricing-section .item .description-container .price {
   text-align: center;
   color: var(--main-color);
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .pricing-section .item .description-container .price span {
   font-weight: bold;
