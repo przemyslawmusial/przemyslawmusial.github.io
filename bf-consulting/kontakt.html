@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVFHiY5sAh6o7Mi8w7K5PK-oH3OOBAO6A&libraries=maps,marker&v=beta&loading=async">
+        </script>
     <script src="https://kit.fontawesome.com/ae82900702.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -67,6 +70,93 @@
         <div class="shadow"></div>
         <h1>Kontakt</h1>
     </header>
+
+    <main>
+        <section class="contact-subpage wrapper">
+            <div class="container">
+                <!-- <h2>Ranczo Pod Laskiem</h2>
+                <p class="adress">38-230 łężyny</p> -->
+
+                <div class="info-item">
+                    <h2>biuro</h2>
+                    <p>ul. Słowackiego 8</p>
+                    <p>38-300 Gorlice</p>
+                    <a href="tel:+48506002326">+48 506 002 326</a>
+                    <a href="mailto:kancelaria@bf-consulting.eu">kancelaria@bf-consulting.eu</a>
+                </div>
+
+                <div class="info-item">
+                    <h2>godziny otwarcia:</h2>
+                    <p>pon - pt: 8:00 - 16:00</p>
+                </div>
+
+                <!-- <a href="tel:+48506002326">
+                    <div class="item">
+                        <p><i class="fa-solid fa-phone"></i>+48 506 002 326</p>
+                        <p>Zadzwoń do nas!</p>
+                    </div>
+                </a>
+
+                <a href="mailto:kancelaria@bf-consulting.eu">
+                    <div class="item">
+                        <p><i class="fa-solid fa-envelope"></i>kancelaria@bf-consulting.eu</p>
+                        <p>Napisz do nas!</p>
+                    </div>
+                </a> -->
+            </div>
+            <div class="contact-form-container">
+                <div class="form-info">
+                    <h2>Masz pytania?</h2>
+                    <p>Skontaktuj się z nami.</p>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div>
+                        <label for="name">Imię i Nazwisko*</label>
+                        <input type="text" id="name_form" name="name" placeholder="Imię i nazwisko" class="formField">
+                    </div>
+                    <div>
+                        <label for="phone">Telefon*</label>
+                        <input type="number" id="phone_form" name="phone" placeholder="Podaj numer telefonu"
+                            class="formField">
+                    </div>
+                    <div>
+                        <label for="email">E-mail*</label>
+                        <input type="email" id="email_form" name="email" placeholder="Podaj adres e-mail"
+                            class="formField">
+                    </div>
+                    <div>
+                        <label for="message">Wiadomość</label>
+                        <textarea id="message_form" name="message" placeholder="Treść wiadomości"
+                            class="formField formMessage"></textarea>
+                    </div>
+                    <div id="message-status-form" class="message-status-form"></div>
+                    <div><button type="submit">wyślij</button></div>
+                </form>
+            </div>
+        </section>
+        <section class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3071.3716058865725!2d21.15908129983217!3d49.65985040569876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473dc6f2c0f50cbb%3A0xf3f0d96910956c2a!2sBiuro%20rachunkowe%2C%20ksi%C4%99gowe%2C%20doradztwo%20Gorlice%20%7C%20Pawe%C5%82%20Gucwa!5e0!3m2!1spl!2spl!4v1745932397633!5m2!1spl!2spl"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDVFHiY5sAh6o7Mi8w7K5PK-oH3OOBAO6A&q=place_id:ChIJuwz1wPLGPUcRKmyVEGnZ8PM&zoom=16&language=pl">
+            </iframe> -->
+
+            <!-- <gmp-map center="49.66051360733935, 21.160752153692442" zoom="14" map-id="980149886a673c0a">
+
+                <gmp-advanced-marker position="49.66051360733935, 21.160752153692442" title="Prowadź mnie tutaj">
+
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=49.66051360733935,21.160752153692442&travelmode=driving"
+                        target="_blank" rel="noopener" class="marker-link">
+
+                        <img src="/img/favicon.png" width="38" height="38" alt="Pinezka">
+                    </a>
+                </gmp-advanced-marker>
+            </gmp-map> -->
+        </section>
+    </main>
 
     <footer style="margin-top:0">
         <div class="footer-img"><a href="index.html"><img src="./img/logo.jpeg" alt="logo B&F Consulting"></a></div>
