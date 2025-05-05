@@ -1079,74 +1079,6 @@ svg:hover {
 	}
 }
 
-.offer-subpage-main {
-	.container {
-		margin-top: 30px;
-		margin-bottom: 30px;
-		// padding: 0 20px;
-
-		.description {
-			padding: 0 20px;
-			font-size: 15px;
-			text-align: center;
-		}
-
-		.offer-card {
-			margin-top: 60px;
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
-
-			.offer-description {
-				padding: 0 20px;
-				h2 {
-					font-size: 22px;
-					text-align: center;
-					margin-bottom: 20px;
-				}
-
-				p {
-					font-size: 14px;
-					&:first-of-type {
-						margin-bottom: 10px;
-					}
-
-					&:last-of-type {
-						margin-top: 10px;
-					}
-				}
-
-				ul {
-					margin-left: 30px;
-
-					li {
-						font-size: 14px;
-						font-weight: bold;
-						padding: 8px 0;
-
-						&::marker {
-							color: var(--second-color);
-						}
-					}
-				}
-			}
-
-			.image-container {
-				position: relative;
-				width: 100%;
-
-				.square {
-					display: none;
-				}
-
-				img {
-					width: 100%;
-				}
-			}
-		}
-	}
-}
-
 @media (min-width: 768px) {
 	.about-us {
 		padding: 50px 30px 0;
@@ -1279,58 +1211,6 @@ svg:hover {
 				span {
 					font-weight: bold;
 					font-size: 30px;
-				}
-			}
-		}
-	}
-
-	.offer-subpage-main {
-		.container {
-			margin-top: 30px;
-			margin-bottom: 30px;
-			// padding: 0 20px;
-
-			.description {
-				font-size: 16px;
-				padding: 0 20px;
-				text-align: center;
-			}
-
-			.offer-card {
-				margin-top: 80px;
-				padding: 0 30px;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-
-				.offer-description {
-					width: 50%;
-				}
-
-				.image-container {
-					width: 50%;
-
-					.square {
-						position: absolute;
-						display: block;
-						bottom: -20px;
-						right: -20px;
-						width: 50%;
-						height: 50%;
-						background-color: var(--main-color);
-						z-index: -5;
-					}
-				}
-			}
-
-			.offer-card-reverse {
-				flex-direction: row-reverse;
-
-				.image-container {
-					.square {
-						left: -20px;
-					}
 				}
 			}
 		}
@@ -1617,38 +1497,6 @@ svg:hover {
 			.form-info {
 				h2 {
 					font-size: 30px;
-				}
-			}
-		}
-	}
-
-	.offer-subpage-main {
-		.container {
-			margin-top: 30px;
-			margin-bottom: 30px;
-			// padding: 0 20px;
-
-			.description {
-				font-size: 16px;
-				padding: 0 20px;
-				text-align: center;
-			}
-
-			.offer-card {
-				.offer-description {
-					h2 {
-						font-size: 24px;
-					}
-
-					p {
-						font-size: 16px;
-					}
-
-					ul {
-						li {
-							font-size: 16px;
-						}
-					}
 				}
 			}
 		}

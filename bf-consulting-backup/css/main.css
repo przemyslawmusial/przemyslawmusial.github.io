@@ -911,60 +911,6 @@ svg:hover {
   background-color: #fff;
 }
 
-.offer-subpage-main .container {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.offer-subpage-main .container .description {
-  padding: 0 20px;
-  font-size: 15px;
-  text-align: center;
-}
-.offer-subpage-main .container .offer-card {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.offer-subpage-main .container .offer-card .offer-description {
-  padding: 0 20px;
-}
-.offer-subpage-main .container .offer-card .offer-description h2 {
-  font-size: 22px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.offer-subpage-main .container .offer-card .offer-description p {
-  font-size: 14px;
-}
-.offer-subpage-main .container .offer-card .offer-description p:first-of-type {
-  margin-bottom: 10px;
-}
-.offer-subpage-main .container .offer-card .offer-description p:last-of-type {
-  margin-top: 10px;
-}
-.offer-subpage-main .container .offer-card .offer-description ul {
-  margin-left: 30px;
-}
-.offer-subpage-main .container .offer-card .offer-description ul li {
-  font-size: 14px;
-  font-weight: bold;
-  padding: 8px 0;
-}
-.offer-subpage-main .container .offer-card .offer-description ul li::marker {
-  color: var(--second-color);
-}
-.offer-subpage-main .container .offer-card .image-container {
-  position: relative;
-  width: 100%;
-}
-.offer-subpage-main .container .offer-card .image-container .square {
-  display: none;
-}
-.offer-subpage-main .container .offer-card .image-container img {
-  width: 100%;
-}
-
 @media (min-width: 768px) {
   .about-us {
     padding: 50px 30px 0;
@@ -1076,45 +1022,6 @@ svg:hover {
   .pricing-section .item .price-desktop span {
     font-weight: bold;
     font-size: 30px;
-  }
-  .offer-subpage-main .container {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .offer-subpage-main .container .description {
-    font-size: 16px;
-    padding: 0 20px;
-    text-align: center;
-  }
-  .offer-subpage-main .container .offer-card {
-    margin-top: 80px;
-    padding: 0 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .offer-subpage-main .container .offer-card .offer-description {
-    width: 50%;
-  }
-  .offer-subpage-main .container .offer-card .image-container {
-    width: 50%;
-  }
-  .offer-subpage-main .container .offer-card .image-container .square {
-    position: absolute;
-    display: block;
-    bottom: -20px;
-    right: -20px;
-    width: 50%;
-    height: 50%;
-    background-color: var(--main-color);
-    z-index: -5;
-  }
-  .offer-subpage-main .container .offer-card-reverse {
-    flex-direction: row-reverse;
-  }
-  .offer-subpage-main .container .offer-card-reverse .image-container .square {
-    left: -20px;
   }
 }
 @media (min-width: 992px) {
@@ -1307,24 +1214,6 @@ svg:hover {
   }
   .contact-subpage .contact-form-container .form-info h2 {
     font-size: 30px;
-  }
-  .offer-subpage-main .container {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .offer-subpage-main .container .description {
-    font-size: 16px;
-    padding: 0 20px;
-    text-align: center;
-  }
-  .offer-subpage-main .container .offer-card .offer-description h2 {
-    font-size: 24px;
-  }
-  .offer-subpage-main .container .offer-card .offer-description p {
-    font-size: 16px;
-  }
-  .offer-subpage-main .container .offer-card .offer-description ul li {
-    font-size: 16px;
   }
 }
 @media (min-width: 1400px) {
