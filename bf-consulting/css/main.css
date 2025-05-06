@@ -322,6 +322,11 @@ header .container .description a:hover {
   padding: 40px 0 30px;
   transition: color 0.3s;
 }
+.offer-section .container a .card img {
+  height: 120px;
+  padding: 40px 0 30px;
+  transition: filter 0.3s;
+}
 .offer-section .container a .card h3 {
   padding: 0 20px 15px;
   font-size: 16px;
@@ -333,6 +338,9 @@ header .container .description a:hover {
 }
 .offer-section .container a:hover .card i {
   color: #fff;
+}
+.offer-section .container a:hover .card img {
+  filter: brightness(0) invert(1);
 }
 .offer-section .container a:hover .card h3 {
   color: #fff;
@@ -1206,6 +1214,9 @@ svg:hover {
   }
   .offer-section .container a .card i {
     font-size: 55px;
+  }
+  .offer-section .container a .card img {
+    height: 150px;
   }
   .offer-section .container a .card h3 {
     padding-bottom: 30px;

@@ -350,6 +350,12 @@ header .container {
 					transition: color 0.3s;
 				}
 
+				img {
+					height: 120px;
+					padding: 40px 0 30px;
+					transition: filter 0.3s;
+				}
+
 				h3 {
 					padding: 0 20px 15px;
 					font-size: 16px;
@@ -364,6 +370,10 @@ header .container {
 
 					i {
 						color: #fff;
+					}
+
+					img {
+						filter: brightness(0) invert(1);
 					}
 
 					h3 {
@@ -1450,6 +1460,10 @@ svg:hover {
 				.card {
 					i {
 						font-size: 55px;
+					}
+
+					img {
+						height: 150px;
 					}
 
 					h3 {
