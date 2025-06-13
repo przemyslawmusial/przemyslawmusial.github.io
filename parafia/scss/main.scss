@@ -1026,6 +1026,15 @@ svg:hover {
 	}
 }
 
+.subpage-header-news{
+	height: 400px;
+
+	.description{
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
 // MSZE I NABOŻEŃSTWA
 
 .mass-section {
@@ -1128,6 +1137,307 @@ svg:hover {
 	}
 }
 
+// DUSZPASTERZE
+
+.priests-section {
+	.title {
+		width: 100%;
+		background-color: var(--second-color);
+
+		p {
+			padding: 30px 20px;
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+		}
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		padding: 40px 0;
+
+		.card {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border: 5px solid var(--main-color);
+			border-radius: 5px;
+			margin: 20px;
+
+			&:hover {
+				.description {
+					.name {
+						transform: scale(1.05);
+					}
+				}
+			}
+
+			.image {
+				position: relative;
+				height: 250px;
+				padding: 10px 0 20px;
+				width: auto;
+
+				img {
+					border-radius: 10px;
+					object-fit: cover;
+					height: 220px;
+					width: 100%;
+				}
+			}
+
+			.description {
+				text-align: center;
+				width: 100%;
+				background-color: var(--main-color);
+				height: 100%;
+
+				.name {
+					color: var(--second-color);
+					font-size: 24px;
+					padding: 20px 10px 10px;
+					transition: transform 0.3s;
+				}
+
+				.period {
+					padding-bottom: 10px;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+// KONTAKT
+
+.contact-subpage {
+	margin-top: 30px;
+	.container {
+		padding: 20px;
+		color: var(--main-color);
+
+		.info-item {
+			text-align: center;
+
+			h2 {
+				font-size: 22px;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 15px;
+				padding: 5px 0;
+			}
+
+			a {
+				padding: 5px 0;
+				display: block;
+				font-size: 15px;
+				color: var(--main-color);
+				text-decoration: none;
+				transition: color 0.3s;
+
+				&:last-of-type {
+					margin-bottom: 30px;
+				}
+
+				&:hover {
+					color: var(--third-color);
+				}
+			}
+		}
+
+		h2 {
+			text-transform: uppercase;
+			font-size: 28px;
+			text-align: center;
+		}
+
+		.adress {
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 24px;
+			margin-bottom: 40px;
+		}
+
+		// a {
+		// 	text-align: center;
+		// 	text-decoration: none;
+		// 	display: block;
+		// 	color: var(--main-color);
+		// 	margin: 40px 0;
+		// 	font-size: 22px;
+		// 	transition: color 0.3s, transform 0.3s;
+
+		// 	i {
+		// 		padding-right: 5px;
+		// 	}
+
+		// 	&:first-of-type {
+		// 		margin-bottom: 20px;
+		// 	}
+
+		// 	&:hover {
+		// 		color: var(--second-color);
+		// 		transform: scale(1.05);
+		// 	}
+
+		// 	.item {
+		// 		p {
+		// 			&:first-of-type {
+		// 				padding-bottom: 10px;
+		// 			}
+
+		// 			&:last-of-type {
+		// 				font-size: 14px;
+		// 			}
+		// 		}
+		// 	}
+		// }
+	}
+
+	.contact-form-container {
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		margin-top: 40px;
+		background-color: var(--second-color);
+
+		.form-info {
+			padding: 50px 20px 10px;
+			h2 {
+				font-size: 28px;
+				color: var(--main-color);
+			}
+
+			p {
+				color: var(--main-color);
+				margin: 5px 0 25px;
+			}
+		}
+
+		.contact-form {
+			padding: 0 20px;
+
+			label {
+				color: #000;
+				padding-left: 5px;
+				font-size: 13px;
+			}
+
+			.error {
+				border: 1px solid rgb(194, 52, 52) !important;
+			}
+
+			.error-message {
+				color: blue;
+				font-size: 12px;
+				margin-bottom: 15px;
+				opacity: 0;
+				transform: translateY(5px);
+				transition: opacity 0.5s ease, transform 0.5s ease;
+
+				&.visible {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.message-status-form {
+				position: relative;
+				display: none;
+				width: 100%;
+				height: 50px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				padding: 20px 10px;
+				background-color: #000;
+				text-align: center;
+
+				p {
+					width: 100%;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					font-weight: bold;
+					letter-spacing: 1.5px;
+				}
+
+				&.active {
+					display: block;
+				}
+			}
+
+			input {
+				padding-left: 10px;
+				&::placeholder {
+					color: #000;
+					font-size: 15px;
+				}
+			}
+
+			.formField {
+				margin-top: 5px;
+				margin-bottom: 20px;
+				width: 100%;
+				height: 50px;
+				background-color: #fff;
+				border-radius: 5px;
+				border: 1.5px solid #fff;
+				color: #000;
+			}
+			.formMessage {
+				height: 200px;
+			}
+
+			textarea {
+				resize: none;
+				padding: 10px 0 0 10px;
+				&::placeholder {
+					color: #000;
+					font-size: 15px;
+				}
+			}
+
+			button {
+				cursor: pointer;
+				width: 100%;
+				padding: 20px 0;
+				background-color: transparent;
+				border: 3px solid var(--main-color);
+				color: var(--main-color);
+				font-size: 16px;
+				margin-bottom: 50px;
+				transition: color 0.3s, background-color 0.3s;
+
+				&:hover {
+					color: var(--second-color);
+					background-color: var(--main-color);
+				}
+			}
+		}
+	}
+}
+
+.map {
+	width: 100%;
+	height: 350px;
+}
+
+.news-container{
+	padding: 50px 20px;
+
+	p{
+		padding-bottom: 20px;
+		&:first-of-type{
+			font-weight: bold;
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	.hours-section {
 		.container {
@@ -1186,7 +1496,7 @@ svg:hover {
 			p {
 				padding: 30px 20px;
 				text-align: center;
-				font-size: 24px;
+				font-size: 30px;
 				font-weight: bold;
 			}
 		}
@@ -1223,6 +1533,24 @@ svg:hover {
 			.card {
 				width: 100%;
 			}
+		}
+	}
+
+	.priests-section {
+		.title {
+			width: 100%;
+			background-color: var(--second-color);
+
+			p {
+				padding: 30px 20px;
+				text-align: center;
+				font-size: 30px;
+				font-weight: bold;
+			}
+		}
+
+		.container {
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 }
@@ -1515,11 +1843,11 @@ svg:hover {
 			width: 100%;
 
 			.item {
-				.date{
+				.date {
 					width: 10%;
 				}
 
-				.description{
+				.description {
 					width: 70%;
 				}
 				a {
@@ -1582,4 +1910,81 @@ svg:hover {
 			font-size: 34px;
 		}
 	}
+
+	.contact-subpage {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+
+		.container {
+			width: 50%;
+
+			.info-item {
+				h2 {
+					font-size: 25px;
+				}
+
+				p {
+					font-size: 16px;
+				}
+
+				a {
+					font-size: 16px;
+
+					&:last-of-type {
+						margin-bottom: 50px;
+					}
+				}
+			}
+
+			h2 {
+				font-size: 20px;
+				text-align: center;
+			}
+
+			.adress {
+				font-size: 30px;
+				text-align: center;
+			}
+
+			// a {
+			// 	font-size: 30px;
+
+			// 	&:first-of-type {
+			// 		margin-top: 60px;
+			// 		margin-bottom: 50px;
+			// 	}
+
+			// 	.item {
+			// 		p {
+			// 			&:last-of-type {
+			// 				font-size: 18px;
+			// 			}
+			// 		}
+			// 	}
+			// }
+		}
+
+		.contact-form-container {
+			position: relative;
+			width: 50%;
+			margin-top: 0;
+			// padding: 50px 0;
+
+			.form-info {
+				h2 {
+					font-size: 30px;
+				}
+			}
+		}
+	}
+
+	.news-container{
+	padding: 50px 20px;
+
+	p{
+		font-size: 20px;
+	}
+}
 }

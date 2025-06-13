@@ -886,6 +886,14 @@ svg:hover {
   font-size: 40px;
 }
 
+.subpage-header-news {
+  height: 400px;
+}
+.subpage-header-news .description {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .mass-section .title {
   width: 100%;
   background-color: var(--second-color);
@@ -968,6 +976,237 @@ svg:hover {
   margin-bottom: 10px;
 }
 
+.priests-section .title {
+  width: 100%;
+  background-color: var(--second-color);
+}
+.priests-section .title p {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.priests-section .container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 40px 0;
+}
+.priests-section .container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--main-color);
+  border-radius: 5px;
+  margin: 20px;
+}
+.priests-section .container .card:hover .description .name {
+  transform: scale(1.05);
+}
+.priests-section .container .card .image {
+  position: relative;
+  height: 250px;
+  padding: 10px 0 20px;
+  width: auto;
+}
+.priests-section .container .card .image img {
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 220px;
+  width: 100%;
+}
+.priests-section .container .card .description {
+  text-align: center;
+  width: 100%;
+  background-color: var(--main-color);
+  height: 100%;
+}
+.priests-section .container .card .description .name {
+  color: var(--second-color);
+  font-size: 24px;
+  padding: 20px 10px 10px;
+  transition: transform 0.3s;
+}
+.priests-section .container .card .description .period {
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+.contact-subpage {
+  margin-top: 30px;
+}
+.contact-subpage .container {
+  padding: 20px;
+  color: var(--main-color);
+}
+.contact-subpage .container .info-item {
+  text-align: center;
+}
+.contact-subpage .container .info-item h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.contact-subpage .container .info-item p {
+  font-size: 15px;
+  padding: 5px 0;
+}
+.contact-subpage .container .info-item a {
+  padding: 5px 0;
+  display: block;
+  font-size: 15px;
+  color: var(--main-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-subpage .container .info-item a:last-of-type {
+  margin-bottom: 30px;
+}
+.contact-subpage .container .info-item a:hover {
+  color: var(--third-color);
+}
+.contact-subpage .container h2 {
+  text-transform: uppercase;
+  font-size: 28px;
+  text-align: center;
+}
+.contact-subpage .container .adress {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.contact-subpage .contact-form-container {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-top: 40px;
+  background-color: var(--second-color);
+}
+.contact-subpage .contact-form-container .form-info {
+  padding: 50px 20px 10px;
+}
+.contact-subpage .contact-form-container .form-info h2 {
+  font-size: 28px;
+  color: var(--main-color);
+}
+.contact-subpage .contact-form-container .form-info p {
+  color: var(--main-color);
+  margin: 5px 0 25px;
+}
+.contact-subpage .contact-form-container .contact-form {
+  padding: 0 20px;
+}
+.contact-subpage .contact-form-container .contact-form label {
+  color: #000;
+  padding-left: 5px;
+  font-size: 13px;
+}
+.contact-subpage .contact-form-container .contact-form .error {
+  border: 1px solid rgb(194, 52, 52) !important;
+}
+.contact-subpage .contact-form-container .contact-form .error-message {
+  color: blue;
+  font-size: 12px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.contact-subpage .contact-form-container .contact-form .error-message.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact-subpage .contact-form-container .contact-form .message-status-form {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px 10px;
+  background-color: #000;
+  text-align: center;
+}
+.contact-subpage .contact-form-container .contact-form .message-status-form p {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+.contact-subpage .contact-form-container .contact-form .message-status-form.active {
+  display: block;
+}
+.contact-subpage .contact-form-container .contact-form input {
+  padding-left: 10px;
+}
+.contact-subpage .contact-form-container .contact-form input::-moz-placeholder {
+  color: #000;
+  font-size: 15px;
+}
+.contact-subpage .contact-form-container .contact-form input::placeholder {
+  color: #000;
+  font-size: 15px;
+}
+.contact-subpage .contact-form-container .contact-form .formField {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1.5px solid #fff;
+  color: #000;
+}
+.contact-subpage .contact-form-container .contact-form .formMessage {
+  height: 200px;
+}
+.contact-subpage .contact-form-container .contact-form textarea {
+  resize: none;
+  padding: 10px 0 0 10px;
+}
+.contact-subpage .contact-form-container .contact-form textarea::-moz-placeholder {
+  color: #000;
+  font-size: 15px;
+}
+.contact-subpage .contact-form-container .contact-form textarea::placeholder {
+  color: #000;
+  font-size: 15px;
+}
+.contact-subpage .contact-form-container .contact-form button {
+  cursor: pointer;
+  width: 100%;
+  padding: 20px 0;
+  background-color: transparent;
+  border: 3px solid var(--main-color);
+  color: var(--main-color);
+  font-size: 16px;
+  margin-bottom: 50px;
+  transition: color 0.3s, background-color 0.3s;
+}
+.contact-subpage .contact-form-container .contact-form button:hover {
+  color: var(--second-color);
+  background-color: var(--main-color);
+}
+
+.map {
+  width: 100%;
+  height: 350px;
+}
+
+.news-container {
+  padding: 50px 20px;
+}
+.news-container p {
+  padding-bottom: 20px;
+}
+.news-container p:first-of-type {
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .hours-section .container {
     flex-direction: row;
@@ -1011,7 +1250,7 @@ svg:hover {
   .mass-section .title p {
     padding: 30px 20px;
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
   }
   .mass-section .container {
@@ -1041,6 +1280,19 @@ svg:hover {
   }
   .mass-section3 .container .card {
     width: 100%;
+  }
+  .priests-section .title {
+    width: 100%;
+    background-color: var(--second-color);
+  }
+  .priests-section .title p {
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .priests-section .container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 992px) {
@@ -1306,5 +1558,48 @@ svg:hover {
   }
   .subpage-header-title h2 {
     font-size: 34px;
+  }
+  .contact-subpage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-subpage .container {
+    width: 50%;
+  }
+  .contact-subpage .container .info-item h2 {
+    font-size: 25px;
+  }
+  .contact-subpage .container .info-item p {
+    font-size: 16px;
+  }
+  .contact-subpage .container .info-item a {
+    font-size: 16px;
+  }
+  .contact-subpage .container .info-item a:last-of-type {
+    margin-bottom: 50px;
+  }
+  .contact-subpage .container h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .contact-subpage .container .adress {
+    font-size: 30px;
+    text-align: center;
+  }
+  .contact-subpage .contact-form-container {
+    position: relative;
+    width: 50%;
+    margin-top: 0;
+  }
+  .contact-subpage .contact-form-container .form-info h2 {
+    font-size: 30px;
+  }
+  .news-container {
+    padding: 50px 20px;
+  }
+  .news-container p {
+    font-size: 20px;
   }
 }/*# sourceMappingURL=main.css.map */
