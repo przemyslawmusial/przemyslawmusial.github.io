@@ -1207,6 +1207,94 @@ svg:hover {
   font-weight: bold;
 }
 
+.history-subpage .container {
+  padding: 30px 20px;
+}
+.history-subpage .container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+.history-subpage .container .item .image {
+  width: 100%;
+}
+.history-subpage .container .item .image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.history-subpage .container .item .description {
+  width: 100%;
+}
+.history-subpage .container .item .description p {
+  margin-top: 10px;
+}
+
+.gallery-subpage .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+.gallery-subpage .container a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+.gallery-subpage .container a:hover img {
+  filter: brightness(0.7);
+}
+.gallery-subpage .container a:hover p {
+  transform: scale(1.05);
+}
+.gallery-subpage .container a .item {
+  width: 100%;
+  height: 100%;
+}
+.gallery-subpage .container a .item .image {
+  width: 100%;
+}
+.gallery-subpage .container a .item .image img {
+  width: 100%;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: filter 0.3s;
+}
+.gallery-subpage .container a .item .description {
+  margin-top: 10px;
+}
+.gallery-subpage .container a .item .description p {
+  font-size: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.event-gallery .container {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.event-gallery .container .card {
+  width: 100%;
+}
+.event-gallery .container .card:hover img {
+  filter: brightness(0.6);
+}
+.event-gallery .container .card a {
+  width: 100%;
+}
+.event-gallery .container .card a img {
+  width: 100%;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: filter 0.3s;
+}
+
 @media (min-width: 768px) {
   .hours-section .container {
     flex-direction: row;
@@ -1293,6 +1381,30 @@ svg:hover {
   }
   .priests-section .container {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .history-subpage .container {
+    padding: 30px 20px;
+  }
+  .history-subpage .container .item {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .history-subpage .container .item .image {
+    width: 60%;
+  }
+  .history-subpage .container .item .description {
+    width: 40%;
+  }
+  .history-subpage .container .item-reverse {
+    flex-direction: row-reverse;
+  }
+  .gallery-subpage .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .event-gallery .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 992px) {
@@ -1601,5 +1713,20 @@ svg:hover {
   }
   .news-container p {
     font-size: 20px;
+  }
+  .history-subpage .container p {
+    font-size: 18px;
+  }
+  .gallery-subpage .container {
+    padding: 60px 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery-subpage .container a .item .description p {
+    font-size: 24px;
+  }
+  .event-gallery .container {
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }/*# sourceMappingURL=main.css.map */
