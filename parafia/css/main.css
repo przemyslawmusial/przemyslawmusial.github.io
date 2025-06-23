@@ -613,6 +613,24 @@ header .header-carousele .card .description a:hover {
   width: 100%;
   height: 400px;
 }
+.transmission-section .btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 50px;
+}
+.transmission-section .btn-container a {
+  padding: 15px 40px;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  text-decoration: none;
+  transition: color 0.3s, background-color 0.3s;
+}
+.transmission-section .btn-container a:hover {
+  color: var(--main-color);
+  background-color: #fff;
+}
 
 .news-section .title {
   text-align: center;
@@ -903,6 +921,33 @@ svg:hover {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
+}
+.mass-section .btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+.mass-section .btn-container a {
+  text-align: center;
+  background-color: var(--main-color);
+  text-decoration: none;
+  color: var(--second-color);
+  padding: 20px 30px;
+  transition: color 0.3s, background-color 0.3s;
+}
+.mass-section .btn-container a:hover {
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+.mass-section .video-container {
+  padding: 0 20px;
+  margin-top: 60px;
+  height: 400px;
+}
+.mass-section .video-container:nth-of-type(2) {
+  margin-bottom: 60px;
 }
 .mass-section .container {
   margin-top: 20px;
@@ -1270,6 +1315,52 @@ svg:hover {
   font-size: 20px;
   text-align: center;
   transition: transform 0.3s;
+}
+
+.sacraments-subpage {
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+.sacraments-subpage .title {
+  text-align: center;
+  padding: 30px 10px;
+}
+.sacraments-subpage .title .subtitle {
+  font-size: 14px;
+  color: var(--third-color);
+}
+.sacraments-subpage .title h2 {
+  color: #000;
+  font-weight: 600;
+}
+.sacraments-subpage .description {
+  text-align: center;
+}
+.sacraments-subpage .list-container ul {
+  padding: 20px;
+}
+.sacraments-subpage .list-container ul li {
+  padding-bottom: 8px;
+  color: #000;
+}
+.sacraments-subpage .list-container ul li::marker {
+  color: var(--third-color);
+}
+
+.quote-section {
+  margin-top: 60px;
+  background-color: var(--second-color);
+}
+.quote-section .container {
+  padding: 50px 20px;
+}
+.quote-section .container p {
+  font-size: 20px;
+  text-align: center;
+}
+.quote-section .container p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .event-gallery .container {
@@ -1728,5 +1819,34 @@ svg:hover {
     padding: 60px 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .sacraments-subpage .title {
+    padding: 40px 0;
+  }
+  .sacraments-subpage .title h2 {
+    font-size: 34px;
+  }
+  .sacraments-subpage .title .subtitle {
+    font-size: 15px;
+  }
+  .sacraments-subpage .description {
+    font-size: 18px;
+  }
+  .sacraments-subpage .list-container ul li {
+    font-size: 18px;
+  }
+  .quote-section {
+    margin-top: 100px;
+  }
+  .quote-section .container {
+    padding: 50px 20px;
+  }
+  .quote-section .container p {
+    font-size: 34px;
+    text-align: center;
+  }
+  .quote-section .container p:first-of-type {
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 }/*# sourceMappingURL=main.css.map */
