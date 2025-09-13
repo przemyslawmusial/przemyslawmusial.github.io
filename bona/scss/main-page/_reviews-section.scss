@@ -1,0 +1,48 @@
+.reviews-section {
+	margin: 40px 0;
+	position: relative;
+	background-image: url(../../img/reviews.webp);
+	background-position: center;
+	background-size: cover;
+	padding: 30px 20px;
+	text-align: center;
+	color: #fff;
+	z-index: 0;
+
+	.shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.55);
+		z-index: -5;
+	}
+
+	h2 {
+		font-size: 14px;
+		font-weight: 400;
+		margin-bottom: 5px;
+	}
+	.title {
+		font-size: 40px;
+		font-weight: 500;
+		font-family: "Cormorant Garamond", serif;
+	}
+
+	.reviews-carousele {
+		margin: 30px 20px;
+		.card {
+			.description {
+				font-weight: 300;
+				font-size: 14px;
+			}
+
+			.name {
+				margin-top: 15px;
+				font-size: 15px;
+				font-weight: 500;
+			}
+		}
+	}
+}
