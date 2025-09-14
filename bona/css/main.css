@@ -486,6 +486,130 @@
     font-size: 50px;
   }
 }
+.faq-section {
+  padding: 30px 20px;
+  background-color: var(--main-color);
+  color: #fff;
+}
+.faq-section .container .description-container h2 {
+  padding: 35px 10px 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--second-color);
+  margin-bottom: 5px;
+  text-align: center;
+}
+.faq-section .container .description-container .title {
+  text-align: center;
+  padding: 0 10px 40px;
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "Cormorant Garamond", serif;
+}
+.faq-section .container .description-container .more-container.desktop {
+  display: none;
+}
+.faq-section .container .accordion-container {
+  padding: 0 20px;
+}
+.faq-section .container .accordion-container .accordion {
+  padding-bottom: 40px;
+  width: 100%;
+}
+.faq-section .container .accordion-container .accordion .card {
+  padding: 15px 0;
+  border-bottom: 1px solid #fff;
+}
+.faq-section .container .accordion-container .accordion .card:last-of-type {
+  border-bottom: none;
+}
+.faq-section .container .accordion-container .accordion .card:hover .accordion-header i {
+  color: var(--second-color);
+}
+.faq-section .container .accordion-container .accordion .card.active .accordion-content {
+  pointer-events: all;
+  opacity: 1;
+  max-height: 250px;
+  padding: 10px 5px;
+}
+.faq-section .container .accordion-container .accordion .card.active .accordion-header i {
+  transform: rotate(180deg);
+}
+.faq-section .container .accordion-container .accordion .card .accordion-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+}
+.faq-section .container .accordion-container .accordion .card .accordion-header .title {
+  text-align: left;
+  padding-right: 30px;
+  font-size: 15px;
+}
+.faq-section .container .accordion-container .accordion .card .accordion-header i {
+  display: block;
+  transition: color 0.3s, transform 0.3s;
+}
+.faq-section .container .accordion-container .accordion .card .accordion-content {
+  pointer-events: none;
+  opacity: 0;
+  text-align: left;
+  max-height: 0;
+  padding: 0 5px;
+  font-size: 15px;
+  color: #ddd;
+  transition: max-height 0.2s linear, padding 0.2s linear;
+}
+.faq-section .container .accordion-container .more-container {
+  text-align: center;
+  padding-bottom: 60px;
+}
+.faq-section .container .accordion-container .more-container p {
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .faq-section {
+    padding: 60px 0;
+  }
+  .faq-section .container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .faq-section .container .description-container {
+    width: 40%;
+  }
+  .faq-section .container .description-container h2 {
+    padding: 0;
+  }
+  .faq-section .container .description-container .title {
+    padding: 0 0 40px;
+  }
+  .faq-section .container .description-container .more-container.desktop {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .faq-section .container .description-container .more-container.desktop p {
+    padding-bottom: 20px;
+  }
+  .faq-section .container .description-container .more-container.desktop a {
+    text-align: center;
+    width: 50%;
+  }
+  .faq-section .container .accordion-container {
+    width: 60%;
+  }
+  .faq-section .container .accordion-container .more-container.mobile {
+    display: none;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -597,6 +721,7 @@ body.modal-open {
 .shop-basket-modal .main-container {
   height: calc(100% - 234px);
   overflow: hidden;
+  overflow-y: scroll;
 }
 .shop-basket-modal .main-container .card {
   padding: 10px;
@@ -936,12 +1061,69 @@ header .description p {
   font-size: 14px;
 }
 
+footer {
+  background-color: var(--main-color);
+  border-top: 1px solid var(--second-color);
+  border-bottom: 1.5px solid var(--second-color);
+}
+footer .container {
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 25px;
+}
+footer .container .item {
+  color: #fff;
+}
+footer .container .item h2 {
+  font-weight: 400;
+}
+footer .container .footer-1 {
+  font-size: 14px;
+  color: #fff;
+}
+footer .container .footer-1 .img img {
+  width: 40%;
+}
+footer .container .footer-1 h3 {
+  font-weight: 400;
+  margin: 5px 0 10px;
+}
+footer .container .footer-1 a {
+  text-decoration: none;
+  color: #fff;
+}
+footer .container .footer-1 a i {
+  padding-right: 5px;
+}
+footer .container .footer-3 h2 {
+  font-size: 21px;
+}
+footer .container .footer-3 ul {
+  margin-top: 10px;
+}
+footer .container .footer-3 ul li {
+  list-style: none;
+}
+footer .container .footer-3 ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: color 0.3;
+}
+footer .container .footer-3 ul li a:hover {
+  color: var(--second-color);
+}
+
 @media (min-width: 768px) {
   header .description h1 {
     font-size: 50px;
   }
   header .description p {
     font-size: 16px;
+  }
+  footer .container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 992px) {

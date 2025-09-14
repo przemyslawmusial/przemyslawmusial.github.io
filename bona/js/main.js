@@ -12,6 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
 		".shop-basket-modal .top-container .close-btn"
 	);
 	const overlay = document.querySelector(".modal-overlay");
+	const accordionItems = document.querySelectorAll(
+		".accordion-container .accordion .card"
+	);
+
+	accordionItems.forEach((item) => {
+		const header = item.querySelector(".accordion-header");
+		const content = item.querySelector(".accordion-content");
+
+		header.addEventListener("click", function () {
+			item.classList.toggle("active");
+
+			if (item.classList.contains("active")) {
+				content.classList.add("active");
+			} else {
+				content.classList.remove("active");
+			}
+		});
+	});
 
 	function openBasket() {
 		basketModal.classList.add("active");

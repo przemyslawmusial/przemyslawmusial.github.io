@@ -3,6 +3,7 @@
 @import "./main-page/reviews-section";
 @import "./main-page/logos-section";
 @import "./main-page/coworking-section";
+@import "./main-page/faq-section";
 
 * {
 	margin: 0;
@@ -128,7 +129,7 @@ body.modal-open {
 	.main-container {
 		height: calc(100% - 234px);
 		overflow: hidden;
-		// overflow-y: scroll;
+		overflow-y: scroll;
 		.card {
 			padding: 10px;
 			width: 100%;
@@ -536,6 +537,73 @@ header {
 	}
 }
 
+footer {
+	background-color: var(--main-color);
+	border-top: 1px solid var(--second-color);
+	border-bottom: 1.5px solid var(--second-color);
+
+	.container {
+		padding: 30px 20px;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 25px;
+
+		.item {
+			color: #fff;
+			h2 {
+				font-weight: 400;
+			}
+		}
+
+		.footer-1 {
+			font-size: 14px;
+			color: #fff;
+			.img {
+				img {
+					width: 40%;
+				}
+			}
+
+			h3 {
+				font-weight: 400;
+				margin: 5px 0 10px;
+			}
+
+			a {
+				text-decoration: none;
+				color: #fff;
+
+				i {
+					padding-right: 5px;
+				}
+			}
+		}
+
+		.footer-3 {
+			h2 {
+				font-size: 21px;
+			}
+
+			ul {
+				margin-top: 10px;
+				li {
+					list-style: none;
+					a {
+						text-decoration: none;
+						color: #fff;
+						font-size: 14px;
+						transition: color 0.3;
+
+						&:hover {
+							color: var(--second-color);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	header {
 		.description {
@@ -546,6 +614,12 @@ header {
 			p {
 				font-size: 16px;
 			}
+		}
+	}
+
+	footer {
+		.container {
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 }
