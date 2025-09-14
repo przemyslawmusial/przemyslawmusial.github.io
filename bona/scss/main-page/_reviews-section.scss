@@ -1,5 +1,5 @@
 .reviews-section {
-	margin: 40px 0;
+	margin: 40px 0 0;
 	position: relative;
 	background-image: url(../../img/reviews.webp);
 	background-position: center;
@@ -30,9 +30,59 @@
 		font-family: "Cormorant Garamond", serif;
 	}
 
+	.arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #fff;
+		cursor: pointer;
+		font-size: 20px;
+
+		i {
+			transition: color 0.3s;
+		}
+
+		&:hover {
+			i {
+				color: var(--second-color);
+			}
+		}
+
+		&.right {
+			right: 10px;
+		}
+
+		&.left {
+			left: 10px;
+		}
+	}
+
 	.reviews-carousele {
-		margin: 30px 20px;
+		position: relative;
+		width: 100%;
+		margin-top: 30px;
+		padding: 0 20px;
+
+		.slick-list {
+			overflow: hidden;
+		}
+
+		.slick-track {
+			display: flex !important;
+		}
+
 		.card {
+			width: 100%;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			i {
+				font-size: 60px;
+				margin-bottom: 20px;
+			}
+
 			.description {
 				font-weight: 300;
 				font-size: 14px;
@@ -42,6 +92,31 @@
 				margin-top: 15px;
 				font-size: 15px;
 				font-weight: 500;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.reviews-section {
+		.arrow {
+			font-size: 30px;
+
+			&.right {
+				right: 30px;
+			}
+
+			&.left {
+				left: 30px;
+			}
+		}
+
+		.reviews-carousele {
+			.card {
+				width: 80%;
+				i {
+					font-size: 75px;
+				}
 			}
 		}
 	}

@@ -1,0 +1,111 @@
+.logos-section {
+	padding: 40px 0;
+	text-align: center;
+	border-bottom: 1px solid var(--second-color);
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+		padding: 0 20px;
+		.description-container {
+			h2 {
+				font-size: 14px;
+				font-weight: 400;
+				color: var(--second-color);
+				margin-bottom: 5px;
+			}
+
+			.title {
+				font-size: 40px;
+				font-weight: 500;
+				font-family: "Cormorant Garamond", serif;
+			}
+
+			.description {
+				font-size: 15px;
+				margin-top: 10px;
+				color: #535353;
+			}
+		}
+
+		.shops-carousel {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-height: 250px;
+			padding: 30px 10px;
+			border-radius: 16px;
+			width: 100%;
+			background: #fff;
+			background: linear-gradient(
+				320deg,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(247, 247, 247, 1) 50%,
+				rgba(242, 242, 242, 1) 100%
+			);
+			-webkit-box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
+			box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
+
+			.slick-list {
+				overflow: hidden;
+			}
+
+			.slick-track {
+				display: flex !important;
+			}
+
+			.card {
+				flex: 0 0 auto;
+				width: 70%;
+				margin: 0 auto;
+				max-width: 400px;
+
+				&:hover {
+					.image {
+						img {
+							filter: grayscale(0);
+						}
+					}
+				}
+
+				.image {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					aspect-ratio: 3 / 2; /* proporcje „ramki” na logo */
+					padding: 30px 10px;
+					img {
+						object-fit: contain;
+						filter: grayscale(1);
+						max-width: 100%;
+						max-height: 100%;
+						transition: filter 0.3s;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.logos-section {
+		padding: 60px 0;
+		.container {
+			flex-direction: row;
+
+			.description-container {
+				width: 40%;
+				text-align: left;
+			}
+
+			.shops-carousel {
+				width: 60%;
+			}
+		}
+	}
+}

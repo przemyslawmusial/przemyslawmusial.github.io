@@ -29,7 +29,7 @@ $(document).ready(function () {
 			{
 				breakpoint: 1200,
 				settings: {
-                    slidesToShow: 3,
+					slidesToShow: 3,
 					slidesToScroll: 3,
 					speed: 900,
 					arrows: true,
@@ -38,5 +38,25 @@ $(document).ready(function () {
 				},
 			},
 		],
+	});
+	$(".reviews-carousele").slick({
+		mobileFirst: true,
+		arrows: true,
+		prevArrow: $(".arrow.left"),
+		nextArrow: $(".arrow.right"),
+		dots: false,
+		autoplay: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	});
+	$(".shops-carousel").slick({
+		mobileFirst: true,
+		arrows: false,
+		dots: false,
+		autoplay: true,
+		speed: 1500,
+		autoplaySpeed: 1500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
 	});
 });
