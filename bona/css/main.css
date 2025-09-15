@@ -1217,7 +1217,7 @@ body.modal-open {
   padding: 20px 25px;
   background-color: var(--second-color);
   color: var(--main-color);
-  border-radius: 5px;
+  border-radius: 30px;
   transition: background-color 0.3s;
 }
 .mobile-nav .nav-container .ul-container .contact-links li a:hover {
@@ -1301,7 +1301,6 @@ header .description p {
 footer {
   background-color: var(--main-color);
   border-top: 1px solid var(--second-color);
-  border-bottom: 1.5px solid var(--second-color);
 }
 footer .container {
   padding: 30px 20px;
@@ -1434,6 +1433,9 @@ footer .copyrights-footer .copyrights-container .proweb-container a svg {
   }
   footer .container {
     grid-template-columns: repeat(3, 1fr);
+  }
+  footer .copyrights-footer {
+    padding: 10px 0;
   }
   footer .copyrights-footer .copyrights-container {
     flex-direction: row;
