@@ -4,6 +4,7 @@
 @import "./main-page/logos-section";
 @import "./main-page/coworking-section";
 @import "./main-page/faq-section";
+@import "./subpages/contact-subpage";
 
 * {
 	margin: 0;
@@ -415,7 +416,7 @@ body.modal-open {
 			right: 0;
 			background-color: var(--main-color);
 			list-style-type: none;
-			height: calc(100vh - 80px);
+			height: calc(100vh - 75px);
 			width: 100%;
 			flex-direction: column;
 			padding-top: 20px;
@@ -536,6 +537,10 @@ header {
 			margin-bottom: 40px;
 		}
 	}
+}
+
+.subpage-header {
+	height: 200px;
 }
 
 .advantages {
@@ -731,6 +736,14 @@ footer {
 		}
 	}
 
+	.subpage-header {
+		.description {
+			h1 {
+				font-size: 40px;
+			}
+		}
+	}
+
 	footer {
 		.container {
 			grid-template-columns: repeat(3, 1fr);
@@ -872,6 +885,13 @@ footer {
 
 			p {
 				font-size: 16px;
+			}
+		}
+	}
+	.subpage-header {
+		.description {
+			h1 {
+				font-size: 50px;
 			}
 		}
 	}
