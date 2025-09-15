@@ -631,6 +631,32 @@
   max-width: 1200px;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4a24c, var(--second-color));
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e6b45c, var(--second-color));
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--second-color) transparent;
+}
+
 .button {
   text-decoration: none;
   color: #fff;
@@ -653,7 +679,7 @@
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: 110; /* niżej niż modal */
+  z-index: 110;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -720,8 +746,11 @@ body.modal-open {
 }
 .shop-basket-modal .main-container {
   height: calc(100% - 234px);
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.shop-basket-modal .main-container::-webkit-scrollbar {
+  display: none;
 }
 .shop-basket-modal .main-container .card {
   padding: 10px;
@@ -1076,6 +1105,7 @@ footer .container .item {
   color: #fff;
 }
 footer .container .item h2 {
+  font-size: 21px;
   font-weight: 400;
 }
 footer .container .footer-1 {
@@ -1096,8 +1126,50 @@ footer .container .footer-1 a {
 footer .container .footer-1 a i {
   padding-right: 5px;
 }
-footer .container .footer-3 h2 {
-  font-size: 21px;
+footer .container .footer-blog {
+  width: 100%;
+}
+footer .container .footer-blog .container {
+  padding: 15px 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+footer .container .footer-blog .container a {
+  text-decoration: none;
+  color: #fff;
+}
+footer .container .footer-blog .container a .card {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+footer .container .footer-blog .container a .card:hover .image img {
+  transform: scale(1.05);
+}
+footer .container .footer-blog .container a .card .image {
+  width: 20%;
+  height: 60px;
+  overflow: hidden;
+}
+footer .container .footer-blog .container a .card .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s;
+}
+footer .container .footer-blog .container a .card .description {
+  width: 80%;
+}
+footer .container .footer-blog .container a .card .description p:first-of-type {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 8px;
+}
+footer .container .footer-blog .container a .card .description p:last-of-type {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
 }
 footer .container .footer-3 ul {
   margin-top: 10px;
@@ -1114,6 +1186,33 @@ footer .container .footer-3 ul li a {
 footer .container .footer-3 ul li a:hover {
   color: var(--second-color);
 }
+footer .copyrights-footer {
+  border-top: 1px solid var(--second-color);
+}
+footer .copyrights-footer .copyrights-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  padding: 15px 20px;
+}
+footer .copyrights-footer .copyrights-container .proweb-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+footer .copyrights-footer .copyrights-container .proweb-container a {
+  height: 100%;
+}
+footer .copyrights-footer .copyrights-container .proweb-container a svg {
+  width: 70px;
+  height: 100%;
+}
 
 @media (min-width: 768px) {
   header .description h1 {
@@ -1124,6 +1223,10 @@ footer .container .footer-3 ul li a:hover {
   }
   footer .container {
     grid-template-columns: repeat(3, 1fr);
+  }
+  footer .copyrights-footer .copyrights-container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 @media (min-width: 992px) {
