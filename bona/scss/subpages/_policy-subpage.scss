@@ -1,0 +1,54 @@
+.policy-container {
+	padding: 30px 20px;
+
+	a {
+		text-decoration: none;
+		color: #3e3e3e;
+		transition: color 0.3s;
+
+		&:hover {
+			color: var(--second-color);
+		}
+	}
+
+	p {
+		margin-bottom: 15px;
+
+        span{
+            font-weight: bold;
+        }
+	}
+
+	.headers {
+		font-weight: bold;
+		margin-top: 30px;
+	}
+
+	ol {
+		li {
+			margin-left: 20px;
+
+			&::marker {
+				color: var(--second-color);
+			}
+
+			&:last-of-type {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	ul {
+		li {
+			margin-left: 20px;
+
+			&::marker {
+				color: var(--second-color);
+			}
+
+			&:last-of-type {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

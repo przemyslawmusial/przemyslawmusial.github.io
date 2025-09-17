@@ -1434,6 +1434,46 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+.policy-container {
+  padding: 30px 20px;
+}
+.policy-container a {
+  text-decoration: none;
+  color: #3e3e3e;
+  transition: color 0.3s;
+}
+.policy-container a:hover {
+  color: var(--second-color);
+}
+.policy-container p {
+  margin-bottom: 15px;
+}
+.policy-container p span {
+  font-weight: bold;
+}
+.policy-container .headers {
+  font-weight: bold;
+  margin-top: 30px;
+}
+.policy-container ol li {
+  margin-left: 20px;
+}
+.policy-container ol li::marker {
+  color: var(--second-color);
+}
+.policy-container ol li:last-of-type {
+  margin-bottom: 20px;
+}
+.policy-container ul li {
+  margin-left: 20px;
+}
+.policy-container ul li::marker {
+  color: var(--second-color);
+}
+.policy-container ul li:last-of-type {
+  margin-bottom: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;
