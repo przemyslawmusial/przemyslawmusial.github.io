@@ -1,0 +1,235 @@
+.shop-filters-modal {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	width: 325px;
+	background-color: var(--main-color);
+	z-index: 1000;
+	transition: left 0.5s ease-in-out;
+
+	&.active {
+		left: 0;
+	}
+
+	.top-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 10px;
+		color: #fff;
+		border-bottom: 1px solid #333;
+
+		p {
+			font-family: "Cormorant Garamond", serif;
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		.close-btn {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			font-weight: bold;
+			cursor: pointer;
+
+			p {
+				font-family: "Poppins", sans-serif;
+				font-size: 13px;
+				transition: color 0.3s;
+			}
+
+			i {
+				font-size: 19px;
+				padding-right: 5px;
+				transition: color 0.3s;
+			}
+
+			&:hover {
+				p {
+					color: #ddd;
+				}
+
+				i {
+					color: #ddd;
+				}
+			}
+		}
+	}
+
+	.main-container {
+		color: #fff;
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding: 30px 20px;
+
+		.price-filter {
+			.title {
+				font-family: "Cormorant Garamond", serif;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.shop-subpage-container {
+
+    .filters-container{
+        display: none;
+    }
+
+	.products-container {
+		.mobile-btns {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding: 15px 20px 0;
+
+			p {
+				font-size: 13px;
+				font-weight: 500;
+				transition: color 0.3s;
+				cursor: pointer;
+
+				&:hover {
+					color: var(--second-color);
+				}
+
+				i {
+					&:first-of-type {
+						padding-right: 5px;
+					}
+				}
+			}
+		}
+		.container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+			padding: 30px 20px;
+			.card {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				text-align: center;
+
+				&:hover {
+					.image {
+						img {
+							transform: scale(1.03);
+						}
+					}
+				}
+
+				.image {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					border-radius: 20px;
+					padding: 25px 0;
+					width: 100%;
+					background-color: #faf9f9;
+					overflow: hidden;
+
+					img {
+						width: 80%;
+						height: auto;
+						object-fit: cover;
+						transition: transform 0.4s;
+					}
+				}
+
+				.title {
+					margin-top: 10px;
+					font-size: 16px;
+				}
+
+				.price {
+					padding: 4px 0;
+					color: var(--second-color);
+				}
+
+				.buttons-container {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					gap: 8px;
+					padding: 0 0 30px;
+					margin-top: 15px;
+					font-size: 13px;
+					a {
+						padding: 10px;
+						border-radius: 15px;
+						text-decoration: none;
+						transition: background-color 0.3s;
+
+						&:last-of-type {
+							background-color: #fff;
+							color: var(--main-color);
+
+							&:hover {
+								background-color: #d9d9d9;
+							}
+						}
+
+						&:first-of-type {
+							background-color: var(--second-color);
+							color: #fff;
+
+							&:hover {
+								background-color: #b5854a;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.shop-subpage-container {
+		.products-container {
+			.container {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.shop-subpage-container {
+        margin-top: 40px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		.filters-container {
+            display: block;
+			padding: 20px 10px;
+			width: 320px;
+
+			.price-filter {
+				.title {
+					font-family: "Cormorant Garamond", serif;
+					text-transform: uppercase;
+                    font-size: 17px;
+                    font-weight: 500;
+				}
+			}
+		}
+
+		.products-container {
+			width: auto;
+			.mobile-btns {
+				display: none;
+			}
+		}
+	}
+}

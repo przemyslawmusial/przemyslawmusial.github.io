@@ -1,0 +1,122 @@
+.blog-subpage-container {
+	margin: 30px 0;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	.card {
+		text-align: center;
+		margin: 30px 20px;
+		border-radius: 16px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: #fff;
+		background: linear-gradient(
+			320deg,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(247, 247, 247, 1) 50%,
+			rgba(242, 242, 242, 1) 100%
+		);
+		-webkit-box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
+
+		&:hover {
+			.image {
+				img {
+					transform: scale(1.1);
+					filter: brightness(0.5);
+				}
+			}
+		}
+
+		.image {
+			position: relative;
+			width: 100%;
+			height: 250px;
+			overflow: hidden;
+			border-top-left-radius: 16px;
+			border-top-right-radius: 16px;
+			img {
+				width: 100%;
+				height: 100%;
+				border-top-left-radius: 16px;
+				border-top-right-radius: 16px;
+				object-fit: cover;
+				transition: transform 0.6s ease-in-out, filter 0.6s ease-in-out;
+			}
+
+			.date {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				background-color: var(--main-color);
+				color: var(--second-color);
+				width: 60px;
+				height: 60px;
+				top: 10px;
+				left: 10px;
+				border-radius: 16px;
+			}
+		}
+
+		.description {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 15px 10px;
+
+			a {
+				text-decoration: none;
+				color: var(--main-color);
+
+				h2 {
+					font-family: "Cormorant Garamond", serif;
+					font-size: 30px;
+					transition: color 0.3s;
+
+					&:hover {
+						color: #3e3e3e;
+					}
+				}
+			}
+
+			p {
+				margin: 10px 10px 15px;
+				font-size: 14px;
+				color: #3e3e3e;
+			}
+		}
+		.btn {
+			text-decoration: none;
+			padding: 15px 20px;
+			font-size: 13px;
+			font-weight: 500;
+			letter-spacing: 1.5px;
+			color: var(--second-color);
+			align-self: end;
+			background-color: var(--main-color);
+			border-bottom-right-radius: 16px;
+			border-top-left-radius: 16px;
+			transition: color 0.3s;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.blog-subpage-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 992px) {
+	.blog-subpage-container {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
