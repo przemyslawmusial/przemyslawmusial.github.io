@@ -1165,6 +1165,275 @@
     display: none;
   }
 }
+.product-page {
+  margin-top: 75px;
+  padding: 24px 16px 30px;
+  color: #0d1623;
+}
+.product-page .breadcrumbs {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 12px;
+}
+.product-page .breadcrumbs a {
+  text-decoration: none;
+  color: #888;
+}
+.product-page .breadcrumbs a:hover {
+  color: var(--main-color);
+}
+.product-page .product__grid {
+  display: grid;
+  gap: 28px;
+}
+@media (min-width: 768px) {
+  .product-page .product__grid {
+    grid-template-columns: 1.05fr 1fr;
+    align-items: start;
+  }
+}
+.product-page .product__gallery {
+  position: relative;
+}
+.product-page .product__gallery .product__image {
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+.product-page .product__gallery .product__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+.product-page .product__gallery .product__thumbs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+.product-page .product__gallery .product__thumbs .thumb {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+.product-page .product__gallery .product__thumbs .thumb.is-active {
+  outline: 2px solid #deaf74;
+}
+.product-page .product__gallery .product__thumbs .thumb img {
+  width: 100%;
+  height: 64px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+.product-page .product__summary .product_title {
+  font: 600 34px/1.1 "Cormorant Garamond", serif;
+  margin: 0 0 12px;
+  text-align: left;
+}
+.product-page .product__summary .price {
+  font: 700 22px/1 "Poppins", sans-serif;
+  color: #deaf74;
+  margin: 0 0 16px;
+}
+.product-page .product__summary .short-description {
+  color: #555;
+  margin-bottom: 16px;
+}
+.product-page .product__summary .qty-row {
+  margin: 12px 0;
+}
+.product-page .product__summary .quantity {
+  display: inline-grid;
+  grid-template-columns: 40px 80px 40px;
+  gap: 6px;
+  align-items: center;
+}
+.product-page .product__summary .quantity .qty-btn {
+  height: 42px;
+  border: 1px solid #e3e3e3;
+  background: #fff;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+.product-page .product__summary .quantity .qty-btn:hover {
+  background-color: var(--second-color);
+}
+.product-page .product__summary .quantity input {
+  height: 42px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  text-align: center;
+  width: 80px;
+}
+.product-page .product__summary .product-meta {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  color: #666;
+  font-size: 14px;
+}
+.product-page .product__summary .product-meta li {
+  margin-bottom: 6px;
+}
+.product-page .product__summary .product-meta li a {
+  text-decoration: none;
+  color: var(--second-color);
+}
+.product-page .product__summary .product-meta li span {
+  color: #000;
+}
+.product-page .accordion {
+  margin-top: 28px;
+}
+.product-page .accordion details summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  list-style: none;
+}
+.product-page .accordion details:first-of-type summary {
+  border-top: 0;
+}
+.product-page .accordion details .panel {
+  padding: 6px 0 14px;
+  color: #444;
+}
+.product-page .related {
+  margin-top: 40px;
+}
+.product-page .related__grid {
+  margin-top: 15px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(1, 1fr);
+}
+.product-page .related .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+.product-page .related .card:hover .image img {
+  transform: scale(1.03);
+}
+.product-page .related .card .image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 25px 0;
+  width: 100%;
+  background-color: #faf9f9;
+  overflow: hidden;
+}
+.product-page .related .card .image img {
+  width: 80%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.4s;
+}
+.product-page .related .card .title {
+  margin-top: 10px;
+  font-size: 16px;
+}
+.product-page .related .card .price {
+  padding: 4px 0;
+  color: var(--second-color);
+}
+.product-page .related .card .buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 0 30px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+.product-page .related .card .buttons-container a {
+  padding: 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.product-page .related .card .buttons-container a:last-of-type {
+  background-color: #fff;
+  color: var(--main-color);
+}
+.product-page .related .card .buttons-container a:last-of-type:hover {
+  background-color: #d9d9d9;
+}
+.product-page .related .card .buttons-container a:first-of-type {
+  background-color: var(--second-color);
+  color: #fff;
+}
+.product-page .related .card .buttons-container a:first-of-type:hover {
+  background-color: #b5854a;
+}
+.product-page .related .product-card {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+}
+.product-page .related .product-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+.product-page .sticky-atc {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #eee;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+.product-page .sticky-atc__title {
+  font-weight: 600;
+}
+@media (min-width: 1024px) {
+  .product-page .sticky-atc {
+    display: none;
+  }
+}
+
+@media (min-width: 578px) {
+  .product-page .related__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-page .related .card .buttons-container {
+    flex-direction: row;
+  }
+}
+@media (min-width: 992px) {
+  .product-page .related__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 * {
   margin: 0;
   padding: 0;
