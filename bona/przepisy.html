@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pl">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bona Miody Kremowane | Przepisy</title>
-<link rel="icon" href="./img/favicon.png" type="image/png">
-<link rel="stylesheet" href="./css/main.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-<script src="https://kit.fontawesome.com/ae82900702.js" crossorigin="anonymous"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bona Miody Kremowane | Przepisy</title>
+    <link rel="icon" href="./img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ae82900702.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -187,9 +189,66 @@
     </header>
 
     <main>
-        <div
-            style="height: 50vh; background-color: #fff; border-top:1px solid var(--second-color); border-bottom:1.5px solid var(--second-color)">
-        </div>
+        <section class="recipes">
+            <div class="filter-container wrapper">
+                <p class="active">wszystkie</p>
+                <p>słone</p>
+                <p>słodkie</p>
+            </div>
+            <div class="recipes-container wrapper">
+                <div class="card">
+                    <img src="./img/przepis1.png" alt="">
+                    <div class="description">
+                        <h3>Miodowe tosty z figą</h3>
+                        <a target="_blank" href="https://www.instagram.com/p/DOnNER1D461/" class="button">Zobacz
+                            przepis</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/przepis2.png" alt="">
+                    <div class="description">
+                        <h3>Grillowana biała kiełbasa z sosem miodowym</h3>
+                        <a target="_blank" href="https://www.instagram.com/p/DOVPgLdjQAB/" class="button">Zobacz
+                            przepis</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/przepis4.png" alt="">
+                    <div class="description">
+                        <h3>Owsianka z miodem z pomarańczą</h3>
+                        <a target="_blank" href="https://www.instagram.com/p/DOYKgTwCtjB/" class="button">Zobacz
+                            przepis</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/przepis1.png" alt="">
+                    <div class="description">
+                        <h3>Miodowe tosty z figą</h3>
+                        <a target="_blank" href="https://www.instagram.com/p/DOnNER1D461/" class="button">Zobacz
+                            przepis</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/przepis2.png" alt="">
+                    <div class="description">
+                        <h3>Grillowana biała kiełbasa z sosem miodowym</h3>
+                        <a target="_blank" href="https://www.instagram.com/p/DOVPgLdjQAB/" class="button">Zobacz
+                            przepis</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/przepis4.png" alt="">
+                    <div class="description">
+                        <h3>Owsianka z miodem z pomarańczą</h3>
+                        <a target="_blank" href="https://www.instagram.com/p/DOYKgTwCtjB/" class="button">Zobacz
+                            przepis</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
     </main>
 
     <footer>
@@ -300,11 +359,12 @@
 
 
     <div class="modal-overlay"></div>
+    <script src="https://www.instagram.com/embed.js" async
+        onload="window.instgrm && instgrm.Embeds.process();"></script>
     <script src="./libraries/jquery/jquery-1.11.0.min.js"></script>
     <script src="./libraries/slick/slick.min.js"></script>
     <script src="./js/slick.js"></script>
     <script src="./js/main.js"></script>
-
 </body>
 
 </html>
