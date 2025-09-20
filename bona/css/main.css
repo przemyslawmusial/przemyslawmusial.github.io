@@ -158,22 +158,30 @@
   align-items: center;
   width: 100%;
 }
-.shop-section .container .carousele-container .card:hover .image img {
-  transform: scale(1.03);
+.shop-section .container .carousele-container .card:hover .image .mockup {
+  opacity: 1;
 }
 .shop-section .container .carousele-container .card .image {
+  position: relative;
   border-radius: 20px;
-  padding: 25px 0;
   width: 100%;
+  height: 100%;
   background-color: #faf9f9;
   overflow: hidden;
 }
 .shop-section .container .carousele-container .card .image img {
-  width: 80%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: transform 0.4s;
+}
+.shop-section .container .carousele-container .card .image .mockup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
 .shop-section .container .carousele-container .card .title {
   margin-top: 10px;
@@ -1075,26 +1083,30 @@
   width: 100%;
   text-align: center;
 }
-.shop-subpage-container .products-container .container .card:hover .image img {
-  transform: scale(1.03);
+.shop-subpage-container .products-container .container .card:hover .image .mockup {
+  opacity: 1;
 }
 .shop-subpage-container .products-container .container .card .image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   border-radius: 20px;
-  padding: 25px 0;
   width: 100%;
+  height: 100%;
   background-color: #faf9f9;
   overflow: hidden;
 }
 .shop-subpage-container .products-container .container .card .image img {
-  width: 80%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: transform 0.4s;
+}
+.shop-subpage-container .products-container .container .card .image .mockup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
 .shop-subpage-container .products-container .container .card .title {
   margin-top: 10px;
@@ -1159,7 +1171,7 @@
     font-weight: 500;
   }
   .shop-subpage-container .products-container {
-    width: auto;
+    width: calc(100% - 320px);
   }
   .shop-subpage-container .products-container .mobile-btns {
     display: none;
