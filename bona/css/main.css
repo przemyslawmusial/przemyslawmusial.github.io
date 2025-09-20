@@ -1501,7 +1501,7 @@
   align-items: center;
   gap: 15px;
   overflow-x: auto;
-  z-index: 100;
+  z-index: 10;
   background-color: #fff;
 }
 .recipes .filter-container p {
@@ -1894,6 +1894,9 @@ body.modal-open {
   font-size: 22px;
   margin-right: 20px;
 }
+.mobile-nav .nav-container .shopping-cart svg {
+  margin-right: 20px;
+}
 .mobile-nav .nav-container .shopping-cart:hover i {
   color: #ddd;
 }
@@ -1907,27 +1910,38 @@ body.modal-open {
   transform: scale(1.03);
 }
 .mobile-nav .nav-container .burger {
-  flex-direction: column;
-  justify-content: end;
-  align-items: center;
+  position: relative;
+  width: 32px;
+  height: 28px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
   margin-left: 20px;
-  background: none;
-  border: none;
 }
 .mobile-nav .nav-container .burger .line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   width: 28px;
-  height: 4px;
+  height: 2px;
   background: #fff;
-  margin: 10px 0;
-  border-radius: 20px;
-  transition: 0.3s ease-in-out;
+  border-radius: 999px;
+  transform-origin: center;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  transform: translate(-50%, -50%);
+}
+.mobile-nav .nav-container .burger .line:nth-child(1) {
+  transform: translate(-50%, calc(-50% - 6px)) rotate(0deg);
+}
+.mobile-nav .nav-container .burger .line:nth-child(2) {
+  transform: translate(-50%, calc(-50% + 6px)) rotate(0deg);
 }
 .mobile-nav .nav-container .burger.active .line:first-child {
-  transform: rotate(45deg) translate(4px, 4px);
+  transform: translate(-50%, -50%) rotate(45deg);
   background-color: var(--second-color);
 }
 .mobile-nav .nav-container .burger.active .line:nth-child(2) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: translate(-50%, -50%) rotate(-45deg);
   background-color: var(--second-color);
 }
 .mobile-nav .nav-container .subline {
@@ -2313,13 +2327,20 @@ footer .copyrights-footer .copyrights-container .proweb-container a svg {
     color: #fff;
   }
   .desktop-nav .nav-container .icons-container div {
+    display: flex;
+    justify-content: center;
+    align-items: end;
     cursor: pointer;
+    gap: 5px;
   }
   .desktop-nav .nav-container .icons-container div:hover p {
     color: var(--second-color);
   }
   .desktop-nav .nav-container .icons-container div:hover i {
     color: var(--second-color);
+  }
+  .desktop-nav .nav-container .icons-container div:hover svg path {
+    stroke: var(--second-color);
   }
   .desktop-nav .nav-container .icons-container div p {
     transition: color 0.3s;
@@ -2328,6 +2349,9 @@ footer .copyrights-footer .copyrights-container .proweb-container a svg {
     font-size: 16px;
     padding-right: 5px;
     transition: color 0.3s;
+  }
+  .desktop-nav .nav-container .icons-container div svg path {
+    transition: stroke 0.3s;
   }
   header .description h1 {
     font-size: 65px;
