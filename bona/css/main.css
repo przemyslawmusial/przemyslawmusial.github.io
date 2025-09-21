@@ -344,6 +344,10 @@
   font-size: 60px;
   margin-bottom: 20px;
 }
+.reviews-section .reviews-carousele .card img {
+  width: 80px;
+  margin-bottom: 20px;
+}
 .reviews-section .reviews-carousele .card .description {
   font-weight: 300;
   font-size: 14px;
@@ -369,6 +373,9 @@
   }
   .reviews-section .reviews-carousele .card i {
     font-size: 75px;
+  }
+  .reviews-section .reviews-carousele .card img {
+    width: 100px;
   }
 }
 .logos-section {
@@ -2112,7 +2119,27 @@ body.modal-open {
   font-size: 22px;
   margin-right: 20px;
 }
-.mobile-nav .nav-container .shopping-cart svg {
+.mobile-nav .nav-container .shopping-cart .svg {
+  position: relative;
+}
+.mobile-nav .nav-container .shopping-cart .svg .shoping-circle {
+  position: absolute;
+  top: -2px;
+  right: 16px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--second-color);
+}
+.mobile-nav .nav-container .shopping-cart .svg .shoping-circle p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8px;
+  color: #fff;
+}
+.mobile-nav .nav-container .shopping-cart .svg svg {
   margin-right: 20px;
 }
 .mobile-nav .nav-container .shopping-cart:hover i {
@@ -2557,7 +2584,10 @@ footer .copyrights-footer .copyrights-container .proweb-container a svg {
   .desktop-nav .nav-container .icons-container div:hover i {
     color: var(--second-color);
   }
-  .desktop-nav .nav-container .icons-container div:hover svg path {
+  .desktop-nav .nav-container .icons-container div:hover .svg .shoping-circle p {
+    color: var(--main-color);
+  }
+  .desktop-nav .nav-container .icons-container div:hover .svg svg path {
     stroke: var(--second-color);
   }
   .desktop-nav .nav-container .icons-container div p {
@@ -2568,7 +2598,26 @@ footer .copyrights-footer .copyrights-container .proweb-container a svg {
     padding-right: 5px;
     transition: color 0.3s;
   }
-  .desktop-nav .nav-container .icons-container div svg path {
+  .desktop-nav .nav-container .icons-container div .svg {
+    position: relative;
+  }
+  .desktop-nav .nav-container .icons-container div .svg .shoping-circle {
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: var(--second-color);
+  }
+  .desktop-nav .nav-container .icons-container div .svg .shoping-circle p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8px;
+  }
+  .desktop-nav .nav-container .icons-container div .svg svg path {
     transition: stroke 0.3s;
   }
   header .description h1 {

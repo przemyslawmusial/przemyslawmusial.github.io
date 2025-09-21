@@ -345,8 +345,30 @@ body.modal-open {
 				margin-right: 20px;
 			}
 
-			svg {
-				margin-right: 20px;
+			.svg {
+				position: relative;
+
+				.shoping-circle {
+					position: absolute;
+					top: -2px;
+					right: 16px;
+					width: 13px;
+					height: 13px;
+					border-radius: 50%;
+					background-color: var(--second-color);
+
+					p {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						font-size: 8px;
+						color: #fff;
+					}
+				}
+				svg {
+					margin-right: 20px;
+				}
 			}
 
 			&:hover {
@@ -890,9 +912,16 @@ footer {
 							color: var(--second-color);
 						}
 
-						svg {
-							path {
-								stroke: var(--second-color);
+						.svg {
+							.shoping-circle {
+								p {
+									color: var(--main-color);
+								}
+							}
+							svg {
+								path {
+									stroke: var(--second-color);
+								}
 							}
 						}
 					}
@@ -907,9 +936,29 @@ footer {
 						transition: color 0.3s;
 					}
 
-					svg {
-						path {
-							transition: stroke 0.3s;
+					.svg {
+						position: relative;
+						.shoping-circle {
+							position: absolute;
+							top: -2px;
+							right: -3px;
+							width: 13px;
+							height: 13px;
+							border-radius: 50%;
+							background-color: var(--second-color);
+
+							p {
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -50%);
+								font-size: 8px;
+							}
+						}
+						svg {
+							path {
+								transition: stroke 0.3s;
+							}
 						}
 					}
 				}
