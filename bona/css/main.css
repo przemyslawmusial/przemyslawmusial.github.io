@@ -1429,33 +1429,65 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background: white;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0) 0%, rgb(247, 247, 247) 50%, rgb(242, 242, 242) 100%);
   text-align: center;
+  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
 }
-.product-page .related .card:hover .image img {
-  transform: scale(1.03);
+.product-page .related .card:hover .image .mockup {
+  opacity: 1;
+}
+.product-page .related .card .description {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+.product-page .related .card .description .title {
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+  word-break: break-word;
+}
+.product-page .related .card .description .price {
+  white-space: nowrap;
+  text-align: right;
+}
+.product-page .related .card .weight {
+  align-self: start;
+  font-size: 12px;
+  color: #606060;
 }
 .product-page .related .card .image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   border-radius: 20px;
-  padding: 25px 0;
   width: 100%;
-  background-color: #faf9f9;
+  height: 100%;
+  background-color: #fff;
   overflow: hidden;
 }
 .product-page .related .card .image img {
-  width: 80%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 20px;
   transition: transform 0.4s;
 }
+.product-page .related .card .image .mockup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
 .product-page .related .card .title {
-  margin-top: 10px;
-  font-size: 16px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
 }
 .product-page .related .card .price {
   padding: 4px 0;
@@ -1467,29 +1499,34 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 0 0 30px;
   margin-top: 15px;
   font-size: 13px;
 }
 .product-page .related .card .buttons-container a {
-  padding: 10px;
-  border-radius: 15px;
+  position: relative;
+  font-size: 13px;
+  padding: 12px 20px;
+  border-radius: 50px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  background: #ececec;
+  color: #606060;
+  transition: background-color 0.3s, color 0.3s;
 }
-.product-page .related .card .buttons-container a:last-of-type {
-  background-color: #fff;
-  color: var(--main-color);
-}
-.product-page .related .card .buttons-container a:last-of-type:hover {
-  background-color: #d9d9d9;
-}
-.product-page .related .card .buttons-container a:first-of-type {
-  background-color: var(--second-color);
+.product-page .related .card .buttons-container a:hover {
+  background: var(--second-color);
   color: #fff;
 }
-.product-page .related .card .buttons-container a:first-of-type:hover {
-  background-color: #b5854a;
+.product-page .related .card .buttons-container a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* grubość bordera */
+  border-radius: 50px;
+  background: linear-gradient(180deg, rgba(242, 242, 242, 0) 0%, rgb(129, 129, 129) 50%, rgb(255, 255, 255) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; /* Firefox */
+  pointer-events: none;
 }
 .product-page .related .product-card {
   display: block;
