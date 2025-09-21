@@ -122,12 +122,14 @@
 .shop-section .container .carousele-container {
   position: relative;
   margin-top: 40px;
-  padding: 0 20px;
   overflow: hidden;
 }
 .shop-section .container .carousele-container .slick-track {
   display: flex !important;
-  gap: 40px;
+}
+.shop-section .container .carousele-container .slick-slide {
+  padding: 0 20px;
+  height: auto;
 }
 .shop-section .container .carousele-container .slick-dots {
   text-align: center;
@@ -156,17 +158,48 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 20px;
   width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background: white;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0) 0%, rgb(247, 247, 247) 50%, rgb(242, 242, 242) 100%);
+  text-align: center;
+  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
 }
 .shop-section .container .carousele-container .card:hover .image .mockup {
   opacity: 1;
+}
+.shop-section .container .carousele-container .card .description {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+.shop-section .container .carousele-container .card .description .title {
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+  word-break: break-word;
+}
+.shop-section .container .carousele-container .card .description .price {
+  white-space: nowrap;
+  text-align: right;
+}
+.shop-section .container .carousele-container .card .weight {
+  align-self: start;
+  font-size: 12px;
+  color: #606060;
 }
 .shop-section .container .carousele-container .card .image {
   position: relative;
   border-radius: 20px;
   width: 100%;
   height: 100%;
-  background-color: #faf9f9;
+  background-color: #fff;
   overflow: hidden;
 }
 .shop-section .container .carousele-container .card .image img {
@@ -184,36 +217,47 @@
   transition: opacity 0.5s ease-out;
 }
 .shop-section .container .carousele-container .card .title {
-  margin-top: 10px;
-  font-size: 22px;
+  color: var(--main-color);
+  font-size: 18px;
 }
 .shop-section .container .carousele-container .card .price {
   padding: 4px 0;
   color: var(--second-color);
 }
 .shop-section .container .carousele-container .card .buttons-container {
-  padding: 0 0 30px;
-  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+  font-size: 13px;
 }
 .shop-section .container .carousele-container .card .buttons-container a {
-  padding: 10px;
-  border-radius: 15px;
+  position: relative;
+  font-size: 13px;
+  padding: 12px 20px;
+  border-radius: 50px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  background: #ececec;
+  color: #606060;
+  transition: background-color 0.3s, color 0.3s;
 }
-.shop-section .container .carousele-container .card .buttons-container a:last-of-type {
-  background-color: #fff;
-  color: var(--main-color);
-}
-.shop-section .container .carousele-container .card .buttons-container a:last-of-type:hover {
-  background-color: #d9d9d9;
-}
-.shop-section .container .carousele-container .card .buttons-container a:first-of-type {
-  background-color: var(--second-color);
+.shop-section .container .carousele-container .card .buttons-container a:hover {
+  background: var(--second-color);
   color: #fff;
 }
-.shop-section .container .carousele-container .card .buttons-container a:first-of-type:hover {
-  background-color: #b5854a;
+.shop-section .container .carousele-container .card .buttons-container a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* grubość bordera */
+  border-radius: 50px;
+  background: linear-gradient(180deg, rgba(242, 242, 242, 0) 0%, rgb(129, 129, 129) 50%, rgb(255, 255, 255) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; /* Firefox */
+  pointer-events: none;
 }
 
 @media (min-width: 992px) {
@@ -535,6 +579,9 @@
 .faq-section .container .accordion-container .accordion .card:hover .accordion-header i {
   color: var(--second-color);
 }
+.faq-section .container .accordion-container .accordion .card:hover .accordion-header .title {
+  color: var(--second-color);
+}
 .faq-section .container .accordion-container .accordion .card.active .accordion-content {
   pointer-events: all;
   opacity: 1;
@@ -543,6 +590,9 @@
 }
 .faq-section .container .accordion-container .accordion .card.active .accordion-header i {
   transform: rotate(180deg);
+}
+.faq-section .container .accordion-container .accordion .card.active .accordion-header .title {
+  color: var(--second-color);
 }
 .faq-section .container .accordion-container .accordion .card .accordion-header {
   display: flex;
@@ -569,7 +619,7 @@
   padding: 0 5px;
   font-size: 15px;
   color: #ddd;
-  transition: max-height 0.2s linear, padding 0.2s linear;
+  transition: max-height 0.4s linear, padding 0.4s linear, opacity 0.4s linear;
 }
 .faq-section .container .accordion-container .more-container {
   text-align: center;
@@ -1071,7 +1121,7 @@
 }
 .shop-subpage-container .products-container .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   padding: 30px 20px;
 }
@@ -1081,17 +1131,46 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background: white;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0) 0%, rgb(247, 247, 247) 50%, rgb(242, 242, 242) 100%);
   text-align: center;
+  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
 }
 .shop-subpage-container .products-container .container .card:hover .image .mockup {
   opacity: 1;
+}
+.shop-subpage-container .products-container .container .card .description {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+.shop-subpage-container .products-container .container .card .description .title {
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+  word-break: break-word;
+}
+.shop-subpage-container .products-container .container .card .description .price {
+  white-space: nowrap;
+  text-align: right;
+}
+.shop-subpage-container .products-container .container .card .weight {
+  align-self: start;
+  font-size: 12px;
+  color: #606060;
 }
 .shop-subpage-container .products-container .container .card .image {
   position: relative;
   border-radius: 20px;
   width: 100%;
   height: 100%;
-  background-color: #faf9f9;
+  background-color: #fff;
   overflow: hidden;
 }
 .shop-subpage-container .products-container .container .card .image img {
@@ -1109,8 +1188,8 @@
   transition: opacity 0.5s ease-out;
 }
 .shop-subpage-container .products-container .container .card .title {
-  margin-top: 10px;
-  font-size: 16px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
 }
 .shop-subpage-container .products-container .container .card .price {
   padding: 4px 0;
@@ -1122,32 +1201,42 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 0 0 30px;
   margin-top: 15px;
   font-size: 13px;
 }
 .shop-subpage-container .products-container .container .card .buttons-container a {
-  padding: 10px;
-  border-radius: 15px;
+  position: relative;
+  font-size: 13px;
+  padding: 12px 20px;
+  border-radius: 50px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  background: #ececec;
+  color: #606060;
+  transition: background-color 0.3s, color 0.3s;
 }
-.shop-subpage-container .products-container .container .card .buttons-container a:last-of-type {
-  background-color: #fff;
-  color: var(--main-color);
-}
-.shop-subpage-container .products-container .container .card .buttons-container a:last-of-type:hover {
-  background-color: #d9d9d9;
-}
-.shop-subpage-container .products-container .container .card .buttons-container a:first-of-type {
-  background-color: var(--second-color);
+.shop-subpage-container .products-container .container .card .buttons-container a:hover {
+  background: var(--second-color);
   color: #fff;
 }
-.shop-subpage-container .products-container .container .card .buttons-container a:first-of-type:hover {
-  background-color: #b5854a;
+.shop-subpage-container .products-container .container .card .buttons-container a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* grubość bordera */
+  border-radius: 50px;
+  background: linear-gradient(180deg, rgba(242, 242, 242, 0) 0%, rgb(129, 129, 129) 50%, rgb(255, 255, 255) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; /* Firefox */
+  pointer-events: none;
 }
 
 @media (min-width: 576px) {
+  .shop-subpage-container .products-container .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
   .shop-subpage-container .products-container .container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1601,6 +1690,135 @@
   }
   .recipes .recipes-container .card:hover img {
     transform: scale(1.05);
+  }
+}
+.post-container {
+  padding: 30px 20px;
+}
+.post-container .content .category-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.post-container .content .category-container .category {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--second-color);
+  padding: 2px 10px;
+  border-radius: 13px;
+  color: #111;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  transition: color 0.3s;
+}
+.post-container .content .category-container .category:hover {
+  color: #fff;
+}
+.post-container .content h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+}
+.post-container .content img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  max-height: 300px;
+}
+.post-container .content p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.post-container .sidebar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .post-container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+  .post-container .content {
+    width: 80%;
+  }
+  .post-container .content h2 {
+    font-size: 30px;
+  }
+  .post-container .sidebar {
+    display: block;
+    width: 20%;
+  }
+  .post-container .sidebar h3 {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: "Cormorant Garamond", serif;
+  }
+  .post-container .sidebar .category .container {
+    margin: 10px 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .post-container .sidebar .category .container a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 13px;
+    color: #333;
+    transition: color 0.3s;
+  }
+  .post-container .sidebar .category .container a:hover {
+    color: var(--second-color);
+  }
+  .post-container .sidebar .latest-posts .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+  }
+  .post-container .sidebar .latest-posts .container a {
+    text-decoration: none;
+    color: var(--main-color);
+  }
+  .post-container .sidebar .latest-posts .container a .card {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+  .post-container .sidebar .latest-posts .container a .card:hover .image img {
+    transform: scale(1.05);
+  }
+  .post-container .sidebar .latest-posts .container a .card .image {
+    width: 30%;
+    height: 60px;
+    overflow: hidden;
+  }
+  .post-container .sidebar .latest-posts .container a .card .image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .post-container .sidebar .latest-posts .container a .card .description {
+    width: 70%;
+  }
+  .post-container .sidebar .latest-posts .container a .card .description p:first-of-type {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Cormorant Garamond", serif;
+    margin-bottom: 8px;
+  }
+  .post-container .sidebar .latest-posts .container a .card .description p:last-of-type {
+    color: #333;
+    font-size: 12px;
   }
 }
 * {

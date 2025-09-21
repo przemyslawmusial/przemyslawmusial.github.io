@@ -1,0 +1,156 @@
+.post-container {
+	padding: 30px 20px;
+
+	.content {
+		.category-container {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+
+			.category {
+				text-transform: uppercase;
+				text-decoration: none;
+				text-align: center;
+				background-color: var(--second-color);
+				padding: 2px 10px;
+				border-radius: 13px;
+				color: #111;
+				font-size: 12px;
+				letter-spacing: 1.4px;
+				transition: color 0.3s;
+
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+
+		h2 {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			text-align: center;
+			font-family: "Cormorant Garamond", serif;
+			font-size: 26px;
+		}
+
+		img {
+			width: 100%;
+			object-fit: cover;
+			object-position: top;
+			max-height: 300px;
+		}
+
+		p {
+			margin: 10px 0;
+			font-size: 14px;
+		}
+	}
+
+	.sidebar {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.post-container {
+		display: flex;
+		flex-direction: row;
+		gap: 25px;
+
+		.content {
+			width: 80%;
+
+			h2 {
+				font-size: 30px;
+			}
+		}
+
+		.sidebar {
+			display: block;
+			width: 20%;
+
+			h3 {
+				font-size: 17px;
+				text-transform: uppercase;
+				font-family: "Cormorant Garamond", serif;
+			}
+
+			.category {
+				.container {
+					margin: 10px 0 20px;
+					display: flex;
+					flex-direction: column;
+
+					a {
+						text-decoration: none;
+						text-transform: capitalize;
+						font-size: 13px;
+						color: #333;
+						transition: color 0.3s;
+
+						&:hover {
+							color: var(--second-color);
+						}
+					}
+				}
+			}
+
+			.latest-posts {
+				.container {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					margin: 20px 0;
+					gap: 10px;
+					a {
+						text-decoration: none;
+						color: var(--main-color);
+						.card {
+							display: flex;
+							flex-direction: row;
+							gap: 8px;
+
+							&:hover {
+								.image {
+									img {
+										transform: scale(1.05);
+									}
+								}
+							}
+							.image {
+								width: 30%;
+								height: 60px;
+								overflow: hidden;
+
+								img {
+									width: 100%;
+									height: 100%;
+									object-fit: cover;
+									transition: transform 0.3s;
+								}
+							}
+
+							.description {
+								width: 70%;
+								p {
+									&:first-of-type {
+										font-size: 16px;
+										font-weight: bold;
+										font-family: "Cormorant Garamond", serif;
+										margin-bottom: 8px;
+									}
+									&:last-of-type {
+										color: #333;
+										font-size: 12px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
