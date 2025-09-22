@@ -1141,7 +1141,7 @@
   padding: 20px;
   border-radius: 20px;
   background: white;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0) 0%, rgb(247, 247, 247) 50%, rgb(242, 242, 242) 100%);
+  background: linear-gradient(190deg, rgb(255, 255, 255) 0%, rgb(247, 247, 247) 50%, rgb(242, 242, 242) 100%);
   text-align: center;
   box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
 }
