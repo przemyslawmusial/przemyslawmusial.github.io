@@ -12,6 +12,7 @@
 @import "./subpages/policy-subpage";
 @import "./subpages/recipes-subpage";
 @import "./subpages/post-subpage";
+@import "./subpages/about-us-subpage";
 
 * {
 	margin: 0;
@@ -28,6 +29,16 @@
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 	scroll-padding-top: 80px;
+}
+
+::-moz-selection {
+	background: var(--second-color);
+	color: var(--main-color);
+}
+
+::selection {
+	background: var(--second-color);
+	color: var(--main-color);
 }
 
 .wrapper {

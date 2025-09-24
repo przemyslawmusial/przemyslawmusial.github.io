@@ -1865,6 +1865,288 @@
     font-size: 12px;
   }
 }
+.about-us-subpage .description h2 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: var(--second-color);
+}
+.about-us-subpage .description .title {
+  font-size: 40px;
+  font-family: "Cormorant Garamond", serif;
+}
+.about-us-subpage .description .text {
+  margin: 20px 0 50px;
+  font-size: 15px;
+  color: #667085;
+  font-weight: 300;
+}
+.about-us-subpage .bona .container {
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.about-us-subpage .bona .container .image {
+  width: 100%;
+  height: 250px;
+}
+.about-us-subpage .bona .container .image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border-radius: 15px;
+}
+.about-us-subpage .idea {
+  border-top: 1px solid var(--second-color);
+}
+.about-us-subpage .idea .container {
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about-us-subpage .idea .container .icon-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid var(--second-color);
+  border-radius: 16px;
+  padding: 15px 30px;
+  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
+}
+.about-us-subpage .idea .container .icon-container .item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  gap: 10px;
+  text-align: left;
+  padding: 15px 0;
+}
+.about-us-subpage .idea .container .icon-container .item:nth-of-type(2) {
+  border-top: 1.5px solid #ededed;
+  border-bottom: 1.5px solid #ededed;
+}
+.about-us-subpage .idea .container .icon-container .item .icon {
+  height: 30px;
+}
+.about-us-subpage .idea .container .icon-container .item .icon img {
+  height: 100%;
+}
+.about-us-subpage .flavors {
+  background-color: var(--main-color);
+}
+.about-us-subpage .flavors .container {
+  padding: 40px 20px;
+  text-align: center;
+}
+.about-us-subpage .flavors .container .description .title {
+  color: #fff;
+}
+.about-us-subpage .flavors .container .description .text {
+  color: #ebebeb;
+  margin: 20px 0 0;
+}
+.about-us-subpage .flavors .container .flavors-container {
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.about-us-subpage .flavors .container .flavors-container .item {
+  margin-top: 10px;
+}
+.about-us-subpage .flavors .container .flavors-container .item .description {
+  display: none;
+}
+.about-us-subpage .flavors .container .flavors-container .item .image {
+  width: 100%;
+  height: 150px;
+  border-radius: 15px;
+  background-color: #ddd;
+}
+.about-us-subpage .flavors .container .flavors-container .item .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about-us-subpage .flavors .container .flavors-container .item p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+.about-us-subpage .for-who .container {
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.about-us-subpage .for-who .container .description .text {
+  margin: 20px 0 0;
+}
+.about-us-subpage .for-who .container .image {
+  width: 100%;
+  height: 250px;
+}
+.about-us-subpage .for-who .container .image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border-radius: 15px;
+}
+.about-us-subpage .why-bona {
+  background-color: var(--second-color);
+}
+.about-us-subpage .why-bona .container {
+  padding: 40px 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-us-subpage .why-bona .container .description h2 {
+  color: #fff;
+}
+.about-us-subpage .why-bona .container .why-bona-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+.about-us-subpage .why-bona .container .why-bona-container .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px 30px;
+}
+.about-us-subpage .why-bona .container .why-bona-container .item .icon {
+  height: 50px;
+}
+.about-us-subpage .why-bona .container .why-bona-container .item .icon img {
+  height: 100%;
+  width: 100%;
+}
+.about-us-subpage .why-bona .container .why-bona-container .item p {
+  flex: 1;
+  font-size: 15px;
+  padding-left: 15px;
+}
+.about-us-subpage .cta .container {
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .about-us-subpage .description .title {
+    font-size: 50px;
+  }
+  .about-us-subpage .bona .container {
+    flex-direction: row-reverse;
+    align-items: start;
+    text-align: left;
+    padding: 60px 20px;
+  }
+  .about-us-subpage .bona .container .description {
+    width: 50%;
+  }
+  .about-us-subpage .bona .container .image {
+    width: 50%;
+    height: 400px;
+  }
+  .about-us-subpage .idea .container {
+    padding: 70px 20px;
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+  }
+  .about-us-subpage .flavors .container {
+    padding: 60px 20px;
+  }
+  .about-us-subpage .flavors .container .flavors-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-us-subpage .for-who .container {
+    flex-direction: row;
+    align-items: start;
+    text-align: left;
+    padding: 60px 20px;
+  }
+  .about-us-subpage .for-who .container .description {
+    width: 50%;
+  }
+  .about-us-subpage .for-who .container .image {
+    width: 50%;
+    height: 400px;
+  }
+  .about-us-subpage .why-bona .container {
+    padding: 60px 20px;
+  }
+  .about-us-subpage .why-bona .container .why-bona-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-us-subpage .why-bona .container .why-bona-container .item p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .about-us-subpage .flavors .container .flavors-container {
+    gap: 30px;
+  }
+  .about-us-subpage .flavors .container .flavors-container .item {
+    position: relative;
+  }
+  .about-us-subpage .flavors .container .flavors-container .item .image {
+    height: 250px;
+  }
+  .about-us-subpage .flavors .container .flavors-container .item .title {
+    display: none;
+  }
+  .about-us-subpage .flavors .container .flavors-container .item:hover .description {
+    opacity: 1;
+  }
+  .about-us-subpage .flavors .container .flavors-container .item .description {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    transition: opacity 0.4s ease-out;
+  }
+  .about-us-subpage .flavors .container .flavors-container .item .description p {
+    position: absolute;
+    font-size: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -1878,6 +2160,16 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+}
+
+::-moz-selection {
+  background: var(--second-color);
+  color: var(--main-color);
+}
+
+::selection {
+  background: var(--second-color);
+  color: var(--main-color);
 }
 
 .wrapper {
