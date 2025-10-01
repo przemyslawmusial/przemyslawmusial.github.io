@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bona Miody Kremowane | Produkt</title>
 <link rel="icon" href="./img/favicon.png" type="image/png">
+<link rel="stylesheet" href="./css/fancybox/fancybox.css">
 <link rel="stylesheet" href="./css/main.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -471,16 +472,62 @@
     <div class="modal-overlay"></div>
     <script src="./libraries/jquery/jquery-1.11.0.min.js"></script>
     <script src="./libraries/slick/slick.min.js"></script>
+    <script src="./libraries/fancybox/fancybox.umd.js"></script>
     <script>
-        // Miniatury -> główne zdjęcie
+        // Miniatury -> główne zdjęcie (twoje, tylko lekko doprawione)
         document.querySelectorAll('.product__thumbs .thumb').forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.thumb').forEach(b => b.classList.remove('is-active'));
+                document.querySelectorAll('.product__thumbs .thumb').forEach(b => b.classList.remove('is-active'));
                 btn.classList.add('is-active');
-                const src = btn.querySelector('img').src;
-                document.querySelector('.product__image img').src = src;
+
+                const img = btn.querySelector('img');
+                const src = img.src;
+                const alt = img.alt || '';
+
+                const main = document.querySelector('.product__image img');
+                main.src = src;
+                main.alt = alt;
             });
         });
+
+        // Fancybox: zbuduj listę slajdów z miniatur (src albo data-full)
+        function buildSlides() {
+            return Array.from(document.querySelectorAll('.product__thumbs .thumb img')).map(img => ({
+                src: img.dataset.full || img.src,
+                type: 'image',
+                alt: img.alt || ''
+            }));
+        }
+
+        // Znajdź indeks aktywnej miniatury
+        function getActiveIndex() {
+            const buttons = Array.from(document.querySelectorAll('.product__thumbs .thumb'));
+            const idx = buttons.findIndex(b => b.classList.contains('is-active'));
+            return idx >= 0 ? idx : 0;
+        }
+
+        // Klik w duże zdjęcie -> odpal Fancybox od aktualnie wybranego
+        const mainImg = document.querySelector('.product__image img');
+        if (mainImg) {
+            mainImg.setAttribute('tabindex', '0');
+
+            function openGallery() {
+                if (!window.Fancybox || typeof Fancybox.show !== 'function') return;
+                Fancybox.show(buildSlides(), {
+                    startIndex: getActiveIndex(),
+                    Thumbs: { autoStart: true },
+                    Toolbar: { display: ['close'] },
+                    dragToClose: true,
+                    Images: { zoom: true }
+                });
+            }
+
+            mainImg.addEventListener('click', openGallery);
+            mainImg.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGallery(); }
+            });
+        }
+
         // Ilość +/-
         document.querySelectorAll('.qty-btn').forEach(b => {
             b.addEventListener('click', () => {
@@ -491,6 +538,7 @@
             });
         });
     </script>
+
 
     <script src="./js/slick.js"></script>
     <script src="./js/main.js"></script>
