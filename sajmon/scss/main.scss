@@ -440,6 +440,14 @@ header {
 	}
 }
 
+.subpage-header {
+	height: 200px;
+
+	.description{
+		top: 65%;
+	}
+}
+
 .about-us-section {
 	background-color: var(--main-color);
 
@@ -1000,6 +1008,14 @@ footer {
 		}
 	}
 
+	.subpage-header {
+		.description {
+			h1 {
+				font-size: 40px;
+			}
+		}
+	}
+
 	.about-us-section {
 		.container {
 			flex-direction: row;
@@ -1265,11 +1281,11 @@ footer {
 		}
 	}
 
-	footer{
-		.main-container{
+	footer {
+		.main-container {
 			padding: 60px 20px 40px;
 
-			h3{
+			h3 {
 				font-size: 20px;
 			}
 		}

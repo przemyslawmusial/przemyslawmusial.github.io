@@ -379,6 +379,13 @@ header i:hover {
   color: var(--main-color);
 }
 
+.subpage-header {
+  height: 200px;
+}
+.subpage-header .description {
+  top: 65%;
+}
+
 .about-us-section {
   background-color: var(--main-color);
 }
@@ -834,6 +841,9 @@ footer .copyrights .container .proweb-container svg {
   }
   header .description a {
     font-size: 16px;
+  }
+  .subpage-header .description h1 {
+    font-size: 40px;
   }
   .about-us-section .container {
     flex-direction: row;
