@@ -896,7 +896,7 @@ header {
 }
 
 .contact-subpage {
-	border-bottom: 1px solid #000;
+	// border-bottom: 1px solid #000;
 	.contact-subpage-container {
 		display: flex;
 		flex-direction: column;
@@ -982,8 +982,48 @@ header {
 		}
 	}
 }
+.policy-container {
+	padding: 50px 20px;
+
+	.container {
+		margin-bottom: 20px;
+
+		p {
+			margin-bottom: 10px;
+			font-size: 14px;
+		}
+
+		a {
+			font-size: 14px;
+			text-decoration: none;
+			color: var(--main-color);
+		}
+		ol {
+			margin-left: 30px;
+			li {
+				margin: 8px 0;
+				font-size: 14px;
+			}
+		}
+		strong {
+			font-weight: bold;
+		}
+		ul {
+			margin-left: 15px;
+
+			li {
+				list-style: disc;
+				font-size: 14px;
+				&::marker {
+					color: var(--main-color);
+				}
+			}
+		}
+	}
+}
 
 footer {
+	border-top: 1px solid #000;
 	.main-container {
 		display: grid;
 		grid-template-columns: repeat(1fr, 1);
@@ -1422,6 +1462,29 @@ footer {
 
 			a {
 				font-size: 15px;
+			}
+		}
+	}
+
+	.policy-container {
+		.container {
+			p {
+				font-size: 16px;
+			}
+			a {
+				font-size: 16px;
+			}
+
+			ul {
+				li {
+					font-size: 16px;
+				}
+			}
+
+			ol {
+				li {
+					font-size: 16px;
+				}
 			}
 		}
 	}
