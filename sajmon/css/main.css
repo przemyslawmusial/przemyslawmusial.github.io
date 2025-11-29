@@ -1,3 +1,177 @@
+.about-service-section {
+  background-color: var(--main-color);
+  color: #fff;
+}
+.about-service-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.about-service-section .container .column-1 {
+  text-align: center;
+}
+.about-service-section .container .column-2 {
+  text-align: center;
+  font-size: 14px;
+}
+
+.for-who {
+  padding: 40px 20px;
+}
+.for-who .image {
+  width: 100%;
+  height: 250px;
+}
+.for-who .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+.for-who .description h2 {
+  margin: 10px 0;
+  font-family: "Piazzolla", serif;
+  font-size: 25px;
+  color: #70513a;
+}
+.for-who .description p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #383838;
+}
+.for-who .description ul {
+  margin-left: 20px;
+}
+.for-who .description ul li {
+  font-size: 14px;
+  color: #383838;
+  color: #000;
+}
+.for-who .description ul li::marker {
+  color: var(--main-color);
+}
+
+.subpage-cards-container .card .icon-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.subpage-cards-container .card p {
+  text-align: left;
+  color: #787878;
+  font-size: 13px;
+}
+.subpage-cards-container .card .details {
+  margin-top: 20px;
+  padding: 0 5px;
+  border-top: 1px solid #787878;
+  width: 100%;
+}
+.subpage-cards-container .card .details p {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: start;
+}
+.subpage-cards-container .card .details ul {
+  margin-left: 20px;
+}
+.subpage-cards-container .card .details ul li {
+  font-size: 13px;
+  color: #787878;
+}
+.subpage-cards-container .card .details ul li::marker {
+  color: var(--main-color);
+}
+
+.advantages-subpage-section .cards-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+.advantages-subpage-section .cards-container .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--second-color);
+  border-radius: 12px;
+  padding: 15px 10px;
+  box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.2);
+}
+.advantages-subpage-section .cards-container .card h3 {
+  font-family: "Piazzolla", serif;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.advantages-subpage-section .cards-container .card p {
+  text-align: center;
+  font-size: 14px;
+  color: #383838;
+}
+
+@media (min-width: 768px) {
+  .about-service-section .container {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .about-service-section .container .column-1 {
+    width: 55%;
+    text-align: left;
+  }
+  .about-service-section .container .column-1 .title {
+    text-align: left;
+  }
+  .about-service-section .container .column-2 {
+    width: 45%;
+    text-align: left;
+  }
+  .for-who {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .for-who .image {
+    width: 50%;
+    height: 300px;
+  }
+  .for-who .description {
+    width: 50%;
+  }
+  .for-who .description h2 {
+    margin: 0 0 10px;
+  }
+  .advantages-subpage-section .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .about-service-section .container {
+    gap: 40px;
+  }
+  .about-service-section .container .column-2 {
+    font-size: 16px;
+  }
+  .for-who .description h2 {
+    font-size: 32px;
+  }
+  .for-who .description p {
+    font-size: 16px;
+  }
+  .for-who .description ul li {
+    font-size: 16px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -483,7 +657,7 @@ header i:hover {
   margin: 8px 0;
   text-align: center;
 }
-.offer-section .container .cards-container .card p {
+.offer-section .container .cards-container .card .description {
   text-align: center;
   color: #787878;
   font-size: 13px;
@@ -1226,6 +1400,9 @@ footer .copyrights .container .proweb-container svg {
 @media (min-width: 1200px) {
   .process-section .cards-container {
     grid-template-columns: repeat(5, 1fr);
+  }
+  .process-section .subpage-cards-container {
+    grid-template-columns: repeat(3, 1fr);
   }
   .reviews-section .container .arrow {
     font-size: 30px;

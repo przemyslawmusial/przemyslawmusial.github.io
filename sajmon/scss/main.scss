@@ -1,3 +1,5 @@
+@import "offer-subpage.scss";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -553,7 +555,7 @@ header {
 					text-align: center;
 				}
 
-				p {
+				.description {
 					text-align: center;
 					color: #787878;
 					font-size: 13px;
@@ -1504,6 +1506,9 @@ footer {
 	.process-section {
 		.cards-container {
 			grid-template-columns: repeat(5, 1fr);
+		}
+		.subpage-cards-container{
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 
