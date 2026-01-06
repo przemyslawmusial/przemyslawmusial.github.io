@@ -3,7 +3,7 @@ header {
 	width: calc(100% - 10px);
 	margin-left: 5px;
 	border-radius: 35px;
-	height: calc(100vh - 50px);
+	height: calc(100vh - 60px);
 
 	img {
 		width: 100%;
@@ -90,7 +90,7 @@ header {
 
 @media (min-width: 768px) {
 	header {
-		height: calc(100vh - 200px);
+		height: calc(100vh - 150px);
 		.description {
 			text-align: left;
 			h1 {

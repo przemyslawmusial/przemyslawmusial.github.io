@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const nav = document.querySelector("nav");
 		const lines = document.querySelectorAll("nav .nav-container .burger .line");
 		const logo = document.querySelector("nav .nav-container img");
-		if (window.scrollY > 62) {
+		if (window.scrollY > 34) {
 			nav.classList.add("scrolled");
 			lines.forEach((line) => {
 				line.classList.add("scrolled");
