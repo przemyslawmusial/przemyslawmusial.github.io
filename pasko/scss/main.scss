@@ -1,0 +1,139 @@
+@import "./navigation.scss";
+@import "./footer.scss";
+@import "./main-page/header.scss";
+@import "./main-page/services-section.scss";
+@import "./main-page/about-us-section.scss";
+@import "./main-page/reviews-section.scss";
+@import "./main-page/team-section.scss";
+@import "./main-page/blog-section.scss";
+@import "./main-page/events-section.scss";
+@import "./main-page/map-section.scss";
+@import "./main-page/faq-section.scss";
+@import "./main-page/motto-section.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+:root {
+	--main-color: #14b4ad;
+	--second-color: #f8f5f0;
+	--third-color: #7ac3ff;
+	--fancybox-accent-color: #d0b29a;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 75px;
+}
+
+body {
+	background-color: #eeee;
+}
+
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1400px;
+}
+
+::-moz-selection {
+	background: var(--main-color);
+	color: #fff;
+}
+
+::selection {
+	background: var(--main-color);
+	color: #fff;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--main-color);
+	border-radius: 10px;
+	border: 2px solid transparent;
+	background-clip: content-box;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--main-color);
+}
+
+.section-header-text {
+	text-align: center;
+	h2 {
+		font-size: 13px;
+		font-weight: 300;
+		color: #949494;
+	}
+
+	p {
+		&:first-of-type {
+			font-size: 28px;
+		}
+
+		&:last-of-type {
+			font-size: 13px;
+			color: #696969;
+			font-weight: 300;
+		}
+	}
+
+	span {
+		color: var(--main-color);
+	}
+}
+
+.section-header-text-2 {
+	color: #fff;
+	h2 {
+		color: #fff;
+	}
+
+	p {
+		&:last-of-type {
+			color: #fff;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.section-header-text {
+		p {
+			&:first-of-type {
+				font-size: 32px;
+			}
+		}
+	}
+
+	.section-header-text-2 {
+		text-align-last: left;
+	}
+}
+@media (min-width: 992px) {
+	.section-header-text {
+		margin-bottom: 50px;
+		h2 {
+			font-size: 14px;
+		}
+		p {
+			&:first-of-type {
+				font-size: 36px;
+			}
+
+			&:last-of-type {
+				font-size: 14px;
+			}
+		}
+	}
+}

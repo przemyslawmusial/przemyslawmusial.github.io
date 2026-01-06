@@ -1,0 +1,63 @@
+.motto-section {
+	padding: 30px 20px;
+	background-color: var(--main-color);
+
+	.container {
+		text-align: center;
+		color: #fff;
+
+		h2 {
+			font-size: 13px;
+			font-weight: 300;
+		}
+
+		p {
+			font-size: 28px;
+		}
+
+		.cta-btn {
+            margin-top: 40px;
+            margin-bottom: 10px;
+			a {
+				text-decoration: none;
+				padding: 15px 25px;
+				font-size: 15px;
+				border-radius: 100px;
+				color: var(--main-color);
+				background-color: #fff;
+				border: 1px solid #fff;
+				transition: background-color 0.3s, color 0.3s;
+
+				&:hover {
+					color: #fff;
+					background-color: var(--main-color);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.motto-section {
+		.container {
+			p {
+				font-size: 32px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+    .motto-section{
+        padding: 60px 20px;
+        .container{
+            h2{
+                font-size: 14px;
+            }
+
+            p{
+                font-size: 36px;
+            }
+        }
+    }
+}
