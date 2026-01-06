@@ -1439,7 +1439,10 @@ footer .copyrights .container .proweb-container svg {
   .contact-subpage .contact-subpage-container .form-container {
     width: 50%;
   }
-}/*# sourceMappingURL=main.css.map */x) {
+}/*# sourceMappingURL=main.css.map */ 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+@media (min-width: 992px) {
   .faq-section {
     padding: 70px 20px;
   }
@@ -1615,43 +1618,42 @@ body {
   .section-header-text p:last-of-type {
     font-size: 14px;
   }
-}/*# sourceMappingURL=main.css.map */-section .container-1 .subtitle {
-    font-size: 15px;
+}/*# sourceMappingURL=main.css.map */n: center;
   }
-  .events-section .container-1 p {
-    font-size: 16px;
+  .contact-subpage .container .adress {
+    font-size: 30px;
+    text-align: center;
   }
-  .events-section .container-2 {
-    width: 60%;
-    padding: 20px 50px;
-    box-shadow: 0 60px 65px 0px rgba(4, 4, 5, 0.06);
+  .contact-subpage .contact-form-container {
+    position: relative;
+    width: 50%;
+    margin-top: 0;
   }
-  .events-section .container-2 .item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+  .contact-subpage .contact-form-container .form-info h2 {
+    font-size: 30px;
   }
-  .events-section .container-2 .item .date p {
-    font-size: 50px;
+  .news-container {
+    padding: 50px 20px;
   }
-  .events-section .container-2 .item .description p:first-of-type {
+  .news-container p {
     font-size: 20px;
   }
-  .events-section-subpage .container-2 {
-    width: 100%;
+  .history-subpage .container p {
+    font-size: 18px;
   }
-  .events-section-subpage .container-2 .item .date {
-    width: 10%;
+  .gallery-subpage .container {
+    padding: 60px 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
-  .events-section-subpage .container-2 .item .description {
-    width: 70%;
+  .gallery-subpage .container a .item .description p {
+    font-size: 24px;
   }
-  .events-section-subpage .container-2 .item a {
-    width: 20%;
+  .event-gallery .container {
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
-  .transmission-section .title h2 {
+}/*# sourceMappingURL=main.css.map */e h2 {
     font-size: 34px;
   }
   .transmission-section .title .subtitle {
