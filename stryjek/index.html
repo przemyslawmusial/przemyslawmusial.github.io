@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stryjek.pl | Producent części do myjni samochodowych bezdotykowych</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <!-- Overlay dla nawigacji (rozmazanie/ściemnienie tła) -->
+    <div class="site-overlay" id="site-overlay"></div>
+
+    <header id="site-header" class="site-header">
+        <div class="header-overlay" id="header-overlay"></div>
+
+
+        <!-- Top Bar (Desktop) -->
+        <div class="top-bar">
+            <div class="wrapper top-bar__inner">
+                <div class="top-bar__left">
+                    <span class="top-bar__bullet"></span>
+                    <span>Szybka wysyłka w 24h - <strong>zamów dziś, odbierz jutro!</strong></span>
+                </div>
+                <div class="top-bar__right">
+                    <a href="tel:+48535093202" class="top-bar__link">
+                        <img src="./icons/phone.svg" alt="Phone" class="top-bar__icon"> +48 535 093 202
+                    </a>
+                    <a href="mailto:stryjek@stryjek.pl" class="top-bar__link">
+                        <img src="./icons/mail.svg" alt="Mail" class="top-bar__icon"> stryjek@stryjek.pl
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="main-header">
+            <div class="wrapper main-header__inner">
+
+                <!-- Mobile Wrap (Mobile top strip) -->
+                <div class="main-header__mobile-wrap">
+                    <button class="menu-toggle" aria-label="Otwórz menu" id="menu-toggle">
+                        <div class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </div>
+                    </button>
+
+                    <a href="/" class="logo">
+                        <img src="./img/logo.svg" alt="Stryjek" class="logo__img">
+                    </a>
+
+                    <div class="header-actions">
+                        <a href="#" class="header-actions__btn" aria-label="Moje konto">
+                            <img src="./icons/profile.svg" alt="User" class="header-actions__icon">
+                        </a>
+                        <a href="#" class="header-actions__btn header-actions__btn--cart" aria-label="Koszyk">
+                            <span class="cart-wrapper">
+                                <img src="./icons/buy.svg" alt="Cart" class="header-actions__icon">
+                                <span class="cart-wrapper__badge">2</span>
+                            </span>
+                            <div class="cart-info">
+                                <span class="cart-info__label">Wartość koszyka</span>
+                                <span class="cart-info__price">1569,69 zł</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Search Wrap -->
+                <div class="main-header__search-wrap">
+                    <form class="search-form" action="/">
+                        <div class="search-form__select-wrap">
+                            <button type="button" class="search-form__select-toggle" aria-expanded="false"
+                                aria-label="Wybierz kategorię">
+                                <span class="search-form__select-text">Wszystkie kategorie</span>
+                                <img src="./icons/strzalka-menu-desktop.svg" class="search-form__select-arrow" alt="">
+                            </button>
+
+                            <div class="search-form__dropdown">
+                                <ul class="search-form__dropdown-list">
+                                    <li><button type="button" class="search-form__option is-active"
+                                            data-value="all">Wszystkie kategorie</button></li>
+                                    <li><button type="button" class="search-form__option" data-value="stal">Elementy
+                                            stalowe</button></li>
+                                    <li><button type="button" class="search-form__option"
+                                            data-value="chemia">Chemia</button></li>
+                                    <li><button type="button" class="search-form__option"
+                                            data-value="akcesoria">Akcesoria</button></li>
+                                </ul>
+                            </div>
+
+                            <input type="hidden" name="category" value="all" class="search-form__hidden-input">
+                        </div>
+
+                        <input type="text" class="search-form__input" placeholder="Wpisz czego szukasz..." name="s"
+                            required>
+
+                        <button type="submit" class="search-form__btn" aria-label="Szukaj">
+                            <img src="./icons/search.svg" alt="Szukaj">
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Navigation Bar (Desktop menu / Mobile drawer) -->
+        <nav class="nav-bar" id="mobile-menu">
+            <div class="nav-bar__mobile-header">
+                <span class="nav-bar__mobile-title">Menu</span>
+                <button class="nav-bar__close" id="mobile-menu-close" aria-label="Zamknij menu">
+                    <div class="nav-bar__close-icon">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="wrapper nav-bar__inner">
+                <ul class="nav-menu">
+                    <li class="nav-menu__item menu-item-has-children has-mega-menu">
+                        <a href="#" class="nav-menu__link">
+                            Elementy stalowe <img src="./icons/strzalka-menu-desktop.svg" class="nav-menu__arrow"
+                                alt="">
+                        </a>
+
+                        <div class="mega-menu">
+                            <div class="mega-menu__inner wrapper">
+
+                                <div class="mega-menu__mobile-header">
+                                    <button class="mega-menu__back" aria-label="Wróć">
+                                        <img src="./icons/strzalka-menu-desktop.svg" alt=""> Wróć
+                                    </button>
+                                    <span class="mega-menu__mobile-title">Elementy stalowe</span>
+                                </div>
+
+                                <div class="mega-menu__content">
+                                    <!-- Lista sub-kategorii -->
+                                    <div class="mega-menu__categories">
+                                        <span class="mega-menu__column-title">Elementy stalowe</span>
+                                        <ul class="mega-menu__list">
+                                            <li><a href="#"><img src="./icons/aktywna piana.svg" alt=""
+                                                        aria-hidden="true">
+                                                    Ramiona obrotowe</a></li>
+                                            <li><a href="#"><img src="./icons/mycie zasadnicze.svg" alt=""
+                                                        aria-hidden="true">Pojemniki na szczotki</a></li>
+                                            <li><a href="#"><img src="./icons/neutralizator piany.svg" alt=""
+                                                        aria-hidden="true">Stojaki i trzepaki na dywaniki<span
+                                                        class="badge badge--new">New</span></a></li>
+                                            <li><a href="#"><img src="./icons/oprysk wstepny.svg" alt=""
+                                                        aria-hidden="true">Stalowe schowki na lancę</a></li>
+                                            <li><a href="#"><img src="./icons/wszystkie.svg" alt="" aria-hidden="true">
+                                                    Wszystkie</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Produkty: Najchętniej wybierane -->
+                                    <div class="mega-menu__products">
+                                        <span class="mega-menu__column-title">Najchętniej wybierane</span>
+                                        <div class="products-grid">
+                                            <!-- Produkt 1 -->
+                                            <div class="product-card">
+                                                <div class="product-card__img-wrap">
+                                                    <img src="./img/uchyt.jpg" alt="K2 Piana aktywna do mycia 5L"
+                                                        class="product-card__img">
+                                                </div>
+                                                <div class="product-card__info">
+                                                    <span class="product-card__brand">Stryjek</span>
+                                                    <h4 class="product-card__title">Stojak na dywaniki „1200"</h4>
+                                                    <div class="product-card__price">904,50 PLN</div>
+                                                    <div class="product-card__lowest">Najniższa cena: 999,99zł</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Produkt 2 -->
+                                            <div class="product-card">
+                                                <div class="product-card__img-wrap">
+                                                    <img src="./img/uchyt.jpg" alt="K2 Piana aktywna do mycia 5L"
+                                                        class="product-card__img">
+                                                </div>
+                                                <div class="product-card__info">
+                                                    <span class="product-card__brand">Stryjek</span>
+                                                    <h4 class="product-card__title">Stojak na dywaniki „1200"</h4>
+                                                    <div class="product-card__price">904,50 PLN</div>
+                                                    <div class="product-card__lowest">Najniższa cena: 999,99zł</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="nav-menu__item menu-item-has-children has-mega-menu">
+                        <!-- Ten link służy do wyzwalania Mega Menu -->
+                        <a href="#" class="nav-menu__link">
+                            Chemia <span class="badge badge--new">New</span> <img
+                                src="./icons/strzalka-menu-desktop.svg" class="nav-menu__arrow" alt="">
+                        </a>
+
+                        <!-- Mega Menu dla kategorii Chemia -->
+                        <div class="mega-menu">
+                            <div class="mega-menu__inner wrapper">
+
+                                <div class="mega-menu__mobile-header">
+                                    <button class="mega-menu__back" aria-label="Wróć">
+                                        <img src="./icons/strzalka-menu-desktop.svg" alt=""> Wróć
+                                    </button>
+                                    <span class="mega-menu__mobile-title">Chemia</span>
+                                </div>
+
+                                <div class="mega-menu__content">
+                                    <!-- Lista sub-kategorii -->
+                                    <div class="mega-menu__categories">
+                                        <span class="mega-menu__column-title">Chemia</span>
+                                        <ul class="mega-menu__list">
+                                            <li><a href="#"><img src="./icons/aktywna piana.svg" alt=""
+                                                        aria-hidden="true">
+                                                    Aktywna piana</a></li>
+                                            <li><a href="#"><img src="./icons/mycie zasadnicze.svg" alt=""
+                                                        aria-hidden="true"> Mycie
+                                                    zasadnicze</a></li>
+                                            <li><a href="#"><img src="./icons/neutralizator piany.svg" alt=""
+                                                        aria-hidden="true"> Neutralizator piany</a></li>
+                                            <li><a href="#"><img src="./icons/oprysk wstepny.svg" alt=""
+                                                        aria-hidden="true">
+                                                    Oprysk wstępny</a></li>
+                                            <li><a href="#"><img src="./icons/sól.svg" alt="" aria-hidden="true"> Sól
+                                                    do zmiękczania wody</a></li>
+                                            <li><a href="#"><img src="./icons/wosk.svg" alt="" aria-hidden="true"> Wosk
+                                                    <span class="badge badge--new">New</span></a></li>
+                                            <li><a href="#"><img src="./icons/wszystkie.svg" alt="" aria-hidden="true">
+                                                    Wszystkie</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Produkty: Najchętniej wybierane -->
+                                    <div class="mega-menu__products">
+                                        <span class="mega-menu__column-title">Najchętniej wybierane</span>
+                                        <div class="products-grid">
+                                            <!-- Produkt 1 -->
+                                            <div class="product-card">
+                                                <div class="product-card__img-wrap">
+                                                    <img src="./img/płym.jpg" alt="K2 Piana aktywna do mycia 5L"
+                                                        class="product-card__img">
+                                                </div>
+                                                <div class="product-card__info">
+                                                    <span class="product-card__brand">K2</span>
+                                                    <h4 class="product-card__title">Piana aktywna do mycia<br>5L K2
+                                                        Active Foam</h4>
+                                                    <div class="product-card__price">49,99 PLN</div>
+                                                    <div class="product-card__lowest">Najniższa cena: 69,99 zł</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Produkt 2 -->
+                                            <div class="product-card">
+                                                <div class="product-card__img-wrap">
+                                                    <img src="./img/płym2.jpg" alt="K2 Piana aktywna do mycia 5L"
+                                                        class="product-card__img">
+                                                </div>
+                                                <div class="product-card__info">
+                                                    <span class="product-card__brand">K2</span>
+                                                    <h4 class="product-card__title">Piana aktywna do mycia<br>5L K2
+                                                        Active Foam</h4>
+                                                    <div class="product-card__price">49,99 PLN</div>
+                                                    <div class="product-card__lowest">Najniższa cena: 69,99 zł</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-menu__item menu-item-has-children has-mega-menu">
+                        <!-- Ten link służy do wyzwalania Mega Menu -->
+                        <a href="#" class="nav-menu__link">Akcesoria<img src="./icons/strzalka-menu-desktop.svg"
+                                class="nav-menu__arrow" alt="">
+                        </a>
+
+                        <div class="mega-menu">
+                            <div class="mega-menu__inner wrapper">
+
+                                <div class="mega-menu__mobile-header">
+                                    <button class="mega-menu__back" aria-label="Wróć">
+                                        <img src="./icons/strzalka-menu-desktop.svg" alt=""> Wróć
+                                    </button>
+                                    <span class="mega-menu__mobile-title">Akcesoria</span>
+                                </div>
+
+                                <div class="mega-menu__content">
+                                    <!-- Lista sub-kategorii -->
+                                    <div class="mega-menu__categories">
+                                        <span class="mega-menu__column-title">Akcesoria</span>
+                                        <ul class="mega-menu__list">
+                                            <li><a href="#"><img src="./icons/aktywna piana.svg" alt=""
+                                                        aria-hidden="true">
+                                                    Pompy i części</a></li>
+                                            <li><a href="#"><img src="./icons/mycie zasadnicze.svg" alt=""
+                                                        aria-hidden="true">Węże i złącza</a></li>
+                                            <li><a href="#"><img src="./icons/neutralizator piany.svg" alt=""
+                                                        aria-hidden="true">Lance i pistolety <span
+                                                        class="badge badge--new">New</span></a></li>
+                                            <li><a href="#"><img src="./icons/oprysk wstepny.svg" alt=""
+                                                        aria-hidden="true">Dozowanie chemii</a></li>
+                                            <li><a href="#"><img src="./icons/wszystkie.svg" alt="" aria-hidden="true">
+                                                    Wszystkie</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Produkty: Najchętniej wybierane -->
+                                    <div class="mega-menu__products">
+                                        <span class="mega-menu__column-title">Najchętniej wybierane</span>
+                                        <div class="products-grid">
+                                            <!-- Produkt 1 -->
+                                            <div class="product-card">
+                                                <div class="product-card__img-wrap">
+                                                    <img src="./img/płym.jpg" alt="K2 Piana aktywna do mycia 5L"
+                                                        class="product-card__img">
+                                                </div>
+                                                <div class="product-card__info">
+                                                    <span class="product-card__brand">K2</span>
+                                                    <h4 class="product-card__title">Piana aktywna do mycia<br>5L K2
+                                                        Active Foam</h4>
+                                                    <div class="product-card__price">49,99 PLN</div>
+                                                    <div class="product-card__lowest">Najniższa cena: 69,99 zł</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Produkt 2 -->
+                                            <div class="product-card">
+                                                <div class="product-card__img-wrap">
+                                                    <img src="./img/płym2.jpg" alt="K2 Piana aktywna do mycia 5L"
+                                                        class="product-card__img">
+                                                </div>
+                                                <div class="product-card__info">
+                                                    <span class="product-card__brand">K2</span>
+                                                    <h4 class="product-card__title">Piana aktywna do mycia<br>5L K2
+                                                        Active Foam</h4>
+                                                    <div class="product-card__price">49,99 PLN</div>
+                                                    <div class="product-card__lowest">Najniższa cena: 69,99 zł</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="nav-menu__link">Promocje</a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="#" class="nav-menu__link nav-menu__link--hot">
+                            Hit dnia <span class="badge badge--hot">Hot</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="main-slider">
+            <div class="main-slider__item">
+                <div class="wrapper description">
+                    <p class="subtitle">Wszystko, czego potrzebujesz w jednym miejscu</p>
+                    <h1 class="title">Kompleksowe rozwiązania dla Twojej myjni</h1>
+                    <a href="#" class="button">Sprawdź produkty</a>
+                </div>
+            </div>
+            <div class="main-slider__item main-slider__item--second">
+                <div class="wrapper description">
+                    <p class="subtitle">Skuteczne mycie i perfekcyjny połysk</p>
+                    <h1 class="title">Profesjonalna chemia, do której klienci wracają</h1>
+                    <a href="#" class="button">Odkryj chemię</a>
+                </div>
+            </div>
+            <div class="main-slider__item main-slider__item--third">
+                <div class="wrapper description">
+                    <p class="subtitle">Niezawodność na każdym stanowisku mycia</p>
+                    <h1 class="title">Części i akcesoria, na których możesz polegać</h1>
+                    <a href="#" class="button">Wybierz akcesoria</a>
+                </div>
+            </div>
+        </section>
+
+        <div style="min-height: 2000px; padding-top: 5rem;">
+        </div>
+    </main>
+    <script src="./libraries/jquery/jquery-1.11.0.min.js"></script>
+    <script src="./libraries/slick/slick.min.js"></script>
+    <script src="./js/slick.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

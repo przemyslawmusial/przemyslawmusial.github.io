@@ -1,0 +1,19 @@
+$color-primary: #EF233C;
+$color-gray: #5C626D;
+$color-green: #1ABA1A;
+$color-bg-light: #F5F6F8;
+$color-text: #111827;
+$color-border: #E5E7EB;
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$font-main: 'Inter', sans-serif;
+
+$bp-md: 768px;
+$bp-lg: 1024px; // Próg wejścia dla Desktopu
+
+@mixin desktop {
+    @media (min-width: #{$bp-lg}) {
+        @content;
+    }
+}

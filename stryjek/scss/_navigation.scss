@@ -1,0 +1,916 @@
+.site-header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: $color-white;
+	z-index: 100;
+	border-bottom: 1px solid $color-border;
+	transition:
+		transform 0.4s ease-in-out,
+		box-shadow 0.4s ease-in-out;
+
+	@include desktop {
+		top: -41px; // Pozwala top-bar naturalnie ominąć górną krawędź ekranu
+	}
+
+	&.header--hidden {
+		transform: translateY(-100%);
+	}
+
+	&.header--scrolled {
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	}
+
+	&.header--at-top {
+		transition: none; // Natychmiastowe wskoczenie na miejsce przy uderzeniu w sufit
+	}
+
+	&.header--no-click {
+		pointer-events: none; // Rozwiązanie z-index buga na mobile
+		@include desktop {
+			pointer-events: auto;
+		}
+	}
+}
+
+// Lokalny overlay dla ciemnego tła headera podczas otwarcia mobilnego menu
+.header-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(4px);
+	z-index: 90; // Ponad zawartością headera, poniżej bocznego menu (.nav-bar = z-index 101)
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity 0.3s ease,
+		visibility 0.3s ease;
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@include desktop {
+		display: none !important; // Nigdy nie wyświetlaj na desktopie, by nie było ciemnego paska
+	}
+}
+
+// Top Bar ukryty na komórkach
+.top-bar {
+	display: none;
+	font-size: 13px;
+	color: $color-gray;
+	border-bottom: 1px solid $color-border;
+
+	@include desktop {
+		display: block; // Pokazujemy na desktopie
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 40px;
+	}
+
+	&__left {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		line-height: 1;
+
+		strong {
+			color: $color-text;
+		}
+	}
+
+	&__bullet {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: $color-primary;
+		// border: 2px solid rgba(239, 35, 59, 0.1);
+	}
+
+	&__right {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	&__icon {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+// Główny panel Headera
+.main-header {
+	background-color: $color-white;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		padding-top: 12px;
+		padding-bottom: 12px;
+
+		@include desktop {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+	}
+
+	// Pierwszy rząd na komórkach (Menu | Logo | Ikonki User/Cart)
+	&__mobile-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		position: relative; // Dla idealnego wyśrodkowania logo absolutnego
+		min-height: 50px; // Gwarantuje miejsce dla logo wyjętego z obiegu (absolute)
+
+		@include desktop {
+			display: contents; // Pozwalamy na wypuszczenie dzieci do flexa głównego kontenera
+		}
+	}
+
+	&__search-wrap {
+		width: 100%;
+		margin-top: 12px;
+
+		@include desktop {
+			margin-top: 0;
+			order: 2; // Wyszukiwarka na drugim miejscu (środek)
+			flex: 1;
+			max-width: 600px;
+			margin: 0 32px;
+		}
+	}
+}
+
+// Logo
+.logo {
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
+	@include desktop {
+		position: static;
+		transform: none;
+		order: 1; // Logo na pierwszym miejscu (lewo)
+	}
+
+	&__img {
+		height: 50px;
+
+		@include desktop {
+			height: 60px;
+		}
+	}
+}
+
+// Przycisk Hamburgera
+.menu-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+
+	@include desktop {
+		display: none; // Na desktopie nawigacja na stałe zamiast hamburgera
+	}
+
+	.hamburger-box {
+		width: 24px;
+		height: 16px;
+		position: relative;
+	}
+
+	.hamburger-inner {
+		display: block;
+		top: 50%;
+		margin-top: -1px;
+		width: 100%;
+		height: 2px;
+		background-color: $color-text;
+		border-radius: 2px;
+		position: absolute;
+		transition:
+			transform 0.2s ease,
+			background-color 0s 0.2s;
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: $color-text;
+			border-radius: 2px;
+			position: absolute;
+			transition: transform 0.2s ease;
+		}
+
+		&::before {
+			top: -6px;
+		}
+
+		&::after {
+			bottom: -6px;
+		}
+	}
+
+	// Usunięto animację .is-active na prośbę użytkownika
+}
+
+// Ikonki User / Cart
+.header-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	@include desktop {
+		gap: 10px;
+		order: 3; // Ikonki na trzecim miejscu (prawo)
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		color: $color-text;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	&__icon {
+		width: auto;
+		height: 30px;
+	}
+}
+
+.cart-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__badge {
+		position: absolute;
+		top: -4px;
+		right: -4px;
+		background-color: $color-primary;
+		color: $color-white;
+		font-size: 11px;
+		font-weight: 700;
+		min-width: 18px;
+		height: 18px;
+		border-radius: 9px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 2px solid $color-white;
+	}
+}
+
+.cart-info {
+	display: none; // Ukryte na komórkach
+
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__label {
+		font-size: 13px;
+		color: $color-text;
+		font-weight: 600;
+	}
+
+	&__price {
+		font-size: 13px;
+		color: $color-gray;
+	}
+}
+
+// Wyszukiwarka
+.search-form {
+	display: flex;
+	align-items: center;
+	height: 36px; // Trochę mniejsze na mobile zgodnie z życzeniem
+	border: 1px solid $color-border;
+	border-radius: 8px;
+	background-color: $color-white;
+
+	@include desktop {
+		height: 44px; // Przywracamy klasyczne 44px na dużym ekranie
+		border-radius: 8px;
+	}
+
+	&__select-wrap {
+		display: none; // Ukryte na mobilnych ze wzgledu na brak miejsca
+		position: relative;
+		height: 100%;
+		align-items: center;
+		border-right: 1px solid $color-border; // Zmiana prawego bordera bo wróciło na lewą stronę
+
+		@include desktop {
+			display: flex;
+		}
+	}
+
+	&__select-toggle {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 32px 0 16px;
+		font-size: 13px;
+		font-weight: 500;
+		color: $color-text;
+		background-color: transparent;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
+		border-top-left-radius: 8px; // Ponieważ na .search-form wymusiłem usunięcie overflow: hidden, zaokrąglamy sam przycisk by szary :hover nie wystawał poza lewy-górny i lewy-dolny róg inputu
+		border-bottom-left-radius: 8px;
+
+		&:hover {
+			background-color: $color-bg-light;
+		}
+	}
+
+	&__select-arrow {
+		position: absolute;
+		right: 12px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 12px;
+		height: 12px;
+		pointer-events: none;
+		transition: transform 0.2s ease;
+	}
+
+	// Obrot strzałki przy otwartym menu
+	&__select-wrap.is-open &__select-arrow {
+		transform: translateY(-50%) rotate(180deg);
+	}
+
+	// Nowy Dropdown (Stylizowany na spójny, jasny motyw platformy)
+	&__dropdown {
+		position: absolute;
+		top: calc(100% + 8px); // 8px odstępu od paska szukajki
+		left: 0; // Skoro jest z lewej to przylega do lewej części inputu
+		width: 250px;
+		background-color: $color-white; // Białe tło
+		border: 1px solid $color-border; // Cieńka ramka, taka jak cała reszta sekcji
+		border-radius: 8px;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); // Delikatniejszy, jaśniejszy cień
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-10px);
+		transition:
+			opacity 0.2s ease,
+			transform 0.2s ease,
+			visibility 0.2s ease;
+		z-index: 1000;
+		padding: 8px 0;
+	}
+
+	&__select-wrap.is-open &__dropdown {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	&__dropdown-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__option {
+		width: 100%;
+		text-align: left;
+		padding: 10px 20px;
+		font-size: 13px;
+		font-weight: 500;
+		color: $color-text; // Klasyczny czarno-szary tekst
+		background-color: transparent;
+		transition: all 0.2s ease;
+
+		&:hover,
+		&.is-active {
+			background-color: $color-bg-light; // Ekstralekkie tło hovera
+			color: $color-primary; // Podświetlenie na czerwony z marki
+		}
+	}
+
+	&__input {
+		flex: 1;
+		height: 100%;
+		padding: 0 16px 0 4px; // Minimalny odstęp z lewej, bo ikona jest przed inputem
+		font-size: 13px;
+		color: $color-text;
+
+		@include desktop {
+			padding: 0 16px; // Standardowe ułożenie na desktop
+		}
+
+		&::placeholder {
+			color: $color-gray;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 100%;
+		background-color: transparent;
+		order: -1; // Lupka na skrajnej lewej
+
+		@include desktop {
+			order: 0; // Przywracamy po prawej na desktopie
+			border-radius: 8px;
+			background-color: $color-primary;
+			transition: background-color 0.2s ease;
+
+			&:hover {
+				background-color: darken($color-primary, 5%);
+			}
+		}
+
+		img {
+			width: 16px; // Ciut mniejsza do małego forma
+			height: 16px;
+			opacity: 0.4;
+			filter: brightness(
+				0
+			); // Wymusza kolor czarny (nawet jak SVG jest bazowo białe) - opacity dodaje efekt szarości
+
+			@include desktop {
+				width: 20px;
+				height: 20px;
+				opacity: 1;
+				filter: brightness(0) invert(1); // Powrót naturalnie białej ikony (odwrócony czarny z powrotem na biel)
+			}
+		}
+	}
+}
+
+// ==========================================
+// 5. Nawigacja / Mobile Drawer Offcanvas
+// ==========================================
+.nav-bar {
+	// Styl dla Mobile: Boczne wysuwane menu
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 320px;
+	max-width: 90%;
+	height: 100vh;
+	background-color: $color-white;
+	z-index: 101; // Ponad overlay
+	transform: translateX(-100%);
+	pointer-events: auto; // Musi być klikalne zawsze, nawet jak header--no-click jest włączony
+	transition: transform 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+
+	&.is-open {
+		transform: translateX(0);
+	}
+
+	@include desktop {
+		// Powrót do formy paska dla desktopu
+		position: relative;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		transform: none;
+		z-index: auto;
+		overflow-y: visible;
+		border-top: 1px solid $color-border;
+		background-color: transparent;
+	}
+
+	&__mobile-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 16px 20px;
+		border-bottom: 1px solid $color-border;
+
+		@include desktop {
+			display: none; // Ukryte na dekstpoie
+		}
+	}
+
+	&__mobile-title {
+		font-size: 18px;
+		font-weight: 600;
+		color: $color-text;
+	}
+
+	&__close {
+		width: 32px;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+
+		&-icon {
+			width: 20px;
+			height: 20px;
+			position: relative;
+
+			span {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $color-text;
+				border-radius: 2px;
+
+				&:first-child {
+					transform: translateY(-50%) rotate(45deg);
+				}
+
+				&:last-child {
+					transform: translateY(-50%) rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	&__inner {
+		padding: 0; // Reset na mobilce dla linków pełnej szerokości
+		@include desktop {
+			padding: 0 1rem;
+		}
+	}
+}
+
+// Lista Menu Głównego
+.nav-menu {
+	display: flex;
+	flex-direction: column;
+
+	@include desktop {
+		flex-direction: row;
+		gap: 32px;
+	}
+
+	&__item {
+		border-bottom: 1px solid $color-border;
+
+		@include desktop {
+			border-bottom: none;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start; // Zmiana ze space-between, by teksty i badge się trzymały
+		gap: 8px; // Odstęp między tekstem a przypinką (badge) na mobile
+		padding: 16px 20px;
+		font-size: 14px;
+		font-weight: 500;
+		color: $color-text;
+		transition: color 0.2s ease;
+
+		@include desktop {
+			padding: 16px 0;
+			gap: 6px;
+			font-size: 13px;
+		}
+
+		&:hover {
+			color: $color-primary;
+		}
+
+		&--hot {
+			color: $color-primary;
+		}
+	}
+
+	&__arrow {
+		width: 16px;
+		height: 16px;
+		margin-left: auto; // Spycha wymuszenie strzałki do prawej krawędzi
+		transition: transform 0.2s ease;
+
+		// Na mobile obracamy w prawą stronę, jakby otwierało głębszy poziom
+		transform: rotate(-90deg);
+
+		@include desktop {
+			// Na desktop w dół, domyślnie
+			transform: rotate(0);
+		}
+
+		// Jeżeli podmenu jest aktywne/otwarte
+		.nav-menu__link.is-active & {
+			@include desktop {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+// ==========================================
+// 6. Mega Menu (Zagnieżdżone kategorie)
+// ==========================================
+.mega-menu {
+	// Na komórce działa jako kolejny "panel" wsuwający się z prawa na lewo
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $color-bg-light;
+	z-index: 102;
+	transform: translateX(100%);
+	transition: transform 0.3s ease;
+	overflow-y: auto;
+
+	&.is-open {
+		transform: translateX(0);
+	}
+
+	@include desktop {
+		// Na desktop to absolutny panel wysuwający się spod headera
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: auto;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(
+			-10px
+		); // Leciutkie przesunięcie ku górze do animacji wjazdu
+		transition:
+			opacity 0.2s ease,
+			transform 0.2s ease,
+			visibility 0.2s ease;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+		border-top: 1px solid $color-border;
+		padding-bottom: 32px;
+		z-index: 95;
+
+		// Jeśli ma klasę is-open na desktopie
+		&.is-open {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(
+				0
+			); // Płynnie powraca na domyślne współrzędne pionowe
+		}
+	}
+
+	&__inner {
+		padding: 0;
+		@include desktop {
+			padding: 0 1rem;
+		}
+	}
+
+	&__mobile-header {
+		display: flex;
+		align-items: center;
+		padding: 16px 10px;
+		background-color: $color-white;
+		border-bottom: 1px solid $color-border;
+
+		@include desktop {
+			display: none;
+		}
+	}
+
+	&__back {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font-size: 12px;
+		font-weight: 500;
+		color: $color-gray;
+
+		img {
+			width: 16px;
+			height: 16px;
+			rotate: 90deg;
+		}
+	}
+
+	&__mobile-title {
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 16px;
+		font-weight: 600;
+		color: $color-text;
+		transform: translateX(
+			-16px
+		); // Korekta wizualna wyśrodkowania za brakujący element po prawej
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+
+		@include desktop {
+			flex-direction: row;
+			gap: 64px;
+			padding-top: 32px;
+		}
+	}
+
+	&__categories {
+		@include desktop {
+			flex: 1; // 50% szerokości dla kontenera całych kategorii
+		}
+	}
+
+	&__column-title {
+		display: block;
+		font-size: 13px;
+		color: $color-gray;
+		margin-bottom: 16px;
+		padding: 24px 20px 0; // Odstępy dla Mobile
+
+		@include desktop {
+			padding: 0;
+			margin-bottom: 24px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		background-color: $color-white;
+
+		@include desktop {
+			background-color: transparent;
+			display: block; // Wyłączamy flexa i grida
+			column-count: 2; // Dynamicznie dzieli treść na 2 symetryczne kolumny (od góry w dół)
+			column-gap: 32px;
+		}
+
+		li {
+			border-bottom: 1px solid $color-border;
+
+			@include desktop {
+				border-bottom: none;
+				margin-bottom: 20px; // Zastępuje usunięty "row-gap"
+				break-inside: avoid; // Zabezpiecza przed "złamaniem" jednego linku wpół na dwóch kolumnach
+			}
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			padding: 16px 20px;
+			font-size: 14px;
+			font-weight: 500;
+			color: $color-text;
+			transition: color 0.3s;
+
+			@include desktop {
+				padding: 0;
+				font-size: 14px;
+
+				&:hover {
+					color: $color-primary;
+				}
+			}
+
+			img {
+				width: 20px;
+				height: 20px;
+				margin-right: 12px;
+				opacity: 0.6;
+			}
+		}
+	}
+
+	&__products {
+		padding-bottom: 32px;
+
+		@include desktop {
+			padding-bottom: 0;
+			flex: 1;
+		}
+	}
+}
+
+// Produkty wewnątrz Mega Menu
+.products-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 16px;
+	padding: 0 20px; // Mobilne paddingi
+
+	@include desktop {
+		padding: 0;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 24px;
+	}
+}
+
+.product-card {
+	display: flex;
+	background-color: $color-white;
+	border-radius: 16px;
+	overflow: hidden;
+	padding: 12px;
+	border: 1px solid $color-border;
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+
+	&:hover {
+		border-color: $color-primary;
+		box-shadow: 0 4px 12px rgba(239, 35, 60, 0.08); // Lekki primary cień
+	}
+
+	&__img-wrap {
+		width: 80px;
+		height: 80px;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $color-white;
+
+		@include desktop {
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	&__img {
+		max-height: 100%;
+		max-width: 100%;
+		object-fit: contain;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 16px;
+	}
+
+	&__brand {
+		font-size: 11px;
+		color: $color-gray;
+		text-transform: uppercase;
+		margin-bottom: 2px;
+	}
+
+	&__title {
+		font-size: 13px;
+		font-weight: 600;
+		color: $color-text;
+		line-height: 1.3;
+		margin-bottom: 8px;
+	}
+
+	&__price {
+		font-size: 18px;
+		font-weight: 500;
+		color: $color-green;
+	}
+
+	&__lowest {
+		font-size: 12px;
+		color: $color-gray;
+	}
+}
