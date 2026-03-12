@@ -253,4 +253,45 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // === 6. OFFER SECTION TABS (z fade animacją) ===
+    const offerTabBtns = document.querySelectorAll('.offer-tab-btn');
+    const offerPanels  = document.querySelectorAll('.offer-panel');
+
+    if (offerTabBtns.length > 0 && offerPanels.length > 0) {
+        offerTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-offer');
+                const nextPanel = document.getElementById(`offer-${target}`);
+
+                if (!nextPanel || nextPanel.classList.contains('is-active')) return;
+
+                // Znajdź aktualnie aktywny panel
+                const currentPanel = document.querySelector('.offer-panel.is-active');
+
+                // Aktywuj przycisk
+                offerTabBtns.forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+
+                if (currentPanel) {
+                    // Fade out → swap → fade in
+                    currentPanel.style.opacity = '0';
+                    setTimeout(() => {
+                        currentPanel.classList.remove('is-active');
+                        currentPanel.style.opacity = '';
+
+                        nextPanel.classList.add('is-active');
+                        // requestAnimationFrame żeby przeglądarka "zobaczyła" display:flex przed fade-in
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => {
+                                nextPanel.style.opacity = '1';
+                            });
+                        });
+                    }, 300); // czas trwania CSS transition na opacity (0.35s → 300ms buffer)
+                } else {
+                    nextPanel.classList.add('is-active');
+                }
+            });
+        });
+    }
 });

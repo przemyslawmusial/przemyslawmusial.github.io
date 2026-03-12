@@ -1,0 +1,246 @@
+// === PRODUCTS SLIDER SECTION ===
+
+.products-container-section {
+	padding: 40px 0 48px;
+	background-color: $color-bg-light;
+
+	@include tablet {
+		padding: 48px 0 56px;
+	}
+
+	@include desktop {
+		padding: 56px 0 64px;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 28px;
+
+		@include tablet {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__title {
+		font-size: 22px;
+		font-weight: 700;
+		color: $color-text;
+
+		@include tablet {
+			font-size: 24px;
+		}
+
+		@include desktop {
+			font-size: 26px;
+		}
+	}
+
+	&__arrows {
+		display: flex;
+		gap: 8px;
+	}
+}
+
+// Custom arrow buttons
+.products-slider-prev,
+.products-slider-next {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid $color-border;
+	background: $color-white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition:
+		background 0.2s,
+		border-color 0.2s,
+		opacity 0.2s;
+
+	img {
+		width: 12px;
+		height: 12px;
+		object-fit: contain;
+	}
+
+	&:hover:not(.is-disabled) {
+		background: $color-bg-light;
+		border-color: darken(#e5e7eb, 10%);
+	}
+
+	// Stan nieaktywny (krawędź slidera)
+	&.is-disabled {
+		opacity: 0.35;
+		cursor: default;
+		pointer-events: none;
+	}
+}
+
+.products-slider-prev img {
+	transform: rotate(90deg);
+}
+
+.products-slider-next img {
+	transform: rotate(-90deg);
+}
+
+// Slider wrap – overflow hidden dla "peek" efektu na mobile
+.products-slider-wrap {
+	overflow: hidden;
+}
+
+// Slick reset / spacing between slides
+.products-slider {
+	.slick-list {
+		overflow: visible; // pozwala na "peek" następnej karty
+		margin: 0 -8px;
+
+		// Peek następnej karty przez padding (działa poprawnie z integer slidesToShow)
+		// Na mobile (+tablet) pokazujemy ~30% następnej karty
+		@media (max-width: 767px) {
+			padding-right: 28% !important;
+		}
+
+		@media (min-width: 768px) and (max-width: 1023px) {
+			padding-right: 18% !important;
+		}
+	}
+
+	// Równa wysokość kart – flex na track
+	.slick-track {
+		display: flex;
+		align-items: stretch;
+	}
+
+	.slick-slide {
+		padding: 0 8px;
+		height: auto; // nadpisuje inline height ustawiany przez Slick
+
+		> div {
+			height: 100%;
+		}
+	}
+}
+
+// Single product slide card
+.product-slide {
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		background: $color-white;
+		border-radius: 12px;
+		overflow: hidden;
+		text-decoration: none;
+		color: inherit;
+		transition: box-shadow 0.25s ease;
+		padding: 16px;
+		position: relative; // potrzebne dla absolutnych odznak
+
+		&:hover {
+			box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+		}
+	}
+
+	&__badges {
+		position: absolute;
+		top: 12px;
+		left: 12px;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		z-index: 1;
+	}
+
+	&__img-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 160px;
+		margin-bottom: 16px;
+
+		@include desktop {
+			min-height: 140px;
+		}
+	}
+
+	&__img {
+		max-width: 100%;
+		max-height: 160px;
+		object-fit: contain;
+
+		@include desktop {
+			max-height: 140px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		flex: 1;
+	}
+
+	&__brand {
+		font-size: 12px;
+		color: $color-gray;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: 600;
+		color: $color-text;
+		line-height: 1.35;
+		margin: 0 0 8px;
+
+		@include desktop {
+			font-size: 13px;
+		}
+	}
+
+	&__price-block {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		margin-top: auto;
+	}
+
+	&__price {
+		font-size: 18px;
+		font-weight: 700;
+		color: $color-green;
+
+		@include desktop {
+			font-size: 16px;
+		}
+	}
+
+	&__lowest {
+		font-size: 12px;
+		color: $color-gray;
+	}
+}
+
+// Badge labels on cards
+.badge-label {
+	display: inline-block;
+	font-size: 11px;
+	padding: 2px 5px;
+	border-radius: 4px;
+	width: fit-content;
+
+	&--promo {
+		background-color: $color-primary;
+		color: $color-white;
+	}
+
+	&--new {
+		background-color: $color-green;
+		color: $color-white;
+	}
+}
