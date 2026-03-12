@@ -757,18 +757,23 @@
                 <p class="offer-section__subtitle">Co oferujemy</p>
                 <h2 class="offer-section__title">Kompleksowe wyposażenie myjni - od autorskich konstrukcji po
                     profesjonalną chemię i niezawodne akcesoria</h2>
+            </div>
 
-                <div class="offer-tabs">
-                    <button class="offer-tab-btn is-active" data-offer="stal">Elementy Stalowe</button>
-                    <button class="offer-tab-btn" data-offer="chemia">Chemia</button>
-                    <button class="offer-tab-btn" data-offer="akcesoria">Akcesoria</button>
+            <!-- Sticky tabs bar (mobile) -->
+            <div class="offer-tabs-bar">
+                <div class="wrapper">
+                    <div class="offer-tabs">
+                        <button class="offer-tab-btn is-active" data-offer="stal">Elementy Stalowe</button>
+                        <button class="offer-tab-btn" data-offer="chemia">Chemia</button>
+                        <button class="offer-tab-btn" data-offer="akcesoria">Akcesoria</button>
+                    </div>
                 </div>
             </div>
 
             <div class="wrapper offer-section__panels">
 
                 <!-- Panel: Elementy Stalowe -->
-                <div class="offer-panel is-active" id="offer-stal">
+                <div class="offer-panel is-active is-visible" id="offer-stal">
                     <div class="offer-panel__content">
                         <h3 class="offer-panel__heading">Własna produkcja precyzyjnych podzespołów ze stali nierdzewnej
                         </h3>
@@ -829,6 +834,194 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <section class="categories-links-section">
+            <div class="wrapper categories-links-section__grid">
+
+                <div class="cat-link-card">
+                    <div class="cat-link-card__body">
+                        <h3 class="cat-link-card__title">Solidna konstrukcja to podstawa wydajnej myjni</h3>
+                        <a href="#" class="cat-link-card__btn">Sprawdź produkty</a>
+                    </div>
+                    <div class="cat-link-card__img-wrap">
+                        <img src="./img/stalowe.jpg" alt="Elementy stalowe" class="cat-link-card__img">
+                    </div>
+                </div>
+
+                <div class="cat-link-card">
+                    <div class="cat-link-card__body">
+                        <h3 class="cat-link-card__title">Perfekcyjna czystość zaczyna się od dobrej chemii</h3>
+                        <a href="#" class="cat-link-card__btn">Sprawdź produkty</a>
+                    </div>
+                    <div class="cat-link-card__img-wrap">
+                        <img src="./img/chemia.jpg" alt="Chemia" class="cat-link-card__img">
+                    </div>
+                </div>
+
+                <div class="cat-link-card">
+                    <div class="cat-link-card__body">
+                        <h3 class="cat-link-card__title">Niezbędne akcesoria dla sprawnego działania stanowiska</h3>
+                        <a href="#" class="cat-link-card__btn">Sprawdź produkty</a>
+                    </div>
+                    <div class="cat-link-card__img-wrap">
+                        <img src="./img/akcesoria.jpg" alt="Akcesoria" class="cat-link-card__img">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="products-container-section">
+            <div class="wrapper products-container-section__header">
+                <h2 class="products-container-section__title">Wybrane dla Ciebie</h2>
+                <div class="products-container-section__arrows">
+                    <button class="products-slider-prev" aria-label="Poprzedni">
+                        <img src="./icons/strzalka-menu-desktop.svg" alt="">
+                    </button>
+                    <button class="products-slider-next" aria-label="Następny">
+                        <img src="./icons/strzalka-menu-desktop.svg" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="wrapper products-slider-wrap">
+                <div class="products-slider">
+
+                    <!-- Karta 1 -->
+                    <div class="product-slide">
+                        <a href="#" class="product-slide__inner">
+                            <div class="product-slide__badges">
+                                <span class="badge-label badge-label--promo">Promocja</span>
+                                <span class="badge-label badge-label--new">Nowość</span>
+                            </div>
+                            <div class="product-slide__img-wrap">
+                                <img src="./img/KARCHER-RM-806-5L-PIANA-AKTYWNA-SUPER-KONCENTRAT.jpg"
+                                    alt="Karcher RM 806 10l Piana Aktywna Super Koncentrat" class="product-slide__img">
+                            </div>
+                            <div class="product-slide__info">
+                                <span class="product-slide__brand">KARCHER</span>
+                                <h3 class="product-slide__title">Karcher RM 806 10l Piana Aktywna Super Koncentrat</h3>
+                                <div class="product-slide__price-block">
+                                    <span class="product-slide__price">119,99 PLN</span>
+                                    <span class="product-slide__lowest">Najniższa cena: 139,99 zł</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Karta 2 -->
+                    <div class="product-slide">
+                        <a href="#" class="product-slide__inner">
+                            <div class="product-slide__badges">
+                                <!-- <span class="badge-label badge-label--promo">Promocja</span>
+                                <span class="badge-label badge-label--new">Nowość</span> -->
+                            </div>
+                            <div class="product-slide__img-wrap">
+                                <img src="./img/płym.jpg"
+                                    alt="Płyn do mycia silników i karoserii TENZI Super Green Specjal 5l"
+                                    class="product-slide__img">
+                            </div>
+                            <div class="product-slide__info">
+                                <span class="product-slide__brand">TENZI</span>
+                                <h3 class="product-slide__title">Płyn do mycia silników i karoserii TENZI Super Green
+                                    Specjal 5l</h3>
+                                <div class="product-slide__price-block">
+                                    <span class="product-slide__price">89,99 PLN</span>
+                                    <span class="product-slide__lowest">Najniższa cena: 99,99 zł</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Karta 3 -->
+                    <div class="product-slide">
+                        <a href="#" class="product-slide__inner">
+                            <div class="product-slide__badges">
+                                <!-- <span class="badge-label badge-label--promo">Promocja</span> -->
+                                <span class="badge-label badge-label--new">Nowość</span>
+                            </div>
+                            <div class="product-slide__img-wrap">
+                                <img src="./img/uchyt.jpg" alt="Karcher RM 806 10l Piana Aktywna Super Koncentrat"
+                                    class="product-slide__img">
+                            </div>
+                            <div class="product-slide__info">
+                                <span class="product-slide__brand">stryjek</span>
+                                <h3 class="product-slide__title">Stojak na dywaniki "1200"</h3>
+                                <div class="product-slide__price-block">
+                                    <span class="product-slide__price">904,50 PLN</span>
+                                    <span class="product-slide__lowest">Najniższa cena: 950,00 zł</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Karta 4 -->
+                    <div class="product-slide">
+                        <a href="#" class="product-slide__inner">
+                            <div class="product-slide__badges">
+                                <span class="badge-label badge-label--promo">Promocja</span>
+                                <span class="badge-label badge-label--new">Nowość</span>
+                            </div>
+                            <div class="product-slide__img-wrap">
+                                <img src="./img/płym2.jpg" alt="Piana aktywna do mycia 5L K2 Active Foam"
+                                    class="product-slide__img">
+                            </div>
+                            <div class="product-slide__info">
+                                <span class="product-slide__brand">K2</span>
+                                <h3 class="product-slide__title">Piana aktywna do mycia 5L K2 Active Foam</h3>
+                                <div class="product-slide__price-block">
+                                    <span class="product-slide__price">119,99 PLN</span>
+                                    <span class="product-slide__lowest">Najniższa cena: 136,99 zł</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Karta 5 -->
+                    <div class="product-slide">
+                        <a href="#" class="product-slide__inner">
+                            <div class="product-slide__badges">
+                                <!-- <span class="badge-label badge-label--promo">Promocja</span>
+                                <span class="badge-label badge-label--new">Nowość</span> -->
+                            </div>
+                            <div class="product-slide__img-wrap">
+                                <img src="./img/KARCHER-RM-806-5L-PIANA-AKTYWNA-SUPER-KONCENTRAT.jpg"
+                                    alt="Karcher RM 806 10l Piana Aktywna Super Koncentrat" class="product-slide__img">
+                            </div>
+                            <div class="product-slide__info">
+                                <span class="product-slide__brand">KARCHER</span>
+                                <h3 class="product-slide__title">Karcher RM 806 10l Piana Aktywna Super Koncentrat</h3>
+                                <div class="product-slide__price-block">
+                                    <span class="product-slide__price">119,99 PLN</span>
+                                    <span class="product-slide__lowest">Najniższa cena: 139,99 zł</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Karta 6 -->
+                    <div class="product-slide">
+                        <a href="#" class="product-slide__inner">
+                            <div class="product-slide__badges">
+                                <span class="badge-label badge-label--promo">Promocja</span>
+                            </div>
+                            <div class="product-slide__img-wrap">
+                                <img src="./img/uchyt.jpg" alt="Chemia do myjni" class="product-slide__img">
+                            </div>
+                            <div class="product-slide__info">
+                                <span class="product-slide__brand">stryjek</span>
+                                <h3 class="product-slide__title">Stojak na dywaniki "1200"</h3>
+                                <div class="product-slide__price-block">
+                                    <span class="product-slide__price">904,50 PLN</span>
+                                    <span class="product-slide__lowest">Najniższa cena: 950,00 zł</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </section>
 

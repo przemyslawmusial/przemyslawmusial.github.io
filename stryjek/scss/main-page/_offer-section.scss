@@ -8,14 +8,16 @@
 
 	@include desktop {
 		padding: 72px 0 80px;
+		max-width: 1000px;
+		margin: 0 auto;
 	}
 
 	&__top {
 		text-align: center;
-		margin-bottom: 40px;
+		margin-bottom: 24px;
 
 		@include desktop {
-			margin-bottom: 48px;
+			margin-bottom: 32px;
 		}
 	}
 
@@ -45,6 +47,26 @@
 	}
 }
 
+// Sticky tab bar wrapper (mobile)
+.offer-tabs-bar {
+	margin-bottom: 32px;
+
+	// MOBILE ONLY: sticky
+	@media (max-width: 767px) {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		background-color: $color-bg-light;
+		padding: 12px 0;
+		// Zsynchronizowane z animacją headera (transform 0.4s ease-in-out)
+		transition: top 0.4s ease-in-out;
+	}
+
+	@include desktop {
+		margin-bottom: 40px;
+	}
+}
+
 // Offer Tab Navigation Buttons
 .offer-tabs {
 	display: flex;
@@ -57,8 +79,8 @@
 	background: transparent;
 	border: 1px solid $color-border;
 	border-radius: 8px;
-	padding: 9px 20px;
-	font-size: 14px;
+	padding: 8px 12px;
+	font-size: 13px;
 	font-weight: 500;
 	color: $color-gray;
 	cursor: pointer;
@@ -94,8 +116,13 @@
 	align-items: center;
 	gap: 32px;
 
+	// is-active – tylko włącza display, BEZ opacity (dzięki temu fade działa)
 	&.is-active {
 		display: flex;
+	}
+
+	// is-visible – włącza opacity z animacją
+	&.is-visible {
 		opacity: 1;
 	}
 
@@ -139,7 +166,7 @@
 	}
 
 	&__heading {
-		font-size: 20px;
+		font-size: 22px;
 		font-weight: 700;
 		color: $color-text;
 		line-height: 1.3;

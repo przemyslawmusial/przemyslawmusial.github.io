@@ -1,0 +1,114 @@
+.categories-links-section {
+	margin-top: 20px;
+	padding: 0 0 48px;
+
+	@include tablet {
+		padding-bottom: 56px;
+	}
+
+	@include desktop {
+		padding-bottom: 64px;
+	}
+
+	&__grid {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		@include tablet {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include desktop {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+
+// Single card
+.cat-link-card {
+	display: flex;
+	align-items: stretch;
+	background-color: $color-bg-light;
+	border-radius: 16px;
+	overflow: hidden;
+	text-decoration: none;
+	color: inherit;
+	min-height: 160px;
+	box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
+
+	@include tablet {
+		min-height: 180px;
+	}
+
+	@include desktop {
+		min-height: 200px;
+	}
+
+	// Left: text + button
+	&__body {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 24px 20px 24px 24px;
+		gap: 10px;
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: 600;
+		color: $color-text;
+		line-height: 1.35;
+
+		@include desktop {
+			font-size: 18px;
+		}
+	}
+
+	&__btn {
+		display: inline-block;
+		background-color: $color-primary;
+		color: $color-white;
+		font-size: 13px;
+		font-weight: 400;
+		padding: 8px 12px;
+		border-radius: 8px;
+		width: fit-content;
+		transition: background-color 0.2s ease;
+
+		.cat-link-card:hover & {
+			background-color: darken($color-primary, 6%);
+		}
+	}
+
+	// Right: photo bleeding to the edge
+	&__img-wrap {
+		width: 42%;
+		flex-shrink: 0;
+		position: relative;
+		overflow: hidden;
+
+		@include desktop {
+			width: 44%;
+		}
+	}
+
+	&__img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: right;
+		// Subtelny gradient na lewej krawedzi zdjecia łączący z tłem karty
+		mask-image: linear-gradient(to right, transparent 0%, black 18%);
+		-webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%);
+		transition: transform 0.4s ease;
+
+		.cat-link-card:hover & {
+			transform: scale(1.04);
+		}
+	}
+}
