@@ -396,7 +396,167 @@
             </div>
         </section>
 
-        <div style="min-height: 2000px; padding-top: 5rem;">
+        <section class="wrapper categories-section">
+            <!-- Mobile: kategorie na górze, Desktop: kategorie na prawo -->
+            <div class="categories-container">
+                <h2 class="categories-section__title">Sprawdź nasze kategorie</h2>
+
+                <!-- Mobile Tabs Navigation -->
+                <div class="categories-tabs">
+                    <button class="tab-btn is-active" data-tab="stal">Elementy Stalowe</button>
+                    <button class="tab-btn" data-tab="chemia">Chemia</button>
+                    <button class="tab-btn" data-tab="akcesoria">Akcesoria</button>
+                </div>
+
+                <!-- Categories Content -->
+                <div class="categories-content">
+                    <div class="category-card is-active" id="tab-stal">
+                        <div class="category-card__image">
+                            <!-- Zdjęcie zastępcze -->
+                            <img src="./img/uchyt.jpg" alt="Elementy stalowe">
+                        </div>
+                        <div class="category-card__info">
+                            <h3 class="category-card__title">Elementy stalowe</h3>
+                            <ul class="category-card__list">
+                                <li><a href="#">Ramiona obrotowe</a></li>
+                                <li><a href="#">Pojemniki na szczotki</a></li>
+                                <li><a href="#">Stojaki i trzepaki na dywaniki</a></li>
+                                <li><a href="#">Stalowe schowki na lance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category-card" id="tab-chemia">
+                        <div class="category-card__image">
+                            <!-- Zdjęcie zastępcze -->
+                            <img src="./img/płym2.jpg" alt="Chemia">
+                        </div>
+                        <div class="category-card__info">
+                            <h3 class="category-card__title">Chemia</h3>
+                            <ul class="category-card__list">
+                                <li><a href="#">Aktywna piana</a></li>
+                                <li><a href="#">Mycie zasadnicze</a></li>
+                                <li><a href="#">Neutralizator piany</a></li>
+                                <li><a href="#">Oprysk wstępny</a></li>
+                                <li><a href="#">Sól do zmiękczania wody</a></li>
+                                <li><a href="#">Wosk</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category-card" id="tab-akcesoria">
+                        <div class="category-card__image">
+                            <!-- Zdjęcie zastępcze -->
+                            <img src="./img/akcesoria-img.png" alt="Akcesoria">
+                        </div>
+                        <div class="category-card__info">
+                            <h3 class="category-card__title">Akcesoria</h3>
+                            <ul class="category-card__list">
+                                <li><a href="#">Pompy i części</a></li>
+                                <li><a href="#">Węże i złącza</a></li>
+                                <li><a href="#">Lance i pistolety</a></li>
+                                <li><a href="#">Dozowanie chemii</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hit Dnia (Mobile Bottom, Desktop Left) -->
+            <div class="sale-container">
+                <div class="sale-card">
+                    <div class="sale-card__header">
+                        <div class="sale-card__title">
+                            <span class="red-dot"></span> Hit Dnia
+                        </div>
+                        <div class="sale-card__savings">
+                            <span class="sale-card__savings-label">Oszczędzasz</span>
+                            <span class="sale-card__savings-value">20 zł</span>
+                        </div>
+                    </div>
+
+                    <div class="sale-card__image">
+                        <img src="./img/płym.jpg" alt="Karcher RM 806 5l Piana Aktywna Super Koncentrat">
+                    </div>
+
+                    <h3 class="sale-card__product-name"><a href="#">Karcher RM 806 5l Piana Aktywna Super Koncentrat</a>
+                    </h3>
+
+                    <div class="sale-card__price-box">
+                        <div class="sale-card__current-price">79,99 PLN</div>
+                        <div class="sale-card__lowest-price">Najniższa cena: 99,99 zł</div>
+                    </div>
+
+                    <div class="sale-card__timer-box">
+                        <div class="sale-card__timer">
+                            <div class="timer-unit">
+                                <span class="timer-value">01</span>
+                                <span class="timer-label">godz.</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span class="timer-value">25</span>
+                                <span class="timer-label">min.</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span class="timer-value">53</span>
+                                <span class="timer-label">sek.</span>
+                            </div>
+                        </div>
+                        <div class="sale-card__timer-info">
+                            Pozostało<br>do <strong>końca<br>promocji</strong>
+                        </div>
+                    </div>
+
+                    <a href="#" class="button button--red sale-card__btn">Kup teraz</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages-section">
+            <div class="wrapper advantages-section__inner">
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">
+                        <img src="./icons/advantages-section-icon.svg" alt="">
+                    </div>
+                    <div class="advantage-card__body">
+                        <h3 class="advantage-card__title">Ekspresowa wysyłka zamówień</h3>
+                        <p class="advantage-card__desc">Zamów dzisiaj odbierz jutro!</p>
+                    </div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">
+                        <img src="./icons/advantages-section-icon.svg" alt="">
+                    </div>
+                    <div class="advantage-card__body">
+                        <h3 class="advantage-card__title">Gwarancja najwyższej jakości</h3>
+                        <p class="advantage-card__desc">Sprawdzone produkty</p>
+                    </div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">
+                        <img src="./icons/advantages-section-icon.svg" alt="">
+                    </div>
+                    <div class="advantage-card__body">
+                        <h3 class="advantage-card__title">14 dni na zwrot towaru</h3>
+                        <p class="advantage-card__desc">Bez zbędnych formalności</p>
+                    </div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">
+                        <img src="./icons/advantages-section-icon.svg" alt="">
+                    </div>
+                    <div class="advantage-card__body">
+                        <h3 class="advantage-card__title">Profesjonalne wsparcie</h3>
+                        <p class="advantage-card__desc">Chętnie pomożemy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="min-height: 2000px; padding-top: 5rem; background-color: #fff;">
         </div>
     </main>
     <script src="./libraries/jquery/jquery-1.11.0.min.js"></script>

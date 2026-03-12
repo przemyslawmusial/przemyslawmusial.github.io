@@ -12,6 +12,12 @@ $font-main: 'Inter', sans-serif;
 $bp-md: 768px;
 $bp-lg: 1024px; // Próg wejścia dla Desktopu
 
+@mixin tablet {
+    @media (min-width: #{$bp-md}) {
+        @content;
+    }
+}
+
 @mixin desktop {
     @media (min-width: #{$bp-lg}) {
         @content;

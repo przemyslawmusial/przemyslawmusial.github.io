@@ -227,4 +227,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // === 5. CATEGORIES TABS (Mobile) ===
+    const tabBtns = document.querySelectorAll('.categories-tabs .tab-btn');
+    const categoryCards = document.querySelectorAll('.categories-content .category-card');
+
+    if (tabBtns.length > 0 && categoryCards.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active classes
+                tabBtns.forEach(b => b.classList.remove('is-active'));
+                categoryCards.forEach(card => card.classList.remove('is-active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('is-active');
+                
+                // Show relative content card
+                const tabId = btn.getAttribute('data-tab');
+                const targetCard = document.getElementById(`tab-${tabId}`);
+                if (targetCard) {
+                    targetCard.classList.add('is-active');
+                }
+            });
+        });
+    }
 });

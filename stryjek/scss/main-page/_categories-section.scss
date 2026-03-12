@@ -1,0 +1,364 @@
+.categories-section {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	margin-top: 40px;
+	margin-bottom: 60px;
+
+	@include desktop {
+		flex-direction: row-reverse;
+		align-items: stretch;
+		gap: 24px;
+		margin-top: 80px;
+	}
+
+	&__title {
+		font-size: 22px;
+		font-weight: 700;
+		color: $color-text;
+		text-align: center;
+		margin-bottom: 15px;
+
+		@include desktop {
+			text-align: left;
+			font-size: 26px;
+			margin-bottom: 40px;
+			width: 100%;
+		}
+	}
+}
+
+// SALE CONTAINER (Hit Dnia)
+.sale-container {
+	width: 100%;
+
+	@include desktop {
+		width: 360px;
+		flex-shrink: 0;
+	}
+}
+
+.sale-card {
+	background: $color-white;
+	border: 1px solid $color-primary;
+	border-radius: 16px;
+	padding: 24px;
+
+	@include desktop {
+		padding: 32px 24px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		font-size: 26px;
+		font-weight: 700;
+		color: $color-text;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		.red-dot {
+			width: 10px;
+			height: 10px;
+			background-color: $color-primary;
+			border-radius: 50%;
+			display: inline-block;
+		}
+	}
+
+	&__savings {
+		text-align: right;
+		display: flex;
+		flex-direction: column;
+
+		&-label {
+			font-size: 13px;
+			color: $color-gray;
+		}
+
+		&-value {
+			font-size: 26px;
+			font-weight: 700;
+			color: $color-text;
+		}
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 24px;
+		position: relative;
+		z-index: 1;
+
+		img {
+			max-width: 100%;
+			height: auto;
+			max-height: 200px;
+			object-fit: contain;
+		}
+	}
+
+	&__product-name {
+		font-size: 18px;
+		font-weight: 600;
+		color: $color-text;
+		line-height: 1.4;
+		margin-bottom: 16px;
+
+		@include desktop {
+			font-size: 18px;
+		}
+	}
+
+	&__price-box {
+		margin-bottom: 20px;
+	}
+
+	&__current-price {
+		font-size: 26px;
+		font-weight: 700;
+		color: $color-green;
+	}
+
+	&__lowest-price {
+		font-size: 13px;
+		color: $color-gray;
+	}
+
+	&__timer-box {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		margin-bottom: 24px;
+
+		@include desktop {
+			margin-top: auto; // Wypchnij na sam dół jeśli karta urośnie w pionie
+		}
+	}
+
+	&__timer {
+		display: flex;
+		gap: 8px;
+
+		.timer-unit {
+			border: 1px solid #e5e7eb;
+			border-radius: 8px;
+			padding: 5px;
+			text-align: center;
+			min-width: 56px;
+
+			.timer-value {
+				display: block;
+				font-size: 18px;
+				font-weight: 700;
+				color: $color-text;
+			}
+
+			.timer-label {
+				display: block;
+				font-size: 11px;
+				color: $color-gray;
+			}
+		}
+	}
+
+	&__timer-info {
+		font-size: 12px;
+		color: $color-gray;
+		line-height: 1.4;
+
+		strong {
+			color: $color-text;
+			font-weight: 700;
+		}
+	}
+
+	&__btn {
+		width: 100%;
+		background-color: $color-primary;
+		color: $color-white;
+		text-align: center;
+		border-radius: 8px;
+		padding: 10px;
+		font-size: 13px;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s;
+		display: block;
+		text-decoration: none;
+
+		&:hover {
+			background-color: darken(#ef233c, 5%);
+		}
+	}
+}
+
+// CATEGORIES CONTAINER (Right Side on Desktop / Top on Mobile)
+.categories-container {
+	width: 100%;
+	padding: 0 10px;
+
+	@include desktop {
+		flex: 1;
+		background: $color-white;
+		border-radius: 16px;
+		padding: 40px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+	}
+}
+
+// TABS (Mobile)
+.categories-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	margin-bottom: 24px;
+	overflow-x: auto;
+	padding-bottom: 4px;
+
+	// hide scrollbar
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	@include desktop {
+		display: none; // Tabs disappear on desktop
+	}
+}
+
+.tab-btn {
+	background: transparent;
+	border: 1px solid $color-border;
+	border-radius: 8px;
+	padding: 8px 12px;
+	font-size: 13px;
+	font-weight: 500;
+	color: $color-gray;
+	white-space: nowrap;
+	cursor: pointer;
+	font-family: inherit;
+	transition: all 0.3s ease;
+
+	&.is-active {
+		background: $color-text;
+		color: $color-white;
+		border-color: $color-text;
+	}
+}
+
+// CATEGORY CONTENT
+.categories-content {
+	background: $color-white;
+	border-radius: 16px;
+	padding: 12px 24px;
+
+	@include desktop {
+		background: transparent;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 32px;
+		position: relative;
+	}
+}
+
+.category-card {
+	display: none; // Hidden by default on mobile
+
+	&.is-active {
+		display: block; // Show active on mobile
+	}
+
+	@include desktop {
+		display: block !important; // Always show on desktop
+		position: relative;
+		padding-right: 32px;
+
+		// vertical separator
+		&:not(:last-child)::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 20px;
+			bottom: 20px;
+			width: 1px;
+			background-color: $color-border;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+		min-height: 180px;
+		align-items: center;
+
+		img {
+			max-width: 100%;
+			height: auto;
+			max-height: 160px;
+			object-fit: contain;
+		}
+	}
+
+	&__info {
+		text-align: left;
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 600;
+		color: $color-text;
+		margin-bottom: 16px;
+
+		@include desktop {
+			font-size: 18px;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			font-size: 13px;
+			color: $color-gray;
+			margin-bottom: 12px;
+			padding-left: 20px;
+			position: relative;
+			line-height: 1.4;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 5px;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: $color-primary;
+			}
+
+			a {
+				&:hover {
+					color: $color-primary;
+				}
+			}
+		}
+	}
+}
