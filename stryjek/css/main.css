@@ -554,6 +554,7 @@ img {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .nav-bar.is-open {
   transform: translateX(0);
@@ -567,6 +568,7 @@ img {
     transform: none;
     z-index: auto;
     overflow-y: visible;
+    overflow-x: visible;
     border-top: 1px solid #E5E7EB;
     background-color: transparent;
   }
@@ -696,6 +698,7 @@ img {
   transform: translateX(100%);
   transition: transform 0.3s ease;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .mega-menu.is-open {
   transform: translateX(0);
@@ -709,6 +712,7 @@ img {
     height: auto;
     opacity: 0;
     visibility: hidden;
+    overflow-x: visible;
     transform: translateY(-10px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
