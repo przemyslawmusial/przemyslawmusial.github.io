@@ -1025,9 +1025,144 @@
             </div>
         </section>
 
-        <div style="min-height: 2000px; padding-top: 5rem;">
+        <div style="min-height: 200px; background-color: #fff;">
         </div>
+
+        <section class="contact-section">
+            <div class="wrapper">
+                <div class="contact-banner">
+
+                    <!-- Tekst po lewej -->
+                    <div class="contact-banner__content">
+                        <h2 class="contact-banner__title">Potrzebujesz pomocy?</h2>
+                        <p class="contact-banner__desc">Skontaktuj się z nami – doradzimy szybko i konkretnie.</p>
+                    </div>
+
+                    <!-- Telefon + button po prawej -->
+                    <div class="contact-banner__cta">
+                        <div class="contact-banner__phone-wrap">
+                            <span class="contact-banner__phone-label">Zadzwoń do nas</span>
+                            <a href="tel:+48535093202" class="contact-banner__phone">+48 535 093 202</a>
+                        </div>
+                        <a href="#" class="contact-banner__chat-btn">Zadaj pytanie poprzez Chat</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+
+        <!-- TOP: newsletter + nav columns -->
+        <div class="footer-top">
+            <div class="wrapper footer-top__inner">
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h2 class="footer-newsletter__title">Zapisz się do newslettera</h2>
+                    <p class="footer-newsletter__desc">Nowości, promocje i praktyczne rozwiązania dla Twojej myjni
+                        prosto na skrzynkę mailową.</p>
+                    <form class="footer-newsletter__form" action="#" method="post">
+                        <div class="footer-newsletter__input-wrap">
+                            <img src="./icons/mail.svg" alt="" class="footer-newsletter__icon">
+                            <input type="email" class="footer-newsletter__input" placeholder="Wpisz swój adres email"
+                                required>
+                        </div>
+                        <button type="submit" class="footer-newsletter__submit">Zapisz się</button>
+                    </form>
+                    <p class="footer-newsletter__privacy">Subskrybując, akceptujesz <a href="#">Politykę Prywatności</a>
+                    </p>
+                </div>
+
+                <!-- Nav columns -->
+                <nav class="footer-nav">
+
+                    <!-- Dane firmy (zawsze widoczne) -->
+                    <div class="footer-nav__column footer-nav__column--company">
+                        <h3 class="footer-nav__heading">Dane firmy</h3>
+                        <ul class="footer-nav__list">
+                            <li class="footer-nav__item footer-nav__item--text">ul. Towarowa 26b, 38-200 Jasło</li>
+                            <li class="footer-nav__item footer-nav__item--text"><a href="tel:+48535093202">+48 535 093
+                                    202</a></li>
+                            <li class="footer-nav__item footer-nav__item--text"><a
+                                    href="mailto:zamowienia@stryjek.pl">zamowienia@stryjek.pl</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Produkty (accordion na mobile/tablet) -->
+                    <div class="footer-nav__column footer-nav__column--accordion">
+                        <h3 class="footer-nav__heading-wrap">
+                            <button class="footer-nav__heading footer-nav__heading--accordion" aria-expanded="false">
+                                Produkty
+                                <img src="./icons/strzalka-stopka-mobile.svg" alt="" class="footer-nav__chevron">
+                            </button>
+                        </h3>
+                        <ul class="footer-nav__list footer-nav__list--collapsible">
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Elementy Stalowe</a></li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Chemia</a></li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Akcesoria</a></li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Promocje</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Informacje (accordion na mobile/tablet) -->
+                    <div class="footer-nav__column footer-nav__column--accordion">
+                        <h3 class="footer-nav__heading-wrap">
+                            <button class="footer-nav__heading footer-nav__heading--accordion" aria-expanded="false">
+                                Informacje
+                                <img src="./icons/strzalka-stopka-mobile.svg" alt="" class="footer-nav__chevron">
+                            </button>
+                        </h3>
+                        <ul class="footer-nav__list footer-nav__list--collapsible">
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Regulaminy</a></li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">O firmie</a></li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Polityka prywatności</a>
+                            </li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Zwroty i reklamacje</a>
+                            </li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Kontakt</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Moje konto (accordion na mobile/tablet) -->
+                    <div class="footer-nav__column footer-nav__column--accordion">
+                        <h3 class="footer-nav__heading-wrap">
+                            <button class="footer-nav__heading footer-nav__heading--accordion" aria-expanded="false">
+                                Moje konto
+                                <img src="./icons/strzalka-stopka-mobile.svg" alt="" class="footer-nav__chevron">
+                            </button>
+                        </h3>
+                        <ul class="footer-nav__list footer-nav__list--collapsible">
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Twoje zamówienia</a></li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Ustawienia konta</a></li>
+                            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Przechowalnia</a></li>
+
+                        </ul>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR: copyright + payment logos -->
+        <div class="footer-bottom">
+            <div class="wrapper footer-bottom__inner">
+                <p class="footer-bottom__copy">&copy; Wszystkie prawa zastrzeżone – 2026 – Stryjek</p>
+                <div class="footer-bottom__payments">
+                    <img src="./img/payment-img/blik.svg" alt="BLIK" class="footer-bottom__payment-logo">
+                    <img src="./img/payment-img/przelewy24.png" alt="Przelewy24" class="footer-bottom__payment-logo">
+                    <img src="./img/payment-img/visa.png" alt="VISA" class="footer-bottom__payment-logo">
+                    <img src="./img/payment-img/mastercard.svg" alt="Mastercard" class="footer-bottom__payment-logo">
+                    <img src="./img/payment-img/apple_pay.png" alt="Apple Pay" class="footer-bottom__payment-logo">
+                    <img src="./img/payment-img/GooglePay.webp" alt="Google Pay" class="footer-bottom__payment-logo">
+                    <img src="./img/payment-img/paypo.png" alt="PayPo" class="footer-bottom__payment-logo">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
     <script src="./libraries/jquery/jquery-1.11.0.min.js"></script>
     <script src="./libraries/slick/slick.min.js"></script>
     <script src="./js/slick.js"></script>

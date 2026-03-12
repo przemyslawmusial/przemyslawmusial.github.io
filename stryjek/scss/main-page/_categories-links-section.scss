@@ -38,13 +38,13 @@
 	min-height: 160px;
 	box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
 
-	@include tablet {
-		min-height: 180px;
-	}
+	// @include tablet {
+	// 	min-height: 180px;
+	// }
 
-	@include desktop {
-		min-height: 200px;
-	}
+	// @include desktop {
+	// 	min-height: 200px;
+	// }
 
 	// Left: text + button
 	&__body {

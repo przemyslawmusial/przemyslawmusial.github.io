@@ -1,0 +1,358 @@
+// =====================================
+// SITE FOOTER
+// =====================================
+
+.site-footer {
+	background-color: $color-bg-light;
+}
+
+// ── TOP SECTION ─────────────────────────────────────────────
+
+.footer-top {
+	padding: 48px 0 32px;
+
+	@include tablet {
+		padding: 56px 0 40px;
+	}
+
+	@include desktop {
+		padding: 64px 0 75px;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+
+		@include desktop {
+			flex-direction: row;
+			gap: 80px;
+			align-items: flex-start;
+		}
+	}
+}
+
+// ── NEWSLETTER ───────────────────────────────────────────────
+
+.footer-newsletter {
+	@include desktop {
+		flex: 0 0 340px;
+		max-width: 340px;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 22px;
+		font-weight: 700;
+		color: $color-text;
+		margin-bottom: 10px;
+		line-height: 1.25;
+
+		@include tablet {
+			text-align: left;
+			font-size: 26px;
+		}
+	}
+
+	&__desc {
+		text-align: center;
+		font-size: 13px;
+		color: $color-gray;
+		line-height: 1.6;
+		margin-bottom: 20px;
+
+		@include tablet {
+			text-align: left;
+		}
+	}
+
+	&__form {
+		display: flex;
+		gap: 8px;
+		margin-bottom: 12px;
+	}
+
+	&__input-wrap {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		border: 1px solid $color-border;
+		border-radius: 8px;
+		background-color: $color-white;
+		padding: 0 14px;
+		height: 48px;
+	}
+
+	&__icon {
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+		opacity: 0.5;
+	}
+
+	&__input {
+		flex: 1;
+		height: 100%;
+		font-size: 13px;
+		color: $color-text;
+		background: transparent;
+
+		&::placeholder {
+			color: $color-gray;
+		}
+	}
+
+	&__submit {
+		height: 48px;
+		padding: 0 20px;
+		background-color: $color-primary;
+		color: $color-white;
+		font-size: 13px;
+		font-weight: 400;
+		border-radius: 8px;
+		cursor: pointer;
+		font-family: inherit;
+		white-space: nowrap;
+		transition: background-color 0.2s ease;
+
+		&:hover {
+			background-color: darken($color-primary, 6%);
+		}
+	}
+
+	&__privacy {
+		text-align: center;
+		font-size: 12px;
+		color: $color-gray;
+
+		@include tablet {
+			text-align: left;
+		}
+
+		a {
+			color: $color-text;
+			text-decoration: underline;
+			text-underline-offset: 2px;
+
+			&:hover {
+				color: $color-primary;
+			}
+		}
+	}
+}
+
+// ── NAV GRID ─────────────────────────────────────────────────
+
+.footer-nav {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+
+	@include desktop {
+		flex-direction: row;
+		gap: 48px;
+	}
+
+	&__column {
+		@include desktop {
+			flex: 1;
+		}
+	}
+
+	// Company column – always visible, no accordion
+	&__column--company {
+		margin-bottom: 32px;
+
+		@include desktop {
+			margin-bottom: 0;
+		}
+
+		.footer-nav__heading {
+			// Static heading – not a button
+			display: block;
+			font-size: 18px;
+			font-weight: 700;
+			color: $color-text;
+			margin-bottom: 16px;
+
+			@include desktop {
+				font-size: 13px;
+			}
+		}
+	}
+
+	// Accordion column (Produkty / Informacje / Moje konto) on mobile
+	&__column--accordion {
+		border-top: 1px solid $color-border;
+
+		@include desktop {
+			border-top: none;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid $color-border;
+
+			@include desktop {
+				border-bottom: none;
+			}
+		}
+	}
+
+	// Reset dla h3 owijającego button w akordeonach
+	&__heading-wrap {
+		margin: 0;
+		padding: 0;
+		font-size: inherit;
+		font-weight: inherit;
+	}
+
+	// Heading (button na mobile/tablet, static na desktopie)
+	&__heading--accordion {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 18px;
+		font-weight: 700;
+		color: $color-text;
+		background: transparent;
+		border: none;
+		padding: 16px 0;
+		cursor: pointer;
+		font-family: inherit;
+		text-align: left;
+
+		@include desktop {
+			cursor: default;
+			padding: 0;
+			font-size: 13px;
+			margin-bottom: 16px;
+			pointer-events: none;
+		}
+	}
+
+	&__chevron {
+		width: 20px;
+		height: 20px;
+		flex-shrink: 0;
+		transition: transform 0.3s ease;
+
+		@include desktop {
+			display: none;
+		}
+	}
+
+	// Collapsible list on mobile
+	&__list--collapsible {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.35s ease;
+
+		@include desktop {
+			max-height: none !important;
+			overflow: visible;
+			padding-bottom: 0;
+		}
+	}
+
+	// Open state (max-height ustawiany przez JS via scrollHeight – tu tylko efekty wizualne)
+	&__column--accordion.is-open {
+		.footer-nav__list--collapsible {
+			padding-bottom: 16px;
+		}
+
+		.footer-nav__chevron {
+			transform: rotate(180deg);
+		}
+
+		.footer-nav__heading--accordion {
+			color: $color-primary;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	&__item {
+		font-size: 13px;
+		color: $color-gray;
+		line-height: 1.4;
+	}
+
+	&__item--text {
+		a {
+			color: $color-gray;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: $color-primary;
+			}
+		}
+	}
+
+	&__link {
+		color: $color-gray;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+}
+
+// ── BOTTOM BAR ────────────────────────────────────────────────
+
+.footer-bottom {
+	border-top: 1px solid $color-border;
+	padding: 20px 0;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		text-align: center;
+
+		@include desktop {
+			flex-direction: row;
+			justify-content: space-between;
+			text-align: left;
+		}
+	}
+
+	&__copy {
+		font-size: 13px;
+		color: $color-gray;
+		order: 2;
+
+		@include desktop {
+			order: 1;
+		}
+	}
+
+	&__payments {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		width: 100%;
+		order: 1;
+
+		@include desktop {
+			width: auto;
+			order: 2;
+			justify-content: flex-end;
+			gap: 16px;
+		}
+	}
+
+	&__payment-logo {
+		height: 13px;
+		width: auto;
+		object-fit: contain;
+	}
+}

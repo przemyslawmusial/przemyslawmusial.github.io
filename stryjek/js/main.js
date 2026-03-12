@@ -336,4 +336,44 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		});
 	}
+
+	// === 7. FOOTER ACCORDION (mobile + tablet) ===
+	const footerAccordionBtns = document.querySelectorAll(".footer-nav__heading--accordion");
+
+	footerAccordionBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			// Accordion aktywny tylko poniżej desktop (< 1024px)
+			if (window.innerWidth >= 1024) return;
+
+			const column = btn.closest(".footer-nav__column--accordion");
+			if (!column) return;
+
+			const list = column.querySelector(".footer-nav__list--collapsible");
+			if (!list) return;
+
+			const isOpen = column.classList.contains("is-open");
+
+			// Zamknij pozostałe – płynne zwijanie przez scrollHeight → 0
+			document.querySelectorAll(".footer-nav__column--accordion.is-open").forEach((col) => {
+				if (col !== column) {
+					const otherList = col.querySelector(".footer-nav__list--collapsible");
+					if (otherList) otherList.style.maxHeight = "0";
+					col.classList.remove("is-open");
+					col.querySelector(".footer-nav__heading--accordion")?.setAttribute("aria-expanded", "false");
+				}
+			});
+
+			if (isOpen) {
+				// Zamknij bieżący
+				list.style.maxHeight = "0";
+				column.classList.remove("is-open");
+				btn.setAttribute("aria-expanded", "false");
+			} else {
+				// Otwórz bieżący – płynne rozwijanie do dokładnej wysokości zawartości
+				list.style.maxHeight = list.scrollHeight + "px";
+				column.classList.add("is-open");
+				btn.setAttribute("aria-expanded", "true");
+			}
+		});
+	});
 });
