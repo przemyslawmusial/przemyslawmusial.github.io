@@ -1,0 +1,188 @@
+// =====================================
+// BLOG SECTION – Baza wiedzy
+// =====================================
+
+.blog-section {
+	padding: 48px 0 56px;
+
+	@include tablet {
+		padding: 56px 0 64px;
+	}
+
+	@include desktop {
+		padding: 64px 0 72px;
+	}
+
+	// ── Nagłówek ─────────────────────────────────────────────
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 28px;
+
+		@include tablet {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__title {
+		font-size: 22px;
+		font-weight: 700;
+		color: $color-text;
+
+		@include tablet {
+			font-size: 24px;
+		}
+	}
+
+	&__arrows {
+		display: flex;
+		gap: 8px;
+
+		.blog-slider-prev,
+		.blog-slider-next {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: 1px solid $color-border;
+			background: $color-white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition:
+				background 0.2s,
+				border-color 0.2s,
+				opacity 0.2s;
+
+			img {
+				width: 12px;
+				height: 12px;
+				object-fit: contain;
+			}
+
+			&:hover:not(.is-disabled) {
+				background: $color-bg-light;
+				border-color: darken(#e5e7eb, 10%);
+			}
+
+			&[disabled],
+			&.is-disabled {
+				opacity: 0.35;
+				cursor: default;
+				pointer-events: none;
+			}
+		}
+
+		.blog-slider-prev img {
+			transform: rotate(90deg);
+		}
+
+		.blog-slider-next img {
+			transform: rotate(-90deg);
+		}
+	}
+
+	// ── Slick wrapper ─────────────────────────────────────────
+	// Musi mieć overflow: hidden żeby karty nie wychodziły poza wrapper
+	// (blog-slider-wrap NIE ma overflow hidden – Slick tego potrzebuje)
+
+	&__cta {
+		text-align: center;
+		margin-top: 36px;
+	}
+
+	&__all-btn {
+		display: inline-block;
+		background-color: $color-primary;
+		color: $color-white;
+		font-size: 13px;
+		font-weight: 500;
+		padding: 12px 28px;
+		border-radius: 8px;
+		text-decoration: none;
+		transition: background-color 0.2s ease;
+
+		&:hover {
+			background-color: darken($color-primary, 6%);
+		}
+	}
+}
+
+// .blog-slider-wrap – brak dodatkowych styli (Slick zarządza overflow samodzielnie)
+
+// ── Karta artykułu ────────────────────────────────────────────
+.blog-slide {
+	padding: 0 8px; // gap między kartami
+
+	&__inner {
+		display: block;
+		text-decoration: none;
+		color: $color-text;
+		border-radius: 12px;
+		overflow: hidden;
+	}
+
+	&__img-wrap {
+		width: 100%;
+		aspect-ratio: 16 / 10;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.35s ease;
+
+		.blog-slide__inner:hover & {
+			transform: scale(1.04);
+		}
+	}
+
+	&__body {
+		padding: 14px 4px 8px;
+	}
+
+	&__date {
+		font-size: 13px;
+		color: $color-gray;
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 700;
+		color: $color-text;
+		line-height: 1.35;
+		margin-bottom: 10px;
+	}
+
+	&__excerpt {
+		font-size: 13px;
+		color: $color-gray;
+		line-height: 1.6;
+		margin-bottom: 14px;
+
+		// Obcinamy po 3 liniach
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		overflow: hidden;
+	}
+
+	&__read-more {
+		display: inline-block;
+		font-size: 13px;
+		font-weight: 600;
+		color: $color-primary;
+		transition: color 0.2s ease;
+
+		.blog-slide__inner:hover & {
+			color: darken($color-primary, 8%);
+		}
+	}
+}

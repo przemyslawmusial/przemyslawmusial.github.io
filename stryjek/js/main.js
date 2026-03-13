@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (overlay) overlay.classList.remove("is-active");
 		if (headerOverlay) headerOverlay.classList.remove("is-active");
 		if (header) header.classList.remove("header--no-click");
-		body.classList.remove("menu-open");
+		// body.classList.remove("menu-open");
 	}
 
 	// Otwieranie Offcanvas z Hamburgera na komórce
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				overlay.classList.add("is-active"); // Ściemnienie tła
 				if (headerOverlay) headerOverlay.classList.add("is-active"); // Ściemnienie headera (tylko na komórce)
 				if (header) header.classList.add("header--no-click");
-				body.classList.add("menu-open"); // Blokada scrolla bazowego
+				// body.classList.add("menu-open"); // Blokada scrolla bazowego
 			}
 		});
 	}
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						// Zdejmij overlay tylko na desktopie, lub gdy menu mobilne jest wyłączone
 						if (!mobileMenu || !mobileMenu.classList.contains("is-open")) {
 							overlay.classList.remove("is-active");
-							body.classList.remove("menu-open");
+							// body.classList.remove("menu-open");
 						}
 					} else {
 						// Otwarcie submenu
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						overlay.classList.add("is-active");
 
 						if (window.innerWidth < 1024) {
-							body.classList.add("menu-open");
+							// body.classList.add("menu-open");
 						}
 					}
 				});
@@ -157,6 +157,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			lastScrollY = currentScrollY;
 		} else {
 			header.classList.remove("header--at-top");
+
+			// NOWOŚĆ: Sprawdź czy jakikolwiek menu jest otwarte
+			const isMenuOpen = document.querySelector(
+				"#mobile-menu.is-open, .mega-menu.is-open",
+			);
+
 			// Ignoruj mikro ruchy - wymagany dystans przewijania (zwiększone z 50 do 150 pikseli)
 			if (Math.abs(currentScrollY - lastScrollY) < 150) {
 				ticked = false;
@@ -164,7 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 
 			// Jeżeli jedziemy w dół i przekroczono barierę wysokości headera z zapasem
-			if (currentScrollY > lastScrollY && currentScrollY > 200) {
+			// ORAZ nie ma otwartego menu (jeśli menu jest otwarte, header musi zostać widoczny)
+			if (currentScrollY > lastScrollY && currentScrollY > 200 && !isMenuOpen) {
 				header.classList.add("header--hidden");
 				header.classList.add("header--scrolled");
 				lastScrollY = currentScrollY; // Zresetuj punkt odniesienia do kolejnego pchnięcia kółkiem
@@ -338,7 +345,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// === 7. FOOTER ACCORDION (mobile + tablet) ===
-	const footerAccordionBtns = document.querySelectorAll(".footer-nav__heading--accordion");
+	const footerAccordionBtns = document.querySelectorAll(
+		".footer-nav__heading--accordion",
+	);
 
 	footerAccordionBtns.forEach((btn) => {
 		btn.addEventListener("click", () => {
@@ -354,14 +363,20 @@ document.addEventListener("DOMContentLoaded", () => {
 			const isOpen = column.classList.contains("is-open");
 
 			// Zamknij pozostałe – płynne zwijanie przez scrollHeight → 0
-			document.querySelectorAll(".footer-nav__column--accordion.is-open").forEach((col) => {
-				if (col !== column) {
-					const otherList = col.querySelector(".footer-nav__list--collapsible");
-					if (otherList) otherList.style.maxHeight = "0";
-					col.classList.remove("is-open");
-					col.querySelector(".footer-nav__heading--accordion")?.setAttribute("aria-expanded", "false");
-				}
-			});
+			document
+				.querySelectorAll(".footer-nav__column--accordion.is-open")
+				.forEach((col) => {
+					if (col !== column) {
+						const otherList = col.querySelector(
+							".footer-nav__list--collapsible",
+						);
+						if (otherList) otherList.style.maxHeight = "0";
+						col.classList.remove("is-open");
+						col
+							.querySelector(".footer-nav__heading--accordion")
+							?.setAttribute("aria-expanded", "false");
+					}
+				});
 
 			if (isOpen) {
 				// Zamknij bieżący

@@ -79,5 +79,64 @@ $(document).ready(function () {
 			$slider.slick("slickNext");
 		});
 	}
+
+	// === BLOG SLIDER (Slick) ===
+	if (typeof $ !== "undefined" && $(".blog-slider").length > 0) {
+		var $blogSlider = $(".blog-slider");
+		var $blogPrev = $(".blog-slider-prev");
+		var $blogNext = $(".blog-slider-next");
+
+		$blogSlider.slick({
+			arrows: false,
+			dots: false,
+			infinite: false,
+			speed: 400,
+			slidesToShow: 3,    // desktop
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 1024,  // < 1024px (tablet)
+					settings: {
+						slidesToShow: 2,
+					},
+				},
+				{
+					breakpoint: 768,   // < 768px (mobile)
+					settings: {
+						slidesToShow: 1,
+					},
+				},
+			],
+		});
+
+		function updateBlogArrows() {
+			var slick = $blogSlider.slick("getSlick");
+			var current = slick.currentSlide;
+			var total = slick.slideCount;
+			var visible = slick.options.slidesToShow;
+
+			if (current === 0) {
+				$blogPrev.addClass("is-disabled").attr("disabled", true);
+			} else {
+				$blogPrev.removeClass("is-disabled").attr("disabled", false);
+			}
+
+			if (current >= total - visible) {
+				$blogNext.addClass("is-disabled").attr("disabled", true);
+			} else {
+				$blogNext.removeClass("is-disabled").attr("disabled", false);
+			}
+		}
+
+		$blogSlider.on("init reInit afterChange", updateBlogArrows);
+		updateBlogArrows();
+
+		$blogPrev.on("click", function () {
+			$blogSlider.slick("slickPrev");
+		});
+		$blogNext.on("click", function () {
+			$blogSlider.slick("slickNext");
+		});
+	}
 });
 
