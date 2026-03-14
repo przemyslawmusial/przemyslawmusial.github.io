@@ -10,6 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	const mobileMenu = document.getElementById("mobile-menu");
 	const mobileMenuClose = document.getElementById("mobile-menu-close");
 
+	// Cart Sidebar Elements
+	const cartToggle = document.querySelector(".header-actions__btn--cart");
+	const cartSidebar = document.getElementById("cart-sidebar");
+	const cartClose = document.getElementById("cart-close");
+
+	// Account Sidebar Elements
+	const accountToggle = document.querySelector(".header-actions__btn--account");
+	const accountSidebar = document.querySelector(".account-sidebar");
+	const accountClose = document.querySelector(".account-sidebar__close");
+
 	// Mega Menu Elements
 	const hasMegaMenus = document.querySelectorAll(".has-mega-menu");
 
@@ -17,13 +27,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function closeAllMenus() {
 		if (mobileMenu) mobileMenu.classList.remove("is-open");
+		if (cartSidebar) cartSidebar.classList.remove("is-open");
+		if (accountSidebar) accountSidebar.classList.remove("is-open");
 		document
 			.querySelectorAll(".mega-menu.is-open")
 			.forEach((menu) => menu.classList.remove("is-open"));
 		document
 			.querySelectorAll(".nav-menu__link.is-active")
 			.forEach((target) => target.classList.remove("is-active"));
-		if (overlay) overlay.classList.remove("is-active");
+		if (overlay) {
+			overlay.classList.remove("is-active");
+			// Opóźnienie usunięcia klasy z-index, aby overlay nie zniknął nagle z headera podczas animacji fade-out
+			setTimeout(() => {
+				if (!overlay.classList.contains("is-active")) {
+					overlay.classList.remove("site-overlay--cart");
+				}
+			}, 300); // 300ms odpowiada czasowi transition w CSS
+		}
 		if (headerOverlay) headerOverlay.classList.remove("is-active");
 		if (header) header.classList.remove("header--no-click");
 		// body.classList.remove("menu-open");
@@ -158,9 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		} else {
 			header.classList.remove("header--at-top");
 
-			// NOWOŚĆ: Sprawdź czy jakikolwiek menu jest otwarte
+			// NOWOŚĆ: Sprawdź czy jakikolwiek menu (nawigacja lub koszyk) jest otwarte
 			const isMenuOpen = document.querySelector(
-				"#mobile-menu.is-open, .mega-menu.is-open",
+				"#mobile-menu.is-open, .mega-menu.is-open, .cart-sidebar.is-open, .account-sidebar.is-open",
 			);
 
 			// Ignoruj mikro ruchy - wymagany dystans przewijania (zwiększone z 50 do 150 pikseli)
@@ -388,6 +408,98 @@ document.addEventListener("DOMContentLoaded", () => {
 				list.style.maxHeight = list.scrollHeight + "px";
 				column.classList.add("is-open");
 				btn.setAttribute("aria-expanded", "true");
+			}
+		});
+	});
+
+	// === 8. OBSŁUGA KOSZYKA (Sidebar) ===
+
+	if (cartToggle && cartSidebar) {
+		cartToggle.addEventListener("click", (e) => {
+			e.preventDefault();
+			const isOpen = cartSidebar.classList.contains("is-open");
+
+			if (isOpen) {
+				closeAllMenus();
+			} else {
+				closeAllMenus(); // Zamknij inne menu przed otwarciem koszyka
+				cartSidebar.classList.add("is-open");
+				if (overlay) {
+					overlay.classList.add("is-active");
+					overlay.classList.add("site-overlay--cart");
+				}
+				// body.classList.add("menu-open");
+			}
+		});
+	}
+
+	if (cartClose) {
+		cartClose.addEventListener("click", (e) => {
+			e.preventDefault();
+			closeAllMenus();
+		});
+	}
+
+	// Obsługa ilości (Quantity control) - delegacja zdarzeń wewnątrz koszyka
+	if (cartSidebar) {
+		cartSidebar.addEventListener("click", (e) => {
+			const btn = e.target.closest(".quantity-control__btn");
+			if (!btn) return;
+
+			const input = btn.parentNode.querySelector(".quantity-control__input");
+			if (!input) return;
+
+			let val = parseInt(input.value);
+
+			if (btn.classList.contains("quantity-control__btn--plus")) {
+				val++;
+			} else if (btn.classList.contains("quantity-control__btn--minus")) {
+				if (val > 1) val--;
+			}
+
+			input.value = val;
+			// Tutaj w przyszłości można dodać wyzwalacz aktualizacji cen (AJAX/State)
+		});
+	}
+
+	// === 9. OBSŁUGA KONTA (Sidebar + Password) ===
+
+	if (accountToggle && accountSidebar) {
+		accountToggle.addEventListener("click", (e) => {
+			e.preventDefault();
+			const isOpen = accountSidebar.classList.contains("is-open");
+
+			if (isOpen) {
+				closeAllMenus();
+			} else {
+				closeAllMenus();
+				accountSidebar.classList.add("is-open");
+				if (overlay) {
+					overlay.classList.add("is-active");
+					overlay.classList.add("site-overlay--cart"); // Używamy tej samej klasy z-index dla spójności
+				}
+			}
+		});
+	}
+
+	if (accountClose) {
+		accountClose.addEventListener("click", (e) => {
+			e.preventDefault();
+			closeAllMenus();
+		});
+	}
+
+	// Przełączanie widoczności hasła
+	const passwordToggles = document.querySelectorAll(".password-toggle");
+	passwordToggles.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const input = btn.previousElementSibling;
+			if (input && input.type === "password") {
+				input.type = "text";
+				btn.classList.add("is-visible");
+			} else if (input) {
+				input.type = "password";
+				btn.classList.remove("is-visible");
 			}
 		});
 	});

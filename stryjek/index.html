@@ -58,17 +58,17 @@
                     </a>
 
                     <div class="header-actions">
-                        <a href="#" class="header-actions__btn" aria-label="Moje konto">
+                        <a href="#" class="header-actions__btn header-actions__btn--account" aria-label="Moje konto">
                             <img src="./icons/profile.svg" alt="User" class="header-actions__icon">
                         </a>
                         <a href="#" class="header-actions__btn header-actions__btn--cart" aria-label="Koszyk">
                             <span class="cart-wrapper">
                                 <img src="./icons/buy.svg" alt="Cart" class="header-actions__icon">
-                                <span class="cart-wrapper__badge">2</span>
+                                <span class="cart-wrapper__badge">4</span>
                             </span>
                             <div class="cart-info">
                                 <span class="cart-info__label">Wartość koszyka</span>
-                                <span class="cart-info__price">1569,69 zł</span>
+                                <span class="cart-info__price">1084,47 zł</span>
                             </div>
                         </a>
                     </div>
@@ -1241,7 +1241,7 @@
         <!-- BOTTOM BAR: copyright + payment logos -->
         <div class="wrapper footer-bottom">
             <div class="footer-bottom__inner">
-                <p class="footer-bottom__copy">&copy; Wszystkie prawa zastrzeżone – 2026 – Stryjek</p>
+                <p class="footer-bottom__copy">&copy; Wszystkie prawa zastrzeżone - 2026 - Stryjek</p>
                 <div class="footer-bottom__payments">
                     <img src="./img/payment-img/blik.svg" alt="BLIK" class="footer-bottom__payment-logo">
                     <img src="./img/payment-img/przelewy24.png" alt="Przelewy24" class="footer-bottom__payment-logo">
@@ -1255,6 +1255,185 @@
         </div>
 
     </footer>
+
+    <!-- SIDEBAR KOSZYKA -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-sidebar__header">
+            <h2 class="cart-sidebar__title">Koszyk</h2>
+            <button class="cart-sidebar__close" id="cart-close" aria-label="Zamknij koszyk">
+                <span>Zamknij</span>
+                <div class="nav-bar__close-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+
+        <div class="cart-sidebar__content">
+            <div class="cart-sidebar__products">
+                <!-- Produkt 1 -->
+                <div class="cart-item">
+                    <div class="cart-item__img-wrap">
+                        <img src="./img/uchyt.jpg" alt="Produkt 1">
+                    </div>
+                    <div class="cart-item__info">
+                        <div class="cart-item__details">
+                            <a href="#">
+                                <h3 class="cart-item__name">Stojak na dywaniki „1200"</h3>
+                            </a>
+                            <button class="cart-item__remove" aria-label="Usuń produkt">
+                                <div class="cart-item__remove-icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="cart-item__bottom">
+                            <div class="quantity-control">
+                                <button class="quantity-control__btn quantity-control__btn--minus"
+                                    aria-label="Zmniejsz ilość">-</button>
+                                <input type="number" class="quantity-control__input" value="1" min="1">
+                                <button class="quantity-control__btn quantity-control__btn--plus"
+                                    aria-label="Zwiększ ilość">+</button>
+                            </div>
+                            <div class="cart-item__price">904,50 zł</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produkt 2 -->
+                <div class="cart-item">
+                    <div class="cart-item__img-wrap">
+                        <img src="./img/płym.jpg" alt="Produkt 2">
+                    </div>
+                    <div class="cart-item__info">
+                        <div class="cart-item__details">
+                            <a href="#">
+                                <h3 class="cart-item__name">Karcher RM 806 5l Piana Aktywna Super Koncentrat</h3>
+                            </a>
+                            <button class="cart-item__remove" aria-label="Usuń produkt">
+                                <div class="cart-item__remove-icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="cart-item__bottom">
+                            <div class="quantity-control">
+                                <button class="quantity-control__btn quantity-control__btn--minus"
+                                    aria-label="Zmniejsz ilość">-</button>
+                                <input type="number" class="quantity-control__input" value="1" min="1">
+                                <button class="quantity-control__btn quantity-control__btn--plus"
+                                    aria-label="Zwiększ ilość">+</button>
+                            </div>
+                            <div class="cart-item__price">79,99 zł</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produkt 3 -->
+                <div class="cart-item">
+                    <div class="cart-item__img-wrap">
+                        <img src="./img/płym2.jpg" alt="Produkt 3">
+                    </div>
+                    <div class="cart-item__info">
+                        <div class="cart-item__details">
+                            <a href="#">
+                                <h3 class="cart-item__name">Piana aktywna do mycia
+                                    5L K2 Active Foam</h3>
+                            </a>
+                            <button class="cart-item__remove" aria-label="Usuń produkt">
+                                <div class="cart-item__remove-icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="cart-item__bottom">
+                            <div class="quantity-control">
+                                <button class="quantity-control__btn quantity-control__btn--minus"
+                                    aria-label="Zmniejsz ilość">-</button>
+                                <input type="number" class="quantity-control__input" value="2" min="1">
+                                <button class="quantity-control__btn quantity-control__btn--plus"
+                                    aria-label="Zwiększ ilość">+</button>
+                            </div>
+                            <div class="cart-item__price">99,98 zł</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-sidebar__footer">
+            <div class="cart-summary">
+                <div class="cart-summary__row cart-summary__row--total">
+                    <span>Kwota:</span>
+                    <span class="cart-summary__value">1084,47 zł</span>
+                </div>
+                <div class="cart-summary__free-delivery">
+                    <p class="cart-summary__delivery-text">Brakuje <strong>215,53 zł</strong> do darmowej dostawy</p>
+                    <div class="cart-summary__progress-bar">
+                        <div class="cart-summary__progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-sidebar__actions">
+                <a href="#" class="btn btn--secondary cart-sidebar__btn">ZOBACZ KOSZYK</a>
+                <a href="#" class="btn btn--primary cart-sidebar__btn">ZAMÓWIENIE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="account-sidebar">
+        <div class="account-sidebar__header">
+            <h2 class="account-sidebar__title">Zaloguj się</h2>
+            <button class="account-sidebar__close" aria-label="Zamknij">
+                <span>Zamknij</span>
+                <div class="nav-bar__close-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+
+        <div class="account-sidebar__content">
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="login-email" class="form-label">Nazwa użytkownika lub adres e-mail <span
+                            class="required">*</span></label>
+                    <input type="text" id="login-email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password" class="form-label">Hasło <span class="required">*</span></label>
+                    <div class="password-wrap">
+                        <input type="password" id="login-password" class="form-input" required>
+                        <button type="button" class="password-toggle" aria-label="Pokaż hasło">
+                            <img src="./icons/eye.svg" alt="Pokaż hasło">
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn--primary login-form__btn">ZALOGUJ SIĘ</button>
+
+                <div class="login-form__options">
+                    <label class="checkbox-wrap">
+                        <input type="checkbox" name="remember">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label">Zapamiętaj mnie</span>
+                    </label>
+                    <a href="#" class="forgot-password">Zapomniałeś hasła?</a>
+                </div>
+            </form>
+
+            <div class="account-register">
+                <div class="account-register__icon-wrap">
+                    <img src="./icons/profile.svg" alt="User" class="account-register__icon">
+                </div>
+                <p class="account-register__text">Nie masz jeszcze konta?</p>
+                <a href="#" class="account-register__link">STWÓRZ KONTO</a>
+            </div>
+        </div>
+    </div>
 
     <script src="./libraries/jquery/jquery-1.11.0.min.js"></script>
     <script src="./libraries/slick/slick.min.js"></script>

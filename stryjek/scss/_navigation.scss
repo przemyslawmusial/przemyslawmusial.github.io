@@ -264,7 +264,9 @@
 		transition: color 0.2s ease;
 
 		&:hover {
-			color: $color-primary;
+			.header-actions__icon {
+				filter: invert(50%);
+			}
 		}
 	}
 
@@ -286,7 +288,7 @@
 		right: -4px;
 		background-color: $color-primary;
 		color: $color-white;
-		font-size: 11px;
+		font-size: 10px;
 		font-weight: 700;
 		min-width: 18px;
 		height: 18px;

@@ -1,0 +1,367 @@
+// =====================================
+// CART SIDEBAR MODAL
+// =====================================
+
+.cart-sidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 320px;
+	height: 100%;
+	background-color: $color-white;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	transform: translateX(100%);
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+
+	&.is-open {
+		transform: translateX(0);
+	}
+
+	@include tablet {
+		width: 400px;
+	}
+
+	// ── Nagłówek ─────────────────────────────────────────────
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px 10px;
+		border-bottom: 1px solid $color-border;
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: 700;
+		color: $color-text;
+		margin: 0;
+	}
+
+	&__close {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 13px;
+		font-weight: 500;
+		color: $color-text;
+		padding: 0;
+		transition: color 0.2s;
+
+		span {
+			text-transform: lowercase;
+			&::first-letter {
+				text-transform: uppercase;
+			}
+		}
+
+		.nav-bar__close-icon {
+			position: relative; // MUST BE RELATIVE for absolute spans
+			width: 16px;
+			height: 16px;
+			order: 1; // Put icon AFTER text if desired, or leave default
+
+			span {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 100%;
+				height: 1.5px;
+				background-color: $color-text;
+				transition: background-color 0.2s;
+
+				&:first-child {
+					transform: translateY(-50%) rotate(45deg);
+				}
+				&:last-child {
+					transform: translateY(-50%) rotate(-45deg);
+				}
+			}
+		}
+
+		&:hover {
+			color: $color-primary;
+			.nav-bar__close-icon span {
+				background-color: $color-primary;
+			}
+		}
+	}
+
+	// ── Treść (Scrollable) ──────────────────────────────────
+	&__content {
+		flex: 1;
+		overflow-y: auto;
+		padding: 20px 15px;
+
+		// Custom scrollbar
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		&::-webkit-scrollbar-track {
+			background: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: #eee;
+			border-radius: 10px;
+		}
+	}
+
+	// ── Produkty w koszyku ──────────────────────────────────
+	.cart-item {
+		display: flex;
+		gap: 16px;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $color-border;
+
+		&:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+
+		&__img-wrap {
+			width: 80px;
+			height: 80px;
+			flex-shrink: 0;
+			border: 1px solid $color-border;
+			border-radius: 8px;
+			padding: 4px;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&__info {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		&__details {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 8px;
+			margin-bottom: 8px;
+		}
+
+		&__name {
+			font-size: 12px;
+			font-weight: 600;
+			color: $color-text;
+			margin: 0;
+			line-height: 1.4;
+
+			@include desktop {
+				font-size: 15px;
+			}
+		}
+
+		&__remove {
+			background: none;
+			border: none;
+			padding: 4px;
+			cursor: pointer;
+			opacity: 0.35;
+			transition: opacity 0.2s;
+
+			&:hover {
+				opacity: 1;
+				.cart-item__remove-icon span {
+					background-color: $color-primary;
+				}
+			}
+		}
+
+		&__remove-icon {
+			position: relative;
+			width: 14px;
+			height: 14px;
+
+			span {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 100%;
+				height: 1.5px;
+				background-color: $color-text;
+				transition: background-color 0.2s;
+
+				&:first-child {
+					transform: translateY(-50%) rotate(45deg);
+				}
+				&:last-child {
+					transform: translateY(-50%) rotate(-45deg);
+				}
+			}
+		}
+
+		&__bottom {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__price {
+			font-size: 14px;
+			font-weight: 700;
+			color: $color-text;
+
+			@include desktop {
+				font-size: 16px;
+			}
+		}
+	}
+
+	// ── Kontrola ilości ────────────────────────────────────
+	.quantity-control {
+		display: flex;
+		align-items: center;
+		border: 1px solid $color-border;
+		border-radius: 4px;
+		overflow: hidden;
+
+		&__btn {
+			width: 20px;
+			height: 20px;
+			background: $color-bg-light;
+			border: none;
+			cursor: pointer;
+			font-size: 13px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: background 0.2s;
+
+			@include desktop {
+				width: 22px;
+				height: 22px;
+			}
+
+			&:hover {
+				background: darken($color-bg-light, 5%);
+			}
+		}
+
+		&__input {
+			width: 30px;
+			height: 20px;
+			border: none;
+			border-left: 1px solid $color-border;
+			border-right: 1px solid $color-border;
+			text-align: center;
+			font-size: 10px;
+			font-weight: 600;
+			color: $color-text;
+			-webkit-appearance: none;
+			-moz-appearance: textfield;
+			appearance: none;
+
+			@include desktop {
+				width: 32px;
+				height: 22px;
+				font-size: 11px;
+			}
+
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+		}
+	}
+
+	// ── Stopka (Sticky) ─────────────────────────────────────
+	&__footer {
+		padding: 15px 10px;
+		background-color: $color-white;
+		border-top: 1px solid $color-border;
+		box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.03);
+	}
+
+	.cart-summary {
+		margin-bottom: 24px;
+
+		&__row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 12px;
+
+			&--total {
+				font-size: 18px;
+				font-weight: 700;
+				color: $color-text;
+				margin-bottom: 16px;
+			}
+		}
+
+		&__delivery-text {
+			font-size: 13px;
+			color: $color-text;
+			margin: 0 0 8px;
+
+			strong {
+				color: $color-primary;
+			}
+		}
+
+		&__progress-bar {
+			width: 100%;
+			height: 6px;
+			background-color: #eee;
+			border-radius: 3px;
+			overflow: hidden;
+		}
+
+		&__progress-fill {
+			height: 100%;
+			background-color: $color-primary;
+			border-radius: 3px;
+			transition: width 0.5s ease;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	&__btn {
+		width: 100%;
+		padding: 10px;
+		font-size: 13px;
+		font-weight: 700;
+		text-align: center;
+		border-radius: 8px;
+		letter-spacing: 0.02em;
+
+		&.btn--primary {
+			background-color: $color-primary;
+			color: $color-white;
+			&:hover {
+				background-color: darken($color-primary, 5%);
+			}
+		}
+
+		&.btn--secondary {
+			background-color: $color-white;
+			border: 1px solid $color-border;
+			color: $color-text;
+			&:hover {
+				background-color: $color-bg-light;
+			}
+		}
+	}
+}
