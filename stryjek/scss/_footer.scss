@@ -190,13 +190,13 @@
 			border-top: none;
 		}
 
-		&:last-child {
-			border-bottom: 1px solid $color-border;
+		// &:last-child {
+		// 	// border-bottom: 1px solid $color-border;
 
-			@include desktop {
-				border-bottom: none;
-			}
-		}
+		// 	@include desktop {
+		// 		border-bottom: none;
+		// 	}
+		// }
 	}
 
 	// Reset dla h3 owijającego button w akordeonach
@@ -249,19 +249,24 @@
 		overflow: hidden;
 		transition: max-height 0.35s ease;
 
+		&::after {
+			content: "";
+			display: block;
+			height: 24px; // Add space at the bottom for scrollHeight calculation
+		}
+
 		@include desktop {
 			max-height: none !important;
 			overflow: visible;
-			padding-bottom: 0;
+
+			&::after {
+				display: none;
+			}
 		}
 	}
 
 	// Open state (max-height ustawiany przez JS via scrollHeight – tu tylko efekty wizualne)
 	&__column--accordion.is-open {
-		.footer-nav__list--collapsible {
-			padding-bottom: 16px;
-		}
-
 		.footer-nav__chevron {
 			transform: rotate(180deg);
 		}
